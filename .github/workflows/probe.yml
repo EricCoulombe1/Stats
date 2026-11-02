@@ -1,0 +1,24 @@
+name: Probe GVR data links
+on:
+  push:
+    branches: [probe-gvr]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download CSVs
+        run: |
+          mkdir -p probe
+          for id in ttkFt-2NA ttkFT-POe ttkFl-wzk ttkFj-1v8 ttkF8-n6E; do
+            code=$(curl -sS -L -m 90 --retry 3 --retry-delay 10 -A "Mozilla/5.0" -o "probe/$id.csv" -w "%{http_code}" "https://statscentre.rebgv.org/infoserv/s-v1/$id" || echo ERR)
+            echo "$id -> $code $(wc -c < probe/$id.csv 2>/dev/null) bytes"
+            head -c 600 "probe/$id.csv" 2>/dev/null; echo; echo ----
+          done
+      - name: Commit results
+        run: |
+          git config user.name "stats-bot"; git config user.email "eric@ericcoulombe.com"
+          git add probe && git commit -m "Probe results" && git push origin HEAD:probe-gvr || echo "nothing to commit"
