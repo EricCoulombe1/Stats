@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Neighbourhood Market Stats | Eric Coulombe</title>
+<meta name="description" content="Monthly real estate statistics for Vancouver's Westside neighbourhoods: benchmark prices, market balance and more, from Eric Coulombe, Engel &amp; Völkers Vancouver.">
+<meta property="og:title" content="Neighbourhood Market Stats, updated monthly">
+<meta property="og:image" content="https://stats.ericcoulombe.com/assets/img/ec-ubc-entrance-fountain.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+:root {
+  --bg: #f4f4f3; --surface: #ffffff; --ink: #15191e; --ink-2: #4d555d; --ink-3: #737b83;
+  --line: #e1e5e8; --accent: #b7202e; --hero: #2e2f32; --hero-ink: #f3f3f2; --hero-ink-2: #c9cacc;
+  --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #111315; --surface: #191c1f; --ink: #eef0f2; --ink-2: #b4bcc4; --ink-3: #8c949c; --line: #2b3035; --accent: #d9535f; --hero: #1f2023; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #111315; --surface: #191c1f; --ink: #eef0f2; --ink-2: #b4bcc4; --ink-3: #8c949c; --line: #2b3035; --accent: #d9535f; --hero: #1f2023; color-scheme: dark; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--f-body); }
+[hidden] { display: none !important; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 max(16px, env(safe-area-inset-left, 0px)) 56px; display: grid; gap: 32px; }
+.head { background: var(--hero); color: var(--hero-ink); }
+.head-inner { max-width: 1120px; margin: 0 auto; padding: 22px max(16px, env(safe-area-inset-left, 0px)) 40px; display: grid; gap: 28px; }
+.topbar { display: flex; align-items: center; gap: 16px; font-size: 13px; color: var(--hero-ink-2); }
+.logo { height: 46px; width: auto; display: block; } .logo .r, .logo .g { fill: #fff; } .topbar .who { border-left: 1px solid rgba(255,255,255,.25); padding-left: 16px; line-height: 1.35; }
+.topbar b { color: var(--hero-ink); font-family: var(--f-display); font-weight: 700; letter-spacing: .04em; font-size: 15px; }
+.eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--hero-ink-2); font-weight: 600; }
+h1 { font-family: var(--f-display); font-stretch: 75%; font-weight: 800; font-size: clamp(38px, 6.5vw, 68px); line-height: .95; margin: 6px 0 12px; }
+h1 span { box-shadow: inset 0 -.12em 0 var(--accent); }
+.lede { margin: 0; font-size: 17px; color: var(--hero-ink-2); max-width: 58ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 16px; padding-top: 32px; }
+a.card { display: grid; grid-template-rows: 190px auto; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; color: inherit; text-decoration: none; transition: transform .15s ease, box-shadow .15s ease; }
+a.card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+a.card:focus-visible { outline: 2px solid #2a78d6; outline-offset: 2px; }
+.card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card .body { padding: 16px 18px 18px; display: grid; gap: 6px; }
+.card h2 { margin: 0; font-family: var(--f-display); font-stretch: 85%; font-weight: 700; font-size: 24px; line-height: 1.1; }
+.card .k { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3); font-weight: 600; }
+.card .v { font-family: var(--f-display); font-stretch: 85%; font-weight: 700; font-size: 26px; font-variant-numeric: tabular-nums; }
+.card .d { font-size: 14px; color: var(--ink-2); }
+.card .go { font-size: 14px; font-weight: 600; color: var(--accent); padding-top: 4px; }
+.soon { border: 1px dashed var(--line); border-radius: 10px; padding: 18px; display: grid; gap: 8px; align-content: start; align-self: start; }
+.soon h3 { margin: 0; font-size: 15px; font-weight: 600; }
+.soon p { margin: 0; color: var(--ink-2); font-size: 14px; }
+footer { border-top: 1px solid var(--line); padding-top: 18px; font-size: 13px; color: var(--ink-3); display: grid; gap: 6px; max-width: 80ch; }
+footer p { margin: 0; }
+.embed .topbar { display: none; }
+</style>
+</head>
+<body>
+<div class="head">
+  <div class="head-inner">
+    <div class="topbar"><svg class="logo" role="img" aria-label="Eric Coulombe" xmlns="http://www.w3.org/2000/svg" viewBox="49.153 293.898 241.240 135.636">
+<path d="M185.320 378.108 L185.320 340.424 L191.444 340.424 L191.444 371.984 L233.518 371.984 L233.518 340.424 L239.642 340.424 L239.642 378.108 L185.320 378.108" class="g"/>
+<path d="M148.153 378.107 L148.153 306.822 L276.809 306.822 L276.809 378.107 L271.029 378.107 L271.029 312.424 L153.959 312.424 L153.959 378.107 L148.153 378.107" class="g"/>
+<path d="M63.657 351.690 L80.292 351.690 L80.292 354.605 L66.797 354.605 L66.797 362.905 L79.394 362.905 L79.394 365.821 L66.797 365.821 L66.797 375.241 L80.964 375.241 L80.964 378.157 L63.657 378.157 L63.657 351.690" class="r"/>
+<path d="M88.968 363.353 L91.770 363.353 C92.643 363.353 93.547 363.329 94.481 363.279 C95.414 363.228 96.275 363.067 97.060 362.792 C97.845 362.518 98.493 362.089 99.004 361.502 C99.515 360.918 99.771 360.077 99.771 358.980 C99.771 358.032 99.582 357.272 99.208 356.698 C98.837 356.126 98.344 355.684 97.733 355.372 C97.121 355.060 96.437 354.855 95.676 354.754 C94.916 354.656 94.149 354.605 93.379 354.605 L88.968 354.605 L88.968 363.353 M85.825 351.689 L92.591 351.689 C93.863 351.689 95.129 351.764 96.388 351.915 C97.644 352.063 98.773 352.388 99.771 352.887 C100.766 353.385 101.578 354.114 102.198 355.072 C102.822 356.032 103.135 357.334 103.135 358.980 C103.135 360.922 102.549 362.494 101.377 363.689 C100.206 364.886 98.588 365.645 96.519 365.969 L104.033 378.156 L100.181 378.156 L93.005 366.269 L88.968 366.269 L88.968 378.156 L85.825 378.156 L85.825 351.689" class="r"/>
+<path d="M108.667 351.690H111.810V378.157H108.667Z" class="r"/>
+<path d="M136.928 357.147 C136.131 356.076 135.145 355.273 133.974 354.736 C132.803 354.201 131.583 353.933 130.311 353.933 C128.842 353.933 127.488 354.231 126.256 354.831 C125.021 355.428 123.956 356.231 123.059 357.241 C122.161 358.250 121.465 359.423 120.966 360.755 C120.467 362.089 120.218 363.478 120.218 364.923 C120.218 366.468 120.467 367.907 120.966 369.241 C121.465 370.574 122.155 371.733 123.041 372.717 C123.926 373.703 124.985 374.480 126.220 375.053 C127.452 375.627 128.818 375.913 130.311 375.913 C131.933 375.913 133.378 375.597 134.650 374.960 C135.918 374.325 137.029 373.409 137.975 372.212 L140.329 374.194 C139.134 375.790 137.695 376.961 136.012 377.708 C134.330 378.456 132.429 378.829 130.311 378.829 C128.419 378.829 126.649 378.480 125.003 377.782 C123.360 377.085 121.933 376.120 120.722 374.886 C119.515 373.652 118.569 372.188 117.881 370.493 C117.197 368.799 116.856 366.941 116.856 364.923 C116.856 362.979 117.184 361.160 117.845 359.465 C118.505 357.771 119.432 356.300 120.631 355.054 C121.827 353.808 123.247 352.824 124.890 352.102 C126.536 351.379 128.343 351.017 130.311 351.017 C132.106 351.017 133.831 351.341 135.489 351.989 C137.147 352.637 138.537 353.696 139.657 355.167 L136.928 357.147" class="r"/>
+<path d="M80.804 396.350 C80.232 395.654 79.526 395.117 78.693 394.743 C77.856 394.370 76.892 394.183 75.793 394.183 C74.698 394.183 73.682 394.394 72.748 394.818 C71.814 395.241 71.005 395.833 70.318 396.594 C69.633 397.354 69.097 398.258 68.711 399.304 C68.325 400.350 68.130 401.485 68.130 402.705 C68.130 403.953 68.325 405.092 68.711 406.126 C69.097 407.161 69.627 408.058 70.299 408.817 C70.971 409.578 71.762 410.169 72.672 410.594 C73.582 411.017 74.561 411.228 75.608 411.228 C76.804 411.228 77.862 410.980 78.787 410.481 C79.709 409.982 80.466 409.284 81.066 408.388 L85.927 412.015 C84.804 413.584 83.384 414.743 81.665 415.490 C79.943 416.239 78.176 416.611 76.356 416.611 C74.287 416.611 72.380 416.287 70.637 415.639 C68.891 414.993 67.385 414.063 66.113 412.854 C64.842 411.646 63.850 410.182 63.141 408.463 C62.432 406.743 62.076 404.824 62.076 402.705 C62.076 400.588 62.432 398.668 63.141 396.948 C63.850 395.229 64.842 393.766 66.113 392.557 C67.385 391.348 68.891 390.419 70.637 389.771 C72.380 389.123 74.287 388.800 76.356 388.800 C77.105 388.800 77.884 388.868 78.693 389.005 C79.502 389.142 80.299 389.359 81.084 389.659 C81.869 389.958 82.623 390.357 83.347 390.856 C84.068 391.353 84.716 391.965 85.291 392.687 L80.804 396.350" class="r"/>
+<path d="M93.736 402.705 C93.736 403.952 93.931 405.092 94.317 406.126 C94.704 407.160 95.257 408.058 95.981 408.817 C96.702 409.577 97.569 410.169 98.579 410.593 C99.590 411.016 100.715 411.227 101.962 411.227 C103.207 411.227 104.335 411.016 105.345 410.593 C106.355 410.169 107.219 409.577 107.943 408.817 C108.664 408.058 109.221 407.160 109.607 406.126 C109.994 405.092 110.185 403.952 110.185 402.705 C110.185 401.485 109.994 400.350 109.607 399.304 C109.221 398.257 108.664 397.354 107.943 396.593 C107.219 395.832 106.355 395.241 105.345 394.818 C104.335 394.393 103.207 394.182 101.962 394.182 C100.715 394.182 99.590 394.393 98.579 394.818 C97.569 395.241 96.702 395.832 95.981 396.593 C95.257 397.354 94.704 398.257 94.317 399.304 C93.931 400.350 93.736 401.485 93.736 402.705 M87.682 402.705 C87.682 400.587 88.038 398.668 88.747 396.948 C89.456 395.229 90.447 393.766 91.719 392.556 C92.991 391.347 94.497 390.419 96.243 389.771 C97.986 389.123 99.894 388.799 101.962 388.799 C104.031 388.799 105.935 389.123 107.681 389.771 C109.424 390.419 110.934 391.347 112.205 392.556 C113.477 393.766 114.465 395.229 115.177 396.948 C115.886 398.668 116.242 400.587 116.242 402.705 C116.242 404.824 115.886 406.742 115.177 408.462 C114.465 410.181 113.477 411.646 112.205 412.853 C110.934 414.063 109.424 414.992 107.681 415.639 C105.935 416.287 104.031 416.611 101.962 416.611 C99.894 416.611 97.986 416.287 96.243 415.639 C94.497 414.992 92.991 414.063 91.719 412.853 C90.447 411.646 89.456 410.181 88.747 408.462 C88.038 406.742 87.682 404.824 87.682 402.705" class="r"/>
+<path d="M142.521 405.733 C142.521 407.303 142.284 408.749 141.809 410.070 C141.334 411.391 140.632 412.537 139.698 413.509 C138.764 414.481 137.599 415.241 136.202 415.789 C134.806 416.337 133.200 416.611 131.380 416.611 C129.537 416.611 127.916 416.337 126.519 415.789 C125.126 415.241 123.960 414.481 123.023 413.509 C122.090 412.537 121.387 411.391 120.912 410.070 C120.438 408.749 120.204 407.303 120.204 405.733 L120.204 389.471 L126.035 389.471 L126.035 405.508 C126.035 406.331 126.166 407.091 126.428 407.788 C126.689 408.486 127.055 409.091 127.529 409.602 C128.003 410.112 128.569 410.512 129.229 410.798 C129.890 411.085 130.608 411.227 131.380 411.227 C132.153 411.227 132.862 411.085 133.510 410.798 C134.158 410.512 134.721 410.112 135.192 409.602 C135.667 409.091 136.035 408.486 136.297 407.788 C136.558 407.091 136.689 406.331 136.689 405.508 L136.689 389.471 L142.521 389.471 L142.521 405.733" class="r"/>
+<path d="M148.125 389.472 L153.957 389.472 L153.957 410.555 L164.763 410.555 L164.763 415.939 L148.125 415.939 L148.125 389.472" class="r"/>
+<path d="M172.611 402.705 C172.611 403.952 172.806 405.092 173.192 406.126 C173.578 407.160 174.132 408.058 174.856 408.817 C175.577 409.577 176.444 410.169 177.454 410.593 C178.464 411.016 179.590 411.227 180.837 411.227 C182.081 411.227 183.210 411.016 184.220 410.593 C185.230 410.169 186.094 409.577 186.818 408.817 C187.539 408.058 188.096 407.160 188.482 406.126 C188.868 405.092 189.060 403.952 189.060 402.705 C189.060 401.485 188.868 400.350 188.482 399.304 C188.096 398.257 187.539 397.354 186.818 396.593 C186.094 395.832 185.230 395.241 184.220 394.818 C183.210 394.393 182.081 394.182 180.837 394.182 C179.590 394.182 178.464 394.393 177.454 394.818 C176.444 395.241 175.577 395.832 174.856 396.593 C174.132 397.354 173.578 398.257 173.192 399.304 C172.806 400.350 172.611 401.485 172.611 402.705 M166.557 402.705 C166.557 400.587 166.913 398.668 167.622 396.948 C168.331 395.229 169.322 393.766 170.594 392.556 C171.865 391.347 173.371 390.419 175.118 389.771 C176.861 389.123 178.768 388.799 180.837 388.799 C182.905 388.799 184.810 389.123 186.556 389.771 C188.299 390.419 189.808 391.347 191.080 392.556 C192.352 393.766 193.340 395.229 194.052 396.948 C194.761 398.668 195.117 400.587 195.117 402.705 C195.117 404.824 194.761 406.742 194.052 408.462 C193.340 410.181 192.352 411.646 191.080 412.853 C189.808 414.063 188.299 414.992 186.556 415.639 C184.810 416.287 182.905 416.611 180.837 416.611 C178.768 416.611 176.861 416.287 175.118 415.639 C173.371 414.992 171.865 414.063 170.594 412.853 C169.322 411.646 168.331 410.181 167.622 408.462 C166.913 406.742 166.557 404.824 166.557 402.705" class="r"/>
+<path d="M199.078 389.472 L207.900 389.472 L213.994 406.743 L214.067 406.743 L220.197 389.472 L228.983 389.472 L228.983 415.939 L223.151 415.939 L223.151 395.640 L223.078 395.640 L216.123 415.939 L211.676 415.939 L204.983 395.640 L204.910 395.640 L204.910 415.939 L199.078 415.939 L199.078 389.472" class="r"/>
+<path d="M240.200 411.004 L245.432 411.004 C245.880 411.004 246.336 410.954 246.795 410.855 C247.258 410.754 247.675 410.581 248.049 410.332 C248.423 410.082 248.727 409.758 248.964 409.360 C249.201 408.962 249.320 408.475 249.320 407.901 C249.320 407.279 249.165 406.774 248.852 406.388 C248.541 406.001 248.149 405.709 247.675 405.508 C247.203 405.309 246.692 405.172 246.141 405.098 C245.594 405.023 245.082 404.985 244.611 404.985 L240.200 404.985 L240.200 411.004 M240.200 400.051 L244.422 400.051 C244.872 400.051 245.314 400.002 245.749 399.901 C246.187 399.803 246.579 399.640 246.929 399.415 C247.276 399.191 247.556 398.892 247.769 398.519 C247.979 398.145 248.085 397.696 248.085 397.173 C248.085 396.625 247.967 396.171 247.732 395.808 C247.495 395.448 247.191 395.167 246.817 394.967 C246.442 394.768 246.016 394.625 245.545 394.537 C245.070 394.450 244.611 394.406 244.161 394.406 L240.200 394.406 L240.200 400.051 M234.368 389.472 L244.237 389.472 C245.381 389.472 246.533 389.554 247.693 389.715 C248.852 389.878 249.892 390.200 250.814 390.687 C251.736 391.172 252.484 391.852 253.059 392.724 C253.631 393.597 253.917 394.756 253.917 396.201 C253.917 397.696 253.500 398.936 252.667 399.920 C251.830 400.905 250.729 401.608 249.357 402.033 L249.357 402.108 C250.230 402.232 251.021 402.475 251.733 402.836 C252.442 403.198 253.053 403.659 253.564 404.218 C254.072 404.780 254.465 405.434 254.742 406.182 C255.015 406.929 255.152 407.728 255.152 408.575 C255.152 409.970 254.854 411.135 254.255 412.069 C253.656 413.004 252.883 413.759 251.936 414.331 C250.991 414.904 249.923 415.316 248.739 415.565 C247.556 415.814 246.379 415.939 245.207 415.939 L234.368 415.939 L234.368 389.472" class="r"/>
+<path d="M258.815 389.472 L276.797 389.472 L276.797 394.855 L264.647 394.855 L264.647 399.789 L276.125 399.789 L276.125 405.173 L264.647 405.173 L264.647 410.555 L277.470 410.555 L277.470 415.939 L258.815 415.939 L258.815 389.472" class="r"/>
+</svg><span class="who">Real Estate Advisor<br>Engel &amp; Völkers Vancouver</span></div>
+    <div>
+      <div class="eyebrow">Market Insight</div>
+      <h1>Neighbourhood <span>Stats</span></h1>
+      <p class="lede">How prices, demand and selling speed are moving in the Vancouver neighbourhoods I work in. Each page updates monthly from Greater Vancouver REALTORS® data.</p>
+    </div>
+  </div>
+</div>
+<div class="wrap">
+  <div class="grid" id="grid"></div>
+  <footer>
+    <p>MLS® and the MLS® Home Price Index are trademarks of the Canadian Real Estate Association. Data from Greater Vancouver REALTORS® Stats Centre, © ShowingTime Plus, LLC. Figures are not a valuation of any specific property.</p>
+    <p>Eric Coulombe · Engel &amp; Völkers Vancouver · 604-764-8620 · eric@ericcoulombe.com</p>
+  </footer>
+</div>
+<script>
+const EMBED = new URLSearchParams(location.search).has('embed');
+if (EMBED) document.documentElement.classList.add('embed');
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const COMING = ["Point Grey", "Dunbar & MacKenzie Heights", "Kerrisdale", "Arbutus", "Kitsilano", "Fairview", "Downtown Peninsula"];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const ym = s => { const [y, m] = s.split("-").map(Number); return MONTHS[m - 1] + " " + y; };
+const money = v => "$" + Math.round(v).toLocaleString("en-CA");
+let lastH = 0;
+function postHeight() {
+  if (!EMBED || window.parent === window) return;
+  requestAnimationFrame(() => { const h = Math.ceil(document.documentElement.scrollHeight); if (Math.abs(h - lastH) > 2) { lastH = h; parent.postMessage({ type: 'ec-stats-height', h }, '*'); } });
+}
+async function build() {
+  const reg = await fetch('registry.json', { cache: 'no-cache' }).then(r => r.json());
+  const cards = [];
+  for (const [key, a] of Object.entries(reg.areas)) {
+    let line = "", sub = "";
+    try {
+      const d = await fetch(`data/${key}.json`, { cache: 'no-cache' }).then(r => r.json());
+      const h = d.charts.hpi, s = h.series[0], n = s.length;
+      const chg = s[n - 1] / s[n - 13] - 1;
+      line = money(s[n - 1]);
+      sub = `${chg >= 0 ? "+" : "−"}${Math.abs(chg * 100).toFixed(1)}% over 12 months · through ${ym(h.through)}`;
+    } catch (e) { sub = "Latest figures on the page"; }
+    const href = EMBED && a.host_url ? a.host_url : a.page + (EMBED && !a.host_url ? "?embed=1" : "");
+    cards.push(`<a class="card" href="${esc(href)}"${EMBED && a.host_url ? ' target="_top"' : ''}>
+      <img src="${esc(a.photo)}" alt="" loading="lazy">
+      <div class="body"><h2>${esc(a.name)}</h2>
+        ${line ? `<div class="k">Apartment benchmark price</div><div class="v">${line}</div>` : ""}
+        <div class="d">${esc(sub)}</div><div class="go">See ${esc(a.name)} stats →</div></div></a>`);
+  }
+  cards.push(`<div class="soon"><h3>More neighbourhoods coming</h3><p>${COMING.map(esc).join(" · ")}</p></div>`);
+  document.getElementById('grid').innerHTML = cards.join("");
+  postHeight();
+}
+build().catch(() => { document.getElementById('grid').innerHTML = '<p>The latest figures could not be loaded. Please refresh the page.</p>'; postHeight(); });
+if (EMBED) new ResizeObserver(postHeight).observe(document.body);
+</script>
+</body>
+</html>
