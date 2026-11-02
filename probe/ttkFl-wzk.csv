@@ -1,0 +1,62 @@
+Metric:,Sales to Actives Ratio
+Time Calculation:,Rolling 12 Months
+Data from:,11/2/2026
+Segments:,VVWUL - University VW
+
+Filters
+VVWUL - University VW:,""
+
+By Property Type,
+,"VVWUL - University VW",,
+Date,"Apartment","Townhouse",
+January 2023,0.272,0.195,
+February 2023,0.262,0.217,
+March 2023,0.265,0.232,
+April 2023,0.277,0.220,
+May 2023,0.315,0.248,
+June 2023,0.340,0.294,
+July 2023,0.349,0.321,
+August 2023,0.336,0.345,
+September 2023,0.337,0.356,
+October 2023,0.332,0.367,
+November 2023,0.328,0.382,
+December 2023,0.317,0.357,
+January 2024,0.311,0.373,
+February 2024,0.310,0.388,
+March 2024,0.281,0.393,
+April 2024,0.254,0.387,
+May 2024,0.208,0.361,
+June 2024,0.180,0.340,
+July 2024,0.167,0.330,
+August 2024,0.158,0.288,
+September 2024,0.146,0.272,
+October 2024,0.161,0.263,
+November 2024,0.161,0.262,
+December 2024,0.161,0.262,
+January 2025,0.162,0.244,
+February 2025,0.161,0.226,
+March 2025,0.156,0.203,
+April 2025,0.158,0.201,
+May 2025,0.161,0.184,
+June 2025,0.162,0.162,
+July 2025,0.167,0.143,
+August 2025,0.174,0.140,
+September 2025,0.172,0.122,
+October 2025,0.153,0.118,
+November 2025,0.153,0.104,
+December 2025,0.148,0.108,
+January 2026,0.143,0.115,
+February 2026,0.137,0.115,
+March 2026,0.130,0.136,
+April 2026,0.131,0.136,
+May 2026,0.132,0.128,
+June 2026,0.126,0.148,
+July 2026,0.120,0.160,
+August 2026,0.108,0.160,
+September 2026,0.108,0.166,
+October 2026,0.101,0.161,
+
+
+"All data from Greater Vancouver REALTORS &copy; 2026 ShowingTime Plus, LLC."
+
+
