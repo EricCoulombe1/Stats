@@ -141,6 +141,10 @@ footer p { margin: 0; }
 .hero-band.nophoto .hero-inner { min-height: 360px; }
 .embed .hero-band.nophoto .hero-inner { min-height: 300px; }
 .hero-copy .lede b { color: var(--hero-ink); font-weight: 600; }
+.bare .hero-band { display: none; }
+.bare .wrap { padding-top: 24px; }
+.stamp-bare { display: none; }
+.bare .stamp-bare { display: flex; }
 .more { font-size: 13px; }
 .more a { color: var(--ink-2); }
 </style>
@@ -175,6 +179,7 @@ footer p { margin: 0; }
   <p class="hero-credit">West 41st Avenue, Kerrisdale · Photo: <a href="https://commons.wikimedia.org/wiki/File:W_41_Ave_in_Kerrisdale_2026.JPG" target="_blank" rel="noopener">Canmenwalker / Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
 </div>
 <div class="wrap">
+  <div class="stamp stamp-bare" id="stamp2"></div>
   <section class="sec" aria-labelledby="h-now">
     <div class="sec-head"><h2 id="h-now">The short version</h2></div>
     <div class="nutshell" id="nutshell"></div>
@@ -323,7 +328,7 @@ function start(J) {
   const C = J.charts, H = C.hpi;
   const last = c => monthAt(c.start, c.series[0].length - 1);
   const hpiLast = last(H), rollC = C.ratio || C.dom || C.pctorig;
-  document.getElementById("stamp").innerHTML =
+  document.getElementById("stamp").innerHTML = document.getElementById("stamp2").innerHTML =
     `<span>Benchmark prices through ${long(hpiLast)}</span>` + (rollC ? `<span>Rolling measures through ${long(last(rollC))}</span>` : "") + `<span>Source: Greater Vancouver REALTORS®</span>`;
   document.getElementById("src").textContent = `Benchmark prices through ${long(hpiLast)}` + (rollC ? `; rolling 12-month measures through ${long(last(rollC))}` : "") + `. The most recent month can be revised as late sales are reported.`;
 
@@ -368,6 +373,7 @@ function postHeight() {
 }
 if (new URLSearchParams(location.search).has('embed')) {
   document.documentElement.classList.add('embed');
+  if (new URLSearchParams(location.search).has('bare')) document.documentElement.classList.add('bare');
   document.addEventListener('click', e => { const a = e.target.closest('a[href]'); if (a && !a.target) a.target = '_top'; });
   new ResizeObserver(postHeight).observe(document.body);
   document.addEventListener('toggle', postHeight, true);

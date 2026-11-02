@@ -5,7 +5,7 @@
       "name": "UBC",
       "full_name": "UBC / University Endowment Lands",
       "page": "ubc/",
-      "host_url": null,
+      "host_url": "https://ericcoulombe.com/ubc-market-stats.html",
       "photo": "assets/img/ec-ubc-entrance-fountain.jpg",
       "headline": "Apartment",
       "charts": {
@@ -20,7 +20,7 @@
       "name": "Point Grey",
       "full_name": "Point Grey",
       "page": "point-grey/",
-      "host_url": null,
+      "host_url": "https://ericcoulombe.com/point-grey-market-stats.html",
       "photo": "assets/img/ec-point-grey-beach-skyline.jpg",
       "headline": "Detached (All)",
       "charts": {
@@ -34,7 +34,7 @@
       "name": "Dunbar & MacKenzie Heights",
       "full_name": "Dunbar & MacKenzie Heights",
       "page": "dunbar/",
-      "host_url": null,
+      "host_url": "https://ericcoulombe.com/dunbar-mackenzie-heights-market-stats.html",
       "photo": "assets/img/ec-dunbar-rooftops-city-view.jpg",
       "headline": "VVWDU - Dunbar",
       "charts": {
@@ -48,7 +48,7 @@
       "name": "Kerrisdale",
       "full_name": "Kerrisdale",
       "page": "kerrisdale/",
-      "host_url": null,
+      "host_url": "https://ericcoulombe.com/kerrisdale-market-stats.html",
       "photo": "assets/img/ec-kerrisdale-west-41st.jpg",
       "headline": "Detached (All)",
       "charts": {
@@ -62,7 +62,7 @@
       "name": "Arbutus",
       "full_name": "Arbutus",
       "page": "arbutus/",
-      "host_url": null,
+      "host_url": "https://ericcoulombe.com/arbutus-market-stats.html",
       "photo": "assets/img/ec-arbutus-ridge.jpg",
       "headline": "Detached (All)",
       "charts": {
@@ -76,7 +76,7 @@
       "name": "Kitsilano",
       "full_name": "Kitsilano",
       "page": "kitsilano/",
-      "host_url": null,
+      "host_url": "https://ericcoulombe.com/kitsilano-market-stats.html",
       "photo": "assets/img/ec-kits-shoreline-city.jpg",
       "headline": "Apartment",
       "charts": {
@@ -90,7 +90,7 @@
       "name": "Fairview",
       "full_name": "Fairview",
       "page": "fairview/",
-      "host_url": null,
+      "host_url": "https://ericcoulombe.com/fairview-market-stats.html",
       "photo": "assets/img/ec-false-creek-marina.jpg",
       "headline": "Apartment",
       "charts": {
@@ -104,7 +104,7 @@
       "name": "Downtown Peninsula",
       "full_name": "Downtown Peninsula: Downtown, Yaletown, Coal Harbour & West End",
       "page": "downtown/",
-      "host_url": null,
+      "host_url": "https://ericcoulombe.com/downtown-peninsula-market-stats.html",
       "photo": "assets/img/ec-false-creek-downtown-aerial.jpg",
       "headline": "VVWDT - Downtown VW",
       "charts": {

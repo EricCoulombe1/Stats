@@ -54,6 +54,8 @@ a.card.nophoto .body { align-content: start; }
 footer { border-top: 1px solid var(--line); padding-top: 18px; font-size: 13px; color: var(--ink-3); display: grid; gap: 6px; max-width: 80ch; }
 footer p { margin: 0; }
 .embed .topbar { display: none; }
+.bare .head { display: none; }
+.bare .grid { padding-top: 24px; }
 </style>
 </head>
 <body>
@@ -92,6 +94,7 @@ footer p { margin: 0; }
 <script>
 const EMBED = new URLSearchParams(location.search).has('embed');
 if (EMBED) document.documentElement.classList.add('embed');
+if (EMBED && new URLSearchParams(location.search).has('bare')) document.documentElement.classList.add('bare');
 const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const SEG = { "Detached (All)": "Detached", "Apartment": "Apartment", "Townhouse": "Townhouse" };
 const segName = (c, a) => SEG[c] ? SEG[c] + " benchmark price" : c.replace(/^\w+ - /, "").replace(/ VW$/, "") + " " + (a.name.startsWith("Downtown") ? "condo" : "detached") + " benchmark";
