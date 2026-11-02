@@ -7,12 +7,111 @@
       "page": "ubc/",
       "host_url": null,
       "photo": "assets/img/ec-ubc-entrance-fountain.jpg",
+      "headline": "Apartment",
       "charts": {
-        "hpi":       { "csv": "ttkFT-POe", "kind": "money", "cols": ["Apartment", "Townhouse"], "min": 200000, "max": 6000000, "required": true },
-        "ratio":     { "csv": "ttkFl-wzk", "kind": "ratio", "cols": ["Apartment", "Townhouse"], "min": 0, "max": 2, "required": true },
-        "leasehold": { "csv": "ttkFt-2NA", "kind": "psf",   "cols": ["VVWUL - University VW", "VVW - Vancouver West"], "min": 100, "max": 5000, "required": true },
-        "dom":       { "csv": "ttkFj-1v8", "kind": "days",  "cols": ["Apartment", "Townhouse"], "min": 0, "max": 400, "required": false },
-        "pctorig":   { "csv": "ttkF8-n6E", "kind": "pct",   "cols": ["Apartment", "Townhouse"], "min": 50, "max": 150, "required": false }
+        "hpi": {"csv": "ttkFT-POe", "kind": "money", "cols": ["Apartment", "Townhouse"], "min": 200000, "max": 6000000, "required": true},
+        "ratio": {"csv": "ttkFl-wzk", "kind": "ratio", "cols": ["Apartment", "Townhouse"], "min": 0, "max": 2, "required": true},
+        "leasehold": {"csv": "ttkFt-2NA", "kind": "psf", "cols": ["VVWUL - University VW", "VVW - Vancouver West"], "min": 100, "max": 5000, "required": true},
+        "dom": {"csv": "ttkFj-1v8", "kind": "days", "cols": ["Apartment", "Townhouse"], "min": 0, "max": 400, "required": false},
+        "pctorig": {"csv": "ttkF8-n6E", "kind": "pct", "cols": ["Apartment", "Townhouse"], "min": 50, "max": 150, "required": false}
+      }
+    },
+    "point-grey": {
+      "name": "Point Grey",
+      "full_name": "Point Grey",
+      "page": "point-grey/",
+      "host_url": null,
+      "photo": null,
+      "headline": "Detached (All)",
+      "charts": {
+        "hpi": {"csv": "ttk9W-CpR", "kind": "money", "cols": ["Detached (All)", "Apartment"], "min": 200000, "max": 12000000, "required": true},
+        "ratio": {"csv": "ttk96-pcN", "kind": "ratio", "cols": ["Detached (All)", "Apartment"], "min": 0, "max": 2, "required": false},
+        "dom": {"csv": "ttk9p-NPi", "kind": "days", "cols": ["Detached (All)", "Apartment"], "min": 0, "max": 400, "required": false},
+        "pctorig": {"csv": "ttk9x-ThP", "kind": "pct", "cols": ["Detached (All)", "Apartment"], "min": 50, "max": 150, "required": false}
+      }
+    },
+    "dunbar": {
+      "name": "Dunbar & MacKenzie Heights",
+      "full_name": "Dunbar & MacKenzie Heights",
+      "page": "dunbar/",
+      "host_url": null,
+      "photo": null,
+      "headline": "VVWDU - Dunbar",
+      "charts": {
+        "hpi": {"csv": "ttk0m-dG4", "kind": "money", "cols": ["VVWDU - Dunbar", "VVWMH - MacKenzie Heights"], "min": 200000, "max": 12000000, "required": true},
+        "ratio": {"csv": "ttk0h-g61", "kind": "ratio", "cols": ["VVWDU - Dunbar", "VVWMH - MacKenzie Heights"], "min": 0, "max": 2, "required": false},
+        "dom": {"csv": "ttk02-ixN", "kind": "days", "cols": ["VVWDU - Dunbar", "VVWMH - MacKenzie Heights"], "min": 0, "max": 400, "required": false},
+        "pctorig": {"csv": "ttk0Q-lTk", "kind": "pct", "cols": ["VVWDU - Dunbar", "VVWMH - MacKenzie Heights"], "min": 50, "max": 150, "required": false}
+      }
+    },
+    "kerrisdale": {
+      "name": "Kerrisdale",
+      "full_name": "Kerrisdale",
+      "page": "kerrisdale/",
+      "host_url": null,
+      "photo": null,
+      "headline": "Detached (All)",
+      "charts": {
+        "hpi": {"csv": "ttk9o-QQa", "kind": "money", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 200000, "max": 12000000, "required": true},
+        "ratio": {"csv": "ttk9I-8SV", "kind": "ratio", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 0, "max": 2, "required": false},
+        "dom": {"csv": "ttk9v-r0F", "kind": "days", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 0, "max": 400, "required": false},
+        "pctorig": {"csv": "ttk94-DFS", "kind": "pct", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 50, "max": 150, "required": false}
+      }
+    },
+    "arbutus": {
+      "name": "Arbutus",
+      "full_name": "Arbutus",
+      "page": "arbutus/",
+      "host_url": null,
+      "photo": null,
+      "headline": "Detached (All)",
+      "charts": {
+        "hpi": {"csv": "ttk9e-tq2", "kind": "money", "cols": ["Detached (All)"], "min": 200000, "max": 12000000, "required": true},
+        "ratio": {"csv": "ttk9k-kX4", "kind": "ratio", "cols": ["Detached (All)"], "min": 0, "max": 2, "required": false},
+        "dom": {"csv": "ttk99-t1X", "kind": "days", "cols": ["Detached (All)"], "min": 0, "max": 400, "required": false},
+        "pctorig": {"csv": "ttk90-OhQ", "kind": "pct", "cols": ["Detached (All)"], "min": 50, "max": 150, "required": false}
+      }
+    },
+    "kitsilano": {
+      "name": "Kitsilano",
+      "full_name": "Kitsilano",
+      "page": "kitsilano/",
+      "host_url": null,
+      "photo": null,
+      "headline": "Apartment",
+      "charts": {
+        "hpi": {"csv": "ttk9n-P1Q", "kind": "money", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 200000, "max": 12000000, "required": true},
+        "ratio": {"csv": "ttk9V-Emg", "kind": "ratio", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 0, "max": 2, "required": false},
+        "dom": {"csv": "ttk9c-I2l", "kind": "days", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 0, "max": 400, "required": false},
+        "pctorig": {"csv": "ttk9G-73i", "kind": "pct", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 50, "max": 150, "required": false}
+      }
+    },
+    "fairview": {
+      "name": "Fairview",
+      "full_name": "Fairview",
+      "page": "fairview/",
+      "host_url": null,
+      "photo": null,
+      "headline": "Apartment",
+      "charts": {
+        "hpi": {"csv": "ttk9g-3pY", "kind": "money", "cols": ["Apartment", "Townhouse"], "min": 200000, "max": 12000000, "required": true},
+        "ratio": {"csv": "ttk0B-wCl", "kind": "ratio", "cols": ["Apartment", "Townhouse"], "min": 0, "max": 2, "required": false},
+        "dom": {"csv": "ttk0t-NeE", "kind": "days", "cols": ["Apartment", "Townhouse"], "min": 0, "max": 400, "required": false},
+        "pctorig": {"csv": "ttk0d-b85", "kind": "pct", "cols": ["Apartment", "Townhouse"], "min": 50, "max": 150, "required": false}
+      }
+    },
+    "downtown": {
+      "name": "Downtown Peninsula",
+      "full_name": "Downtown Peninsula: Downtown, Yaletown, Coal Harbour & West End",
+      "page": "downtown/",
+      "host_url": null,
+      "photo": null,
+      "headline": "VVWDT - Downtown VW",
+      "charts": {
+        "hpi": {"csv": "ttk07-FVI", "kind": "money", "cols": ["VVWDT - Downtown VW", "VVWYA - Yaletown", "VVWCB - Coal Harbour", "VVWWE - West End VW"], "min": 200000, "max": 12000000, "required": true},
+        "ratio": {"csv": "ttk0T-CLE", "kind": "ratio", "cols": ["VVWDT - Downtown VW", "VVWYA - Yaletown", "VVWCB - Coal Harbour", "VVWWE - West End VW"], "min": 0, "max": 2, "required": false},
+        "dom": {"csv": "ttk0l-nC7", "kind": "days", "cols": ["VVWDT - Downtown VW", "VVWYA - Yaletown", "VVWCB - Coal Harbour", "VVWWE - West End VW"], "min": 0, "max": 400, "required": false},
+        "pctorig": {"csv": "ttk0Z-V6x", "kind": "pct", "cols": ["VVWDT - Downtown VW", "VVWYA - Yaletown", "VVWCB - Coal Harbour", "VVWWE - West End VW"], "min": 50, "max": 150, "required": false}
       }
     }
   }
