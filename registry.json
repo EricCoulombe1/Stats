@@ -77,7 +77,7 @@
       "full_name": "Kitsilano",
       "page": "kitsilano/",
       "host_url": null,
-      "photo": null,
+      "photo": "assets/img/ec-kits-shoreline-city.jpg",
       "headline": "Apartment",
       "charts": {
         "hpi": {"csv": "ttk9n-P1Q", "kind": "money", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 200000, "max": 12000000, "required": true},
@@ -91,7 +91,7 @@
       "full_name": "Fairview",
       "page": "fairview/",
       "host_url": null,
-      "photo": null,
+      "photo": "assets/img/ec-false-creek-marina.jpg",
       "headline": "Apartment",
       "charts": {
         "hpi": {"csv": "ttk9g-3pY", "kind": "money", "cols": ["Apartment", "Townhouse"], "min": 200000, "max": 12000000, "required": true},
@@ -105,7 +105,7 @@
       "full_name": "Downtown Peninsula: Downtown, Yaletown, Coal Harbour & West End",
       "page": "downtown/",
       "host_url": null,
-      "photo": null,
+      "photo": "assets/img/ec-false-creek-downtown-aerial.jpg",
       "headline": "VVWDT - Downtown VW",
       "charts": {
         "hpi": {"csv": "ttk07-FVI", "kind": "money", "cols": ["VVWDT - Downtown VW", "VVWYA - Yaletown", "VVWCB - Coal Harbour", "VVWWE - West End VW"], "min": 200000, "max": 12000000, "required": true},

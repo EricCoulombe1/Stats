@@ -61,14 +61,24 @@
       "h1": "Kitsilano",
       "lede": "Where Kitsilano condo, townhouse and house values are heading, how fast homes are selling, and how much room buyers have to negotiate. Updated monthly from Greater Vancouver REALTORS® data.",
       "desc": "Kitsilano apartment, townhouse and detached market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp; Völkers Vancouver.",
-      "ogdesc": "Where Kitsilano condo, townhouse and house values are heading, how fast homes are selling, and how much room buyers have to negotiate."
+      "ogdesc": "Where Kitsilano condo, townhouse and house values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
+      "photo": {
+        "src": "assets/img/ec-kits-shoreline-city.jpg",
+        "pos": "center 55%",
+        "credit": "Kitsilano shoreline · Photo: <a href=\"https://unsplash.com/photos/-He-xOYJfkM\" target=\"_blank\" rel=\"noopener\">Vlad D / Unsplash</a>"
+      }
     },
     "fairview": {
       "h1": "Fairview",
       "lede": "Where Fairview condo and townhouse values are heading, how fast homes are selling, and how much room buyers have to negotiate. Updated monthly from Greater Vancouver REALTORS® data.",
       "desc": "Fairview apartment and townhouse market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp; Völkers Vancouver.",
       "note": "Detached homes are rare in Fairview, so they are not shown.",
-      "ogdesc": "Where Fairview condo and townhouse values are heading, how fast homes are selling, and how much room buyers have to negotiate."
+      "ogdesc": "Where Fairview condo and townhouse values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
+      "photo": {
+        "src": "assets/img/ec-false-creek-marina.jpg",
+        "pos": "center 60%",
+        "credit": "False Creek · Photo: <a href=\"https://unsplash.com/photos/zBfM4ifCQ7o\" target=\"_blank\" rel=\"noopener\">Doug Nealy / Unsplash</a>"
+      }
     },
     "downtown": {
       "h1": "Downtown Peninsula",
@@ -97,7 +107,12 @@
           "color": "--s-p4"
         }
       },
-      "ogdesc": "Where condo values in Downtown, Yaletown, Coal Harbour and the West End are heading, how fast homes are selling, and how much room buyers have to negotiate."
+      "ogdesc": "Where condo values in Downtown, Yaletown, Coal Harbour and the West End are heading, how fast homes are selling, and how much room buyers have to negotiate.",
+      "photo": {
+        "src": "assets/img/ec-false-creek-downtown-aerial.jpg",
+        "pos": "center 50%",
+        "credit": "Downtown and False Creek · Photo: <a href=\"https://unsplash.com/photos/Wc45W-dQFlA\" target=\"_blank\" rel=\"noopener\">Adrian Yu / Unsplash</a>"
+      }
     }
   }
 }
