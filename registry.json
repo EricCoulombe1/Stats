@@ -21,7 +21,7 @@
       "full_name": "Point Grey",
       "page": "point-grey/",
       "host_url": null,
-      "photo": null,
+      "photo": "assets/img/ec-point-grey-beach-skyline.jpg",
       "headline": "Detached (All)",
       "charts": {
         "hpi": {"csv": "ttk9W-CpR", "kind": "money", "cols": ["Detached (All)", "Apartment"], "min": 200000, "max": 12000000, "required": true},
@@ -35,7 +35,7 @@
       "full_name": "Dunbar & MacKenzie Heights",
       "page": "dunbar/",
       "host_url": null,
-      "photo": null,
+      "photo": "assets/img/ec-dunbar-rooftops-city-view.jpg",
       "headline": "VVWDU - Dunbar",
       "charts": {
         "hpi": {"csv": "ttk0m-dG4", "kind": "money", "cols": ["VVWDU - Dunbar", "VVWMH - MacKenzie Heights"], "min": 200000, "max": 12000000, "required": true},
@@ -49,7 +49,7 @@
       "full_name": "Kerrisdale",
       "page": "kerrisdale/",
       "host_url": null,
-      "photo": null,
+      "photo": "assets/img/ec-kerrisdale-west-41st.jpg",
       "headline": "Detached (All)",
       "charts": {
         "hpi": {"csv": "ttk9o-QQa", "kind": "money", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 200000, "max": 12000000, "required": true},
@@ -63,7 +63,7 @@
       "full_name": "Arbutus",
       "page": "arbutus/",
       "host_url": null,
-      "photo": null,
+      "photo": "assets/img/ec-arbutus-ridge.jpg",
       "headline": "Detached (All)",
       "charts": {
         "hpi": {"csv": "ttk9e-tq2", "kind": "money", "cols": ["Detached (All)"], "min": 200000, "max": 12000000, "required": true},

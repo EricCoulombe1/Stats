@@ -23,7 +23,12 @@
       "lede": "Point Grey runs from the beaches at Jericho, Locarno and Spanish Banks up to the shops and cafés along West 10th. It's a mix of character homes, newer builds and low-rise condos, and it's a neighbourhood I've helped buyers and sellers in for years. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
       "desc": "Point Grey detached and apartment market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp; Völkers Vancouver.",
       "note": "Point Grey has too few townhouse sales to chart reliably, so townhouses are not shown.",
-      "ogdesc": "Where Point Grey house and condo values are heading, how fast homes are selling, and how much room buyers have to negotiate."
+      "ogdesc": "Where Point Grey house and condo values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
+      "photo": {
+        "src": "assets/img/ec-point-grey-beach-skyline.jpg",
+        "pos": "center 60%",
+        "credit": "Point Grey shoreline · Photo: <a href=\"https://commons.wikimedia.org/wiki/File:West_Point_Grey%2C_Vancouver%2C_BC%2C_Canada_-_panoramio_%283%29.jpg\" target=\"_blank\" rel=\"noopener\">bynyalcin / Wikimedia Commons</a>, <a href=\"https://creativecommons.org/licenses/by/3.0/\" target=\"_blank\" rel=\"noopener\">CC BY 3.0</a>"
+      }
     },
     "dunbar": {
       "h1": "Dunbar &amp; MacKenzie Heights",
@@ -42,20 +47,35 @@
           "color": "--s-th"
         }
       },
-      "ogdesc": "Where detached home values in Dunbar and MacKenzie Heights are heading, how fast homes are selling, and how much room buyers have to negotiate."
+      "ogdesc": "Where detached home values in Dunbar and MacKenzie Heights are heading, how fast homes are selling, and how much room buyers have to negotiate.",
+      "photo": {
+        "src": "assets/img/ec-dunbar-rooftops-city-view.jpg",
+        "pos": "center 55%",
+        "credit": "Dunbar · Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Dunbar_view_fr_Dunbar_%26_18th.JPG\" target=\"_blank\" rel=\"noopener\">rowy / Wikimedia Commons</a>, <a href=\"https://creativecommons.org/licenses/by/3.0/\" target=\"_blank\" rel=\"noopener\">CC BY 3.0</a>"
+      }
     },
     "kerrisdale": {
       "h1": "Kerrisdale",
       "lede": "Kerrisdale is my home turf. I live here, and my Engel &amp; Völkers office is right in Kerrisdale Village on West 41st. The neighbourhood mixes big detached homes on leafy streets with apartments and townhouses close to the village shops, so we track all three. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
       "desc": "Kerrisdale detached, apartment and townhouse market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp; Völkers Vancouver.",
-      "ogdesc": "Where Kerrisdale house, condo and townhouse values are heading, how fast homes are selling, and how much room buyers have to negotiate."
+      "ogdesc": "Where Kerrisdale house, condo and townhouse values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
+      "photo": {
+        "src": "assets/img/ec-kerrisdale-west-41st.jpg",
+        "pos": "center 50%",
+        "credit": "West 41st Avenue, Kerrisdale · Photo: <a href=\"https://commons.wikimedia.org/wiki/File:W_41_Ave_in_Kerrisdale_2026.JPG\" target=\"_blank\" rel=\"noopener\">Canmenwalker / Wikimedia Commons</a>, <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a>"
+      }
     },
     "arbutus": {
       "h1": "Arbutus",
       "lede": "Arbutus sits between Kitsilano and Kerrisdale along the Arbutus Greenway, a quiet stretch of mostly detached homes on generous lots, close to good schools and an easy walk or ride to both villages. GVR tracks detached homes here, so that's what you'll see below. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
       "desc": "Arbutus detached home market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp; Völkers Vancouver.",
       "note": "GVR reports Arbutus figures for detached homes only.",
-      "ogdesc": "Where Arbutus detached home values are heading, how fast homes are selling, and how much room buyers have to negotiate."
+      "ogdesc": "Where Arbutus detached home values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
+      "photo": {
+        "src": "assets/img/ec-arbutus-ridge.jpg",
+        "pos": "center 50%",
+        "credit": "Arbutus Ridge · Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Arbutus-Ridge_2026.jpg\" target=\"_blank\" rel=\"noopener\">Canmenwalker / Wikimedia Commons</a>, <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a>"
+      }
     },
     "kitsilano": {
       "h1": "Kitsilano",
