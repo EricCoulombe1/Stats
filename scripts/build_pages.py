@@ -33,6 +33,7 @@ def main():
             "%%HEROCREDIT%%": f'<p class="hero-credit">{photo["credit"]}</p>' if photo and photo.get("credit") else "",
             "%%NOTE%%": f'<p>{p["note"]}</p>\n    ' if p.get("note") else "",
             "%%CFG%%": json.dumps(cfg, ensure_ascii=False),
+            "%%CANON%%": area.get("host_url") or f"https://stats.ericcoulombe.com/{key}/",
         }
         html = tpl
         for k, v in rep.items():
