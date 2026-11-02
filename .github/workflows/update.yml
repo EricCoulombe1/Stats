@@ -1,0 +1,70 @@
+name: Update market stats
+
+# Runs every day; only publishes when GVR has released new data.
+# On any problem it opens (or comments on) a "Market stats update needs
+# attention" issue assigned to Eric, which GitHub emails to him. The issue
+# closes itself the next time the update runs cleanly.
+on:
+  schedule:
+    - cron: "17 15 * * *"   # 15:17 UTC daily (8:17 am Pacific in summer, 7:17 am in winter)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - registry.json
+      - scripts/**
+      - .github/workflows/update.yml
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: stats-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download and check GVR data
+        id: run
+        continue-on-error: true
+        run: python3 scripts/update.py
+
+      - name: Publish new data
+        run: |
+          if [ -n "$(git status --porcelain data)" ]; then
+            git config user.name "stats-bot"
+            git config user.email "eric@ericcoulombe.com"
+            git add data
+            git commit -m "Stats update $(date -u +%F)"
+            git push
+          else
+            echo "No new data to publish."
+          fi
+
+      - name: Alert Eric, or clear an old alert
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          num=$(gh issue list --label stats-alert --state open --json number --jq '.[0].number' 2>/dev/null || true)
+          if [ "${{ steps.run.outcome }}" = "failure" ]; then
+            gh label create stats-alert --color B7202E --description "Automatic stats update problem" --force >/dev/null 2>&1 || true
+            if [ -n "$num" ]; then
+              gh issue comment "$num" --body-file status.md
+            else
+              gh issue create --title "Market stats update needs attention" --label stats-alert \
+                --assignee "${{ github.repository_owner }}" --body-file status.md
+            fi
+            exit 1
+          elif [ -n "$num" ]; then
+            gh issue close "$num" --comment "Resolved: today's update ran cleanly."
+          fi

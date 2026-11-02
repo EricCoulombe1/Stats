@@ -1,0 +1,19 @@
+{
+  "_about": "One entry per neighbourhood stats page. Each chart points at a public GVR Stats Centre share (the CSV link id). The monthly update reads this file; adding an area means adding an entry here plus its page.",
+  "areas": {
+    "ubc": {
+      "name": "UBC",
+      "full_name": "UBC / University Endowment Lands",
+      "page": "ubc/",
+      "host_url": null,
+      "photo": "assets/img/ec-ubc-entrance-fountain.jpg",
+      "charts": {
+        "hpi":       { "csv": "ttkFT-POe", "kind": "money", "cols": ["Apartment", "Townhouse"], "min": 200000, "max": 6000000, "required": true },
+        "ratio":     { "csv": "ttkFl-wzk", "kind": "ratio", "cols": ["Apartment", "Townhouse"], "min": 0, "max": 2, "required": true },
+        "leasehold": { "csv": "ttkFt-2NA", "kind": "psf",   "cols": ["VVWUL - University VW", "VVW - Vancouver West"], "min": 100, "max": 5000, "required": true },
+        "dom":       { "csv": "ttkFj-1v8", "kind": "days",  "cols": ["Apartment", "Townhouse"], "min": 0, "max": 400, "required": false },
+        "pctorig":   { "csv": "ttkF8-n6E", "kind": "pct",   "cols": ["Apartment", "Townhouse"], "min": 50, "max": 150, "required": false }
+      }
+    }
+  }
+}
