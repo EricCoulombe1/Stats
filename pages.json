@@ -1,0 +1,60 @@
+{
+  "_about": "Page copy for each area page built from templates/area.html by scripts/build_pages.py. Data links live in registry.json. UBC is hand-built and not listed here.",
+  "_segments": {
+    "Detached (All)": { "label": "Detached", "nut": "Detached", "color": "--s-det" },
+    "Apartment": { "label": "Apartment", "nut": "Apartment", "color": "--s-apt" },
+    "Townhouse": { "label": "Townhouse", "nut": "Townhouse", "color": "--s-th" }
+  },
+  "pages": {
+    "point-grey": {
+      "h1": "Point Grey",
+      "lede": "Where Point Grey house and condo values are heading, how fast homes are selling, and how much room buyers have to negotiate. Updated monthly from Greater Vancouver REALTORS® data.",
+      "desc": "Point Grey detached and apartment market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp; Völkers Vancouver.",
+      "note": "Point Grey has too few townhouse sales to chart reliably, so townhouses are not shown."
+    },
+    "dunbar": {
+      "h1": "Dunbar &amp; MacKenzie Heights",
+      "lede": "Where detached home values in Dunbar and MacKenzie Heights are heading, how fast homes are selling, and how much room buyers have to negotiate. Updated monthly from Greater Vancouver REALTORS® data.",
+      "desc": "Dunbar and MacKenzie Heights detached home market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp; Völkers Vancouver.",
+      "note": "All figures are for detached homes. MacKenzie Heights is a small area with relatively few sales, so its numbers can move more from month to month.",
+      "segments": {
+        "VVWDU - Dunbar": { "label": "Dunbar", "nut": "Dunbar detached", "color": "--s-apt" },
+        "VVWMH - MacKenzie Heights": { "label": "MacKenzie Heights", "nut": "MacKenzie Heights detached", "color": "--s-th" }
+      }
+    },
+    "kerrisdale": {
+      "h1": "Kerrisdale",
+      "lede": "Where Kerrisdale house, condo and townhouse values are heading, how fast homes are selling, and how much room buyers have to negotiate. Updated monthly from Greater Vancouver REALTORS® data.",
+      "desc": "Kerrisdale detached, apartment and townhouse market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp; Völkers Vancouver."
+    },
+    "arbutus": {
+      "h1": "Arbutus",
+      "lede": "Where Arbutus detached home values are heading, how fast homes are selling, and how much room buyers have to negotiate. Updated monthly from Greater Vancouver REALTORS® data.",
+      "desc": "Arbutus detached home market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp; Völkers Vancouver.",
+      "note": "GVR reports Arbutus figures for detached homes only."
+    },
+    "kitsilano": {
+      "h1": "Kitsilano",
+      "lede": "Where Kitsilano condo, townhouse and house values are heading, how fast homes are selling, and how much room buyers have to negotiate. Updated monthly from Greater Vancouver REALTORS® data.",
+      "desc": "Kitsilano apartment, townhouse and detached market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp; Völkers Vancouver."
+    },
+    "fairview": {
+      "h1": "Fairview",
+      "lede": "Where Fairview condo and townhouse values are heading, how fast homes are selling, and how much room buyers have to negotiate. Updated monthly from Greater Vancouver REALTORS® data.",
+      "desc": "Fairview apartment and townhouse market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp; Völkers Vancouver.",
+      "note": "Detached homes are rare in Fairview, so they are not shown."
+    },
+    "downtown": {
+      "h1": "Downtown Peninsula",
+      "lede": "Where condo values in Downtown, Yaletown, Coal Harbour and the West End are heading, how fast homes are selling, and how much room buyers have to negotiate. Updated monthly from Greater Vancouver REALTORS® data.",
+      "desc": "Downtown, Yaletown, Coal Harbour and West End condo market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp; Völkers Vancouver.",
+      "note": "All figures are for apartments (condos), using GVR's Downtown, Yaletown, Coal Harbour and West End areas.",
+      "segments": {
+        "VVWDT - Downtown VW": { "label": "Downtown", "nut": "Downtown condo", "color": "--s-apt" },
+        "VVWYA - Yaletown": { "label": "Yaletown", "nut": "Yaletown condo", "color": "--s-th" },
+        "VVWCB - Coal Harbour": { "label": "Coal Harbour", "nut": "Coal Harbour condo", "color": "--s-det" },
+        "VVWWE - West End VW": { "label": "West End", "nut": "West End condo", "color": "--s-p4" }
+      }
+    }
+  }
+}

@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>%%NAME%% Real Estate Market Stats | Eric Coulombe</title>
+<meta name="description" content="%%DESC%%">
+<meta property="og:title" content="%%NAME%% Market Stats, updated monthly">
+<meta property="og:description" content="%%OGDESC%%">
+%%OGIMAGE%%<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/*UBC_CSS*/
+/* Area-template additions */
+:root { --s-det: #1f8a5e; --s-p4: #7b55c7; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --s-det: #33a374; --s-p4: #9673de; } }
+:root[data-theme="dark"] { --s-det: #33a374; --s-p4: #9673de; }
+.hero-band.nophoto { background: radial-gradient(120% 140% at 100% 0%, #3a3c40 0%, #26272a 55%, #1d1e21 100%); }
+.hero-band.nophoto .hero-inner { min-height: 360px; }
+.embed .hero-band.nophoto .hero-inner { min-height: 300px; }
+.more { font-size: 13px; }
+.more a { color: var(--ink-2); }
+</style>
+</head>
+<body>
+<div class="hero-band%%HEROCLASS%%">
+  %%HEROPHOTO%%<div class="hero-inner">
+    <div class="topbar"><!--LOGO--><div class="who">Real Estate Advisor<br>Engel &amp; Völkers Vancouver</div></div>
+    <header class="hero-copy">
+      <div class="eyebrow">Market Insight · %%FULLNAME%%</div>
+      <h1>%%H1%% <span class="accent">Market</span></h1>
+      <p class="lede">%%LEDE%%</p>
+      <div class="stamp" id="stamp"></div>
+    </header>
+  </div>
+  %%HEROCREDIT%%
+</div>
+<div class="wrap">
+  <section class="sec" aria-labelledby="h-now">
+    <div class="sec-head"><h2 id="h-now">The short version</h2></div>
+    <div class="nutshell" id="nutshell"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-glance">
+    <div class="sec-head">
+      <h2 id="h-glance">At a glance</h2>
+      <p>Hover or tap any chart to read a specific month.</p>
+    </div>
+    <div class="grid4">
+      <article class="card">
+        <div class="tag">Value</div>
+        <h3>Benchmark price</h3>
+        <p class="sub">MLS® Home Price Index, monthly · last 3 years</p>
+        <div class="multi" id="c-hpi"></div>
+        <details class="explain"><summary>What this shows</summary>
+          <p>The benchmark price is GVR's estimate of what a typical home would sell for that month. It adjusts for the mix of homes that happened to sell, so it moves more steadily than an average or median sale price. Each line gets its own scale so you can see how each one is moving.</p>
+        </details>
+      </article>
+
+      <article class="card" id="card-ratio" hidden>
+        <div class="tag">Market balance</div>
+        <h3>Sales-to-active listings ratio</h3>
+        <p class="sub">Rolling 12 months · last 3 years</p>
+        <div class="legend" id="l-ratio"></div>
+        <div class="chart" id="c-ratio"></div>
+        <details class="explain"><summary>What this shows</summary>
+          <p>Of the homes listed for sale, what share sold. At 10%, about one in ten listings sold in a typical month. Flip it and you get months of inventory: at 10%, it would take about ten months to sell everything listed if nothing new came on. Higher means a busier market with more pressure on buyers; lower means more choice and more room to negotiate.</p>
+          <p>Each point averages the previous 12 months, which smooths out one-off swings from a handful of sales.</p>
+        </details>
+      </article>
+
+      <article class="card" id="card-dom" hidden>
+        <div class="tag">Speed</div>
+        <h3>Days to an accepted offer</h3>
+        <p class="sub">Median listing-to-contract days · rolling 12 months</p>
+        <div class="legend" id="l-dom"></div>
+        <div class="chart" id="c-dom"></div>
+        <details class="explain"><summary>What this shows</summary>
+          <p>How long a typical home took to get an accepted offer, counted from the day it was listed. Half of homes sold faster than this number and half took longer. Rising days mean buyers are taking their time.</p>
+        </details>
+      </article>
+
+      <article class="card" id="card-pct" hidden>
+        <div class="tag">Negotiating room</div>
+        <h3>Sale price vs. original asking price</h3>
+        <p class="sub">Median % of original list price · rolling 12 months</p>
+        <div class="legend" id="l-pct"></div>
+        <div class="chart" id="c-pct"></div>
+        <details class="explain"><summary>What this shows</summary>
+          <p>What a typical home sold for, compared with the price it was first listed at, including any price reductions along the way. 100% means it sold at the original asking price; 96% means it sold 4% below.</p>
+        </details>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <p id="src"></p>
+    %%NOTE%%<p>MLS® and the MLS® Home Price Index are trademarks of the Canadian Real Estate Association. Data from Greater Vancouver REALTORS® Stats Centre, © ShowingTime Plus, LLC. Figures are not a valuation of any specific property.</p>
+    <p>Eric Coulombe · Engel &amp; Völkers Vancouver · 604-764-8620 · eric@ericcoulombe.com</p>
+  </footer>
+</div>
+
+<script>
+const CFG = %%CFG%%;
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const MONTHS_L = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+function monthAt(start, i) { const [y, m] = start.split("-").map(Number); const t = (m - 1) + i; return { y: y + Math.floor(t / 12), m: t % 12 }; }
+const short = d => MONTHS[d.m] + " " + d.y;
+const long = d => MONTHS_L[d.m] + " " + d.y;
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmtMoneyK = v => v >= 1e6 ? "$" + (v / 1e6).toFixed(2).replace(/0$/, "") + "M" : "$" + Math.round(v / 1e3) + "K";
+const fmtMoney = v => "$" + Math.round(v).toLocaleString("en-CA");
+const fmtPct = v => (v * 100).toFixed(1) + "%";
+const sign = v => (v >= 0 ? "+" : "−") + Math.abs(v * 100).toFixed(1) + "%";
+const ok = v => v !== null && v !== undefined && !Number.isNaN(v);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function niceTicks(lo, hi, n) {
+  const span = hi - lo || 1, raw = span / n, mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  const step = [1, 2, 2.5, 5, 10].map(s => s * mag).find(s => span / s <= n) || 10 * mag;
+  const a = Math.floor(lo / step) * step, b = Math.ceil(hi / step) * step, out = [];
+  for (let v = a; v <= b + step / 2; v += step) out.push(+v.toFixed(10));
+  return out;
+}
+
+const NS = "http://www.w3.org/2000/svg";
+function el(tag, attrs, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+const lastIdx = a => { for (let i = a.length - 1; i >= 0; i--) if (ok(a[i])) return i; return -1; };
+
+function lineChart(host, cfg) {
+  host.innerHTML = "";
+  const W = Math.max(host.clientWidth, 200), H = cfg.height || 220;
+  const m = { t: 10, r: cfg.endLabels ? 58 : 14, b: 24, l: cfg.leftPad || 44 };
+  const n = Math.max(...cfg.series.map(s => s.values.length)), from = cfg.from || 0;
+  const idx = []; for (let i = from; i < n; i++) idx.push(i);
+  let lo = Infinity, hi = -Infinity;
+  cfg.series.forEach(s => idx.forEach(i => { if (ok(s.values[i])) { lo = Math.min(lo, s.values[i]); hi = Math.max(hi, s.values[i]); } }));
+  if (!isFinite(lo)) return;
+  const pad = (hi - lo) * 0.08 || Math.abs(hi) * 0.05 || 1; const ticks = niceTicks(lo - pad, hi + pad, cfg.ticks || 4);
+  const y0 = ticks[0], y1 = ticks[ticks.length - 1];
+  const x = i => m.l + (i - from) / Math.max(n - 1 - from, 1) * (W - m.l - m.r);
+  const y = v => m.t + (1 - (v - y0) / (y1 - y0)) * (H - m.t - m.b);
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, height: H, role: "img", "aria-label": cfg.label }, host);
+  ticks.forEach(t => {
+    el("line", { x1: m.l, x2: W - m.r, y1: y(t), y2: y(t), stroke: css("--grid"), "stroke-width": 1 }, svg);
+    const tx = el("text", { x: m.l - 6, y: y(t) + 4, "text-anchor": "end" }, svg); tx.textContent = cfg.fmtAxis(t);
+  });
+  el("line", { x1: m.l, x2: W - m.r, y1: H - m.b, y2: H - m.b, stroke: css("--line"), "stroke-width": 1 }, svg);
+  idx.forEach(i => { const d = monthAt(cfg.start, i); if (d.m === 0) { const tx = el("text", { x: x(i), y: H - 6, "text-anchor": "middle" }, svg); tx.textContent = d.y; el("line", { x1: x(i), x2: x(i), y1: H - m.b, y2: H - m.b + 4, stroke: css("--line") }, svg); } });
+  cfg.series.forEach(s => {
+    let dPath = "", pen = false;
+    idx.forEach(i => { const v = s.values[i]; if (!ok(v)) { pen = false; return; } dPath += (pen ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1); pen = true; });
+    el("path", { d: dPath, fill: "none", stroke: css(s.color), "stroke-width": 2, "stroke-linejoin": "round", "stroke-linecap": "round", class: "series" }, svg);
+    const li = lastIdx(s.values);
+    if (li >= from) el("circle", { cx: x(li), cy: y(s.values[li]), r: 4, fill: css(s.color), stroke: css("--surface"), "stroke-width": 2 }, svg);
+  });
+  if (cfg.endLabels) {
+    const labs = cfg.series.map(s => { const li = lastIdx(s.values); return { s, li, yy: li >= 0 ? y(s.values[li]) : null }; }).filter(o => o.yy !== null).sort((a, b) => a.yy - b.yy);
+    for (let k = 1; k < labs.length; k++) if (labs[k].yy - labs[k - 1].yy < 14) labs[k].yy = labs[k - 1].yy + 14;
+    labs.forEach(o => { const tx = el("text", { x: W - m.r + 8, y: o.yy + 4, class: "endlab" }, svg); tx.textContent = cfg.fmtTip(o.s.values[o.li]); });
+  }
+  const cross = el("line", { y1: m.t, y2: H - m.b, stroke: css("--ink-3"), "stroke-width": 1, "stroke-dasharray": "3 3", visibility: "hidden" }, svg);
+  const dots = cfg.series.map(s => el("circle", { r: 4.5, fill: css(s.color), stroke: css("--surface"), "stroke-width": 2, visibility: "hidden" }, svg));
+  const tip = document.createElement("div"); tip.className = "tip"; tip.hidden = true; host.appendChild(tip);
+  const hit = el("rect", { x: m.l, y: 0, width: W - m.l - m.r, height: H, fill: "transparent" }, svg);
+  function show(evt) {
+    const r = svg.getBoundingClientRect(), px = (evt.clientX - r.left) * (W / r.width);
+    let i = Math.round(from + (px - m.l) / (W - m.l - m.r) * (n - 1 - from)); i = Math.max(from, Math.min(n - 1, i));
+    cross.setAttribute("x1", x(i)); cross.setAttribute("x2", x(i)); cross.setAttribute("visibility", "visible");
+    const ys = [];
+    cfg.series.forEach((s, k) => { const v = s.values[i]; if (ok(v)) { dots[k].setAttribute("cx", x(i)); dots[k].setAttribute("cy", y(v)); dots[k].setAttribute("visibility", "visible"); ys.push(y(v)); } else dots[k].setAttribute("visibility", "hidden"); });
+    tip.innerHTML = `<b>${short(monthAt(cfg.start, i))}</b>` + cfg.series.map(s => `<div class="row"><i style="background:${css(s.color)}"></i>${cfg.series.length > 1 ? esc(s.name) + ": " : ""}${ok(s.values[i]) ? cfg.fmtTip(s.values[i]) : "n/a"}</div>`).join("");
+    tip.hidden = false;
+    const sx = r.width / W; tip.style.left = Math.min(Math.max(x(i) * sx, 70), r.width - 70) + "px"; tip.style.top = (ys.length ? Math.min(...ys) : m.t) * sx + "px";
+  }
+  function hide() { cross.setAttribute("visibility", "hidden"); dots.forEach(d => d.setAttribute("visibility", "hidden")); tip.hidden = true; }
+  hit.addEventListener("pointermove", show); hit.addEventListener("pointerdown", show); hit.addEventListener("pointerleave", hide);
+}
+
+const seg = col => CFG.segs[col] || { label: col.replace(/^\w+ - /, ""), color: "--ink-3" };
+const legend = cols => cols.map(c => `<span><i style="background:var(${seg(c).color})"></i>${esc(seg(c).label)}</span>`).join("");
+
+function start(J) {
+  const C = J.charts, H = C.hpi;
+  const last = c => monthAt(c.start, c.series[0].length - 1);
+  const hpiLast = last(H), rollC = C.ratio || C.dom || C.pctorig;
+  document.getElementById("stamp").innerHTML =
+    `<span>Benchmark prices through ${long(hpiLast)}</span>` + (rollC ? `<span>Rolling measures through ${long(last(rollC))}</span>` : "") + `<span>Source: Greater Vancouver REALTORS®</span>`;
+  document.getElementById("src").textContent = `Benchmark prices through ${long(hpiLast)}` + (rollC ? `; rolling 12-month measures through ${long(last(rollC))}` : "") + `. The most recent month can be revised as late sales are reported.`;
+
+  const nut = [];
+  H.cols.forEach((c, k) => {
+    const a = H.series[k], li = lastIdx(a); if (li < 0) return;
+    const prev = a[li - 12];
+    nut.push({ k: `${seg(c).nut} benchmark`, c: seg(c).color, v: fmtMoney(a[li]), d: ok(prev) ? `${sign(a[li] / prev - 1)} from ${short(monthAt(H.start, li - 12))}` : "" });
+  });
+  if (C.ratio) C.ratio.cols.forEach((c, k) => {
+    const a = C.ratio.series[k], li = lastIdx(a); if (li < 0) return;
+    const prev = a[li - 12];
+    nut.push({ k: `${seg(c).nut} listings selling`, c: seg(c).color, v: `${Math.round(a[li] * 100)} in 100`, d: `per month, 12-month average` + (ok(prev) ? ` (was ${Math.round(prev * 100)} a year ago)` : "") });
+  });
+  document.getElementById("nutshell").innerHTML = nut.map(o => `<div class="nut"><div class="k"><i style="background:var(${o.c})"></i>${esc(o.k)}</div><div class="v">${o.v}</div><div class="d">${o.d}</div></div>`).join("");
+
+  const hpiHost = document.getElementById("c-hpi");
+  hpiHost.innerHTML = H.cols.map((c, k) => `<div><div class="mini-h"><i style="background:var(${seg(c).color})"></i>${esc(seg(c).label)}</div><div class="chart" id="c-hpi-${k}"></div></div>`).join("");
+  const multi = (key, card) => { if (C[key]) { document.getElementById(card).hidden = false; document.getElementById("l-" + card.slice(5)).innerHTML = legend(C[key].cols); } };
+  multi("ratio", "card-ratio"); multi("dom", "card-dom"); multi("pctorig", "card-pct");
+  const S = ch => ch.cols.map((c, k) => ({ name: seg(c).label, color: seg(c).color, values: ch.series[k] }));
+
+  function renderAll() {
+    H.cols.forEach((c, k) => lineChart(document.getElementById("c-hpi-" + k), { start: H.start, series: [{ name: seg(c).label, color: seg(c).color, values: H.series[k] }], fmtAxis: fmtMoneyK, fmtTip: fmtMoney, height: 190, label: `${CFG.name} ${seg(c).nut} benchmark price, monthly` }));
+    if (C.ratio) lineChart(document.getElementById("c-ratio"), { start: C.ratio.start, series: S(C.ratio), fmtAxis: v => Math.round(v * 100) + "%", fmtTip: fmtPct, height: 230, endLabels: true, leftPad: 38, label: `${CFG.name} sales-to-active listings ratio, rolling 12 months` });
+    if (C.dom) lineChart(document.getElementById("c-dom"), { start: C.dom.start, series: S(C.dom), fmtAxis: v => Math.round(v), fmtTip: v => Math.round(v) + " days", height: 230, endLabels: true, leftPad: 34, label: `${CFG.name} median days to an accepted offer, rolling 12 months` });
+    if (C.pctorig) lineChart(document.getElementById("c-pct"), { start: C.pctorig.start, series: S(C.pctorig), fmtAxis: v => v.toFixed(0) + "%", fmtTip: v => v.toFixed(1) + "%", height: 230, endLabels: true, leftPad: 38, label: `${CFG.name} median sale price as a percent of original list price, rolling 12 months` });
+    postHeight();
+  }
+  renderAll();
+  let rt, lastW = 0; new ResizeObserver(es => { const w = Math.round(es[0].contentRect.width); if (w === lastW) return; lastW = w; clearTimeout(rt); rt = setTimeout(renderAll, 80); }).observe(document.querySelector(".wrap"));
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", renderAll);
+  new MutationObserver(renderAll).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+}
+
+/* Embedded on ericcoulombe.com: tell the host page how tall we are, so its frame never shows a second scrollbar. */
+let lastH = 0;
+function postHeight() {
+  if (!new URLSearchParams(location.search).has('embed') || window.parent === window) return;
+  requestAnimationFrame(() => { const h = Math.ceil(document.documentElement.scrollHeight); if (Math.abs(h - lastH) > 2) { lastH = h; window.parent.postMessage({ type: 'ec-stats-height', h }, '*'); } });
+}
+if (new URLSearchParams(location.search).has('embed')) {
+  document.documentElement.classList.add('embed');
+  document.addEventListener('click', e => { const a = e.target.closest('a[href]'); if (a && !a.target) a.target = '_top'; });
+  new ResizeObserver(postHeight).observe(document.body);
+  document.addEventListener('toggle', postHeight, true);
+}
+fetch('../data/' + CFG.key + '.json', { cache: 'no-cache' })
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(j => { if (!j.charts || !j.charts.hpi) throw new Error('no data'); start(j); })
+  .catch(() => { document.getElementById('nutshell').innerHTML = '<div class="nut"><div class="d">The latest figures could not be loaded. Please refresh the page, or contact Eric for the current numbers.</div></div>'; postHeight(); });
+</script>
+</body>
+</html>
