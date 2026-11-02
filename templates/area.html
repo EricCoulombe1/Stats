@@ -202,7 +202,8 @@ function start(J) {
     const prev = a[li - 12];
     nut.push({ k: `${seg(c).nut} listings selling`, c: seg(c).color, v: `${Math.round(a[li] * 100)} in 100`, d: `per month, 12-month average` + (ok(prev) ? ` (was ${Math.round(prev * 100)} a year ago)` : "") });
   });
-  document.getElementById("nutshell").innerHTML = nut.map(o => `<div class="nut"><div class="k"><i style="background:var(${o.c})"></i>${esc(o.k)}</div><div class="v">${o.v}</div><div class="d">${o.d}</div></div>`).join("");
+  const nsEl = document.getElementById("nutshell"); if (nut.length % 3 === 0 && nut.length % 4 !== 0) nsEl.style.gridTemplateColumns = "repeat(auto-fit, minmax(min(100%, 300px), 1fr))";
+  nsEl.innerHTML = nut.map(o => `<div class="nut"><div class="k"><i style="background:var(${o.c})"></i>${esc(o.k)}</div><div class="v">${o.v}</div><div class="d">${o.d}</div></div>`).join("");
 
   const hpiHost = document.getElementById("c-hpi");
   hpiHost.innerHTML = H.cols.map((c, k) => `<div><div class="mini-h"><i style="background:var(${seg(c).color})"></i>${esc(seg(c).label)}</div><div class="chart" id="c-hpi-${k}"></div></div>`).join("");
