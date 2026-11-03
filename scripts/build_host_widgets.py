@@ -64,5 +64,14 @@ hub=f"""{STYLE}
 <section class="ecb"><p class="bt"><a href="tel:16047648620" style="background:#B7202E;color:#fff">Call Eric &middot; 604-764-8620</a></p><details><summary>About these numbers</summary><p>Each neighbourhood page tracks benchmark prices, how quickly listings are selling, how long homes take to get an accepted offer and how much negotiating room buyers have, using Greater Vancouver REALTORS&reg; data for Vancouver&rsquo;s Westside and Downtown. Market statistics describe whole neighbourhoods, not any one home.</p></details>{links(None,'Neighbourhoods:')}</section>
 {SCRIPT}"""
 OUT['hub']=hub
+
+# UBC (hand-built stats page; copy kept here so its ericcoulombe.com block matches the others)
+ubc_hero='<section class="ech"><img src="https://stats.ericcoulombe.com/assets/img/ec-ubc-campus-skyline.jpg" alt="" style="object-position:center 78%"><div class="sh"></div><div class="in"><div class="eb">Market Insight &middot; UBC / University Endowment Lands</div><h1>UBC <span>Market</span></h1><p>Where UBC condo and townhouse values are heading, how fast homes are selling, and how leasehold compares with the rest of the Westside. Updated monthly from Greater Vancouver REALTORS&reg; data.</p></div><p class="cr">UBC campus &middot; Photo: <a href="https://unsplash.com/photos/cwYMwz3WAMs" target="_blank" rel="noopener">Billy Xue / Unsplash</a></p></section>'
+OUT['ubc']=f"""{STYLE}
+{ubc_hero}
+<iframe id="ec-stats" src="https://stats.ericcoulombe.com/ubc/?embed=1&bare=1" title="UBC market statistics, updated monthly" scrolling="no" style="display:block;width:100%;border:0;min-height:1600px;background:#f4f4f3"></iframe>
+<section class="ecb"><p class="bt"><a href="tel:16047648620" style="background:#B7202E;color:#fff">Call Eric &middot; 604-764-8620</a><a href="mailto:eric@ericcoulombe.com?subject=UBC%20market%20question" style="border:1px solid #1F2124;color:#1F2124;padding:11px 20px">Email Eric &rarr;</a><a href="ubc-utopianlifestyle.html" style="border:1px solid #1F2124;color:#1F2124;padding:11px 20px">Buying &amp; selling at UBC &rarr;</a></p><details><summary>What these numbers cover</summary><p>These figures cover condos and townhouses in the University Endowment Lands and UBC neighbourhoods (Greater Vancouver REALTORS&reg; sub-area &ldquo;University VW&rdquo;), plus a comparison of UBC&rsquo;s prepaid leasehold condos with freehold condos across Vancouver West on a price-per-square-foot basis. They come from Greater Vancouver REALTORS&reg; and refresh automatically each month. Market statistics describe the whole neighbourhood, not any one home; if you&rsquo;re weighing a purchase or sale at UBC, including buying for a student, give me a call.</p></details>{links('ubc')}</section>
+{SCRIPT}"""
+
 json.dump(OUT,open('_build/host-widgets.json','w'))
 print('ok')
