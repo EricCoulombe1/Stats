@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+.ech{position:relative;overflow:hidden;background:#2e2f32;color:#f3f3f2;font-family:"Public Sans","Helvetica Neue",Arial,sans-serif}
+.ech img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;display:block}
+.ech .sh{position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,20,23,.86) 0%,rgba(18,20,23,.66) 45%,rgba(18,20,23,.22) 100%),linear-gradient(0deg,rgba(18,20,23,.55) 0%,rgba(18,20,23,0) 40%)}
+.ech .in{position:relative;max-width:1120px;margin:0 auto;padding:56px 16px 64px;min-height:360px;box-sizing:border-box;display:grid;align-content:end;gap:12px}
+.ech .eb{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#c9cacc;font-weight:600}
+.ech h1{font-family:"Archivo","Helvetica Neue",Arial,sans-serif!important;font-stretch:75%;font-weight:800!important;font-size:clamp(40px,7vw,76px)!important;line-height:.95!important;text-transform:none!important;margin:0;letter-spacing:-.01em;color:#f3f3f2;text-wrap:balance}
+.ech h1 span{box-shadow:inset 0 -.12em 0 #b7202e;font-size:inherit!important;line-height:inherit!important;font-family:inherit!important;font-weight:inherit!important;letter-spacing:inherit!important;color:inherit!important}
+.ech p{margin:0;font-size:17px;line-height:1.55;color:#c9cacc;max-width:58ch}
+.ech p b{color:#f3f3f2;font-weight:600}
+.ech .cr{position:absolute;right:16px;bottom:10px;margin:0;font-size:11px;color:rgba(243,243,242,.78);max-width:none}
+.ech .cr a{color:inherit}
+@media(max-width:640px){.ech .sh{background:linear-gradient(0deg,rgba(18,20,23,.88) 0%,rgba(18,20,23,.62) 60%,rgba(18,20,23,.4) 100%)}.ech .in{padding:40px 16px 48px}.ech p{font-size:16px}}
+.ecb{max-width:1120px;margin:0 auto;padding:8px 16px 48px;font-family:"Public Sans","Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.6;color:#45484D;display:grid;gap:18px}
+.ecb .bt{display:flex;flex-wrap:wrap;gap:12px;margin:0}
+.ecb .bt a{display:inline-block;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:2px}
+.ecb details{border-top:1px solid #e1e5e8;padding-top:10px;max-width:72ch}
+.ecb summary{cursor:pointer;font-weight:600;color:#1F2124}
+.ecb details p{margin:8px 0 0}
+.ecb .nb{margin:0;font-size:15px}
+.ecb .nb a{color:#B7202E}
+</style>
+<section class="ech"><div class="sh" style="background:radial-gradient(120% 140% at 100% 0%,#3a3c40 0%,#26272a 55%,#1d1e21 100%)"></div><div class="in" style="min-height:300px"><div class="eb">Investment Properties &middot; Interactive model</div><h1>The Spinning Wheel <span>Calculator</span></h1><p>Buy a rental, let the tenants pay down the mortgage, then borrow against the growth to fund the next down payment. Move the settings to see what one down payment can become, and what happens in a decade when the wheel works against you.</p></div></section>
+<iframe id="ec-calc" src="https://stats.ericcoulombe.com/spinning-wheel/?embed=1" title="The Spinning Wheel Calculator" scrolling="no" style="display:block;width:100%;border:0;min-height:1900px;background:#FAFAF8"></iframe>
+<section class="ecb"><p class="bt"><a href="tel:16047648620" style="background:#B7202E;color:#fff">Call Eric &middot; 604-764-8620</a><a href="mailto:eric@ericcoulombe.com?subject=Spinning%20Wheel%20Report%20request" style="border:1px solid #1F2124;color:#1F2124;padding:11px 20px">Request the Spinning Wheel Report &rarr;</a></p><p class="nb"><strong style="color:#1F2124">More on investing:</strong> <a href="investing.html">Rental houses that pay you to own them</a> &middot; <a href="investment-properties-northern-bc.html">Leverage, explained</a> &middot; <a href="one-house-fifteen-years.html">One house, fifteen years</a> &middot; <a href="real-estate-flywheel.html">The real estate flywheel</a> &middot; <a href="real-estate-income-vs-growth.html">Income now, or growth later</a></p></section>
+<script>(function(){var f=document.getElementById('ec-calc');var base='https://stats.ericcoulombe.com/spinning-wheel/?embed=1';if(/^#s=/.test(location.hash))f.src=base+location.hash;window.addEventListener('message',function(e){if(e.origin!=='https://stats.ericcoulombe.com')return;var d=e.data;if(d&&d.type==='ec-calc-height'&&d.h>200){f.style.height=d.h+'px';f.style.minHeight='0';}});})();</script>
