@@ -106,49 +106,50 @@ footer p{max-width:100ch}
 <body>
 <header class="top"><div class="wrap">
   <div class="brand">Eric Coulombe<small>Real Estate Advisor · Engel &amp; Völkers Vancouver</small></div>
-  <div class="toplink">Investment Properties · Enough by Design</div>
+  <div class="toplink">Investment Properties</div>
 </div></header>
 
 <main class="wrap">
   <section class="hero">
     <div class="eyebrow">Interactive model</div>
     <h1>The Spinning Wheel Calculator</h1>
-    <p class="lede">Buy a rental. Let the tenants pay down the mortgage while the value grows. Then borrow against that growth to fund the next down payment, and repeat. Move the settings to see what one down payment can become, and what happens in a decade when the wheel works against you.</p>
+    <p class="lede">Start with one suited house in Fort St. John at C$565,000, the same house as every page on this site. Let the tenants pay down the mortgage while the value grows, then borrow against that growth at renewal to fund the next down payment. Move the settings to see what one contribution can become, and what happens when the wheel works against you.</p>
   </section>
 
   <div class="layout">
     <aside class="panel controls" aria-label="Model settings">
       <div class="lbl" style="font-weight:600;font-size:.92rem;margin-bottom:8px">Start from a case</div>
       <div class="presets" role="group" aria-label="Preset cases">
-        <button data-preset="planning">Planning case</button>
-        <button data-preset="conservative">Conservative</button>
-        <button data-preset="strong">Strong decade</button>
-        <button data-preset="weak">Weak decade</button>
+        <button data-preset="base">Base case</button>
+        <button data-preset="catchup">Fort St. John catches up</button>
+        <button data-preset="flat">No price growth</button>
+        <button data-preset="downturn">Downturn</button>
+        <button data-preset="aggressive">Faster wheel</button>
       </div>
 
       <div class="ctl">
         <label for="appr">Property values grow <output id="apprOut"></output></label>
         <input type="range" id="appr" min="0" max="6" step="0.5">
-        <div class="hint">Per year. Rents are assumed to move with values.</div>
+        <div class="hint">Per year. Rents rise 2.5% a year regardless.</div>
       </div>
       <div class="ctl">
         <label for="rate">Mortgage rate <output id="rateOut"></output></label>
         <input type="range" id="rate" min="3" max="8" step="0.25">
-        <div class="hint">Held for the whole period, on every mortgage.</div>
+        <div class="hint">On every mortgage, 30-year amortization.</div>
       </div>
       <div class="ctl">
         <div class="lbl">Refinance up to <output id="ltvOut"></output></div>
         <div class="seg" data-key="ltv" role="group" aria-label="Refinance limit">
           <button data-v="0.75">75%</button><button data-v="0.80">80%</button>
         </div>
-        <div class="hint">Of each property's value. 80% is the usual bank maximum.</div>
+        <div class="hint">Of each house's value, at renewal. 80% is the usual bank maximum.</div>
       </div>
       <div class="ctl">
-        <div class="lbl">Refinance every <output id="everyOut"></output></div>
-        <div class="seg" data-key="every" role="group" aria-label="Refinance frequency">
-          <button data-v="2">2 yrs</button><button data-v="3">3 yrs</button><button data-v="5">5 yrs</button>
+        <div class="lbl">Mortgage term <output id="termOut"></output></div>
+        <div class="seg" data-key="term" role="group" aria-label="Mortgage term">
+          <button data-v="3">3 years</button><button data-v="5">5 years</button>
         </div>
-        <div class="hint">Typically at each mortgage renewal.</div>
+        <div class="hint">Refinancing happens only at renewal, so no break penalties.</div>
       </div>
       <div class="ctl">
         <div class="lbl">Monthly cash flow <output id="reinvOut"></output></div>
@@ -157,11 +158,11 @@ footer p{max-width:100ch}
         </div>
       </div>
       <div class="ctl">
-        <div class="lbl">Property quality <output id="capOut"></output></div>
-        <div class="seg" data-key="cap" role="group" aria-label="Property quality">
-          <button data-v="0.0702">Baseline</button><button data-v="0.0778">Strong</button><button data-v="0.0861">Premium</button>
+        <div class="lbl">Rent <output id="rentOut"></output></div>
+        <div class="seg" data-key="rentPct" role="group" aria-label="Rent as a share of price">
+          <button data-v="0.008">0.8%</button><button data-v="0.009">0.9%</button><button data-v="0.01">1.0%</button>
         </div>
-        <div class="hint">Net rent after operating costs, as a share of price (the cap rate).</div>
+        <div class="hint">Of the purchase price, a month. 0.9% is C$5,085 on the starting house.</div>
       </div>
       <div class="ctl">
         <div class="lbl">Years <output id="yearsOut"></output></div>
@@ -173,7 +174,7 @@ footer p{max-width:100ch}
 
     <section aria-live="polite">
       <div class="answer">
-        <div class="eyebrow">Your $110,000, if sold at year <span id="yrA">15</span></div>
+        <div class="eyebrow">Your C$152,125, if sold at year <span id="yrA">15</span></div>
         <div class="big" id="bigNum">$0</div>
         <div class="sub" id="bigSub"></div>
       </div>
@@ -184,7 +185,7 @@ footer p{max-width:100ch}
           <div class="stats">
             <div class="stat"><div class="v" id="wIrr"></div><div class="k">a year, after selling costs</div></div>
             <div class="stat"><div class="v" id="wMult"></div><div class="k">your money back</div></div>
-            <div class="stat"><div class="v" id="wHomes"></div><div class="k">homes owned at the end</div></div>
+            <div class="stat"><div class="v" id="wHomes"></div><div class="k" id="wHomesK"></div></div>
             <div class="stat"><div class="v" id="wCf"></div><div class="k">cash flow a month, final year</div></div>
           </div>
         </div>
@@ -193,7 +194,7 @@ footer p{max-width:100ch}
           <div class="stats">
             <div class="stat"><div class="v" id="hIrr"></div><div class="k">a year, after selling costs</div></div>
             <div class="stat"><div class="v" id="hMult"></div><div class="k">your money back</div></div>
-            <div class="stat"><div class="v" id="hHomes"></div><div class="k">homes owned at the end</div></div>
+            <div class="stat"><div class="v" id="hHomes"></div><div class="k" id="hHomesK"></div></div>
             <div class="stat"><div class="v" id="hCf"></div><div class="k">cash flow a month, final year</div></div>
           </div>
         </div>
@@ -204,12 +205,12 @@ footer p{max-width:100ch}
         <div class="head">
           <div>
             <h3>What you'd walk away with, year by year</h3>
-            <div class="hint" style="margin-top:0">If everything were sold that year, after 4% selling costs, plus any cash already taken out.</div>
+            <div class="hint" style="margin-top:0">If everything were sold that year, after selling costs, plus cash on hand and cash already taken out.</div>
           </div>
           <div class="legend">
             <span><span class="sw red" aria-hidden="true"></span>Spinning Wheel</span>
             <span><span class="sw blue" aria-hidden="true"></span>No refinancing</span>
-            <span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="4" fill="#B7202E" stroke="#fff" stroke-width="2"/></svg>A purchase</span>
+            <span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="4" fill="#B7202E" stroke="#fff" stroke-width="2"/></svg>A house bought</span>
           </div>
         </div>
         <div class="chart" id="chart"><div class="tip" id="tip" role="status"></div></div>
@@ -218,7 +219,7 @@ footer p{max-width:100ch}
       </div>
 
       <div class="stress">
-        <h3>Stress check: the same settings in a weak decade</h3>
+        <h3>Stress check: the same settings in a real downturn</h3>
         <div class="hint" style="margin-top:0" id="stressLbl"></div>
         <div class="row2">
           <div><span class="sw red" aria-hidden="true"></span> <b>Spinning Wheel:</b> <span id="sW"></span></div>
@@ -232,15 +233,16 @@ footer p{max-width:100ch}
       <details>
         <summary>How this model works</summary>
         <ul>
-          <li><b>Starting point:</b> one $110,000 contribution, never topped up. That's 20% down on a $500,000 suited home or duplex, plus about 2% in closing costs.</li>
-          <li><b>Every mortgage:</b> 80% of the price, 30-year amortization, at the rate you set, held constant through renewals.</li>
-          <li><b>Rent:</b> net operating income starts at the cap rate you choose (Baseline 7.0%) and grows with property values. Strong and Premium represent newer, top-of-range rentals.</li>
-          <li><b>Refinancing:</b> on the schedule you set, each property is refinanced up to your limit. Each refinance costs $2,000, starts a fresh 30-year amortization, and is skipped if it would free up less than $5,000.</li>
-          <li><b>Safety rule:</b> no refinance or purchase may push a property's rent below 1.25 times its mortgage payment. At higher rates this limits how much you can borrow, so you need a bigger down payment.</li>
-          <li><b>Buying:</b> once the cash pool covers 20% down plus closing costs on a home at that year's price, the model buys it. No purchase in the final year.</li>
-          <li><b>No refinancing comparison:</b> identical rules, but equity is never borrowed against. Reinvested cash flow can still buy homes.</li>
-          <li><b>Selling:</b> all results assume everything is sold in the final year at 4% selling costs.</li>
-          <li><b>Not included:</b> income tax, capital gains tax, vacancies beyond normal, major repairs, rate changes at renewal, mortgage penalties, and whether a lender will approve each loan. All figures are nominal and pre-tax.</li>
+          <li><b>Starting point:</b> one C$152,125 contribution, never topped up: C$113,000 down (20%) on a C$565,000 newer suited house, about C$14,125 in closing costs, about C$10,000 to set the house up for its manager, and a C$15,000 cash reserve that's never spent on a purchase.</li>
+          <li><b>Rent and costs:</b> rent of 0.9% of price a month (C$5,085), rising 2.5% a year; 3% vacancy; running costs 30% of collected rent (management, taxes, insurance, maintenance), rising 3% a year.</li>
+          <li><b>Mortgages:</b> 80% purchase loans over 30 years at the rate you set, on the term you choose.</li>
+          <li><b>Refinancing:</b> only at renewal, up to your limit, and only if rent covers the new payment 1.35 times, and still covers it at a rate two points higher. Each refinance costs C$4,000.</li>
+          <li><b>Buying:</b> a new house only when the cash covers its down payment, closing, setup and its own reserve, and its rent covers its mortgage 1.25 times on day one. New houses cost that year's price; their rent starts at 0.9% of the original price, grown with rents, so faster price growth makes the next house harder to justify.</li>
+          <li><b>Cash:</b> reserves earn 2.4%, other cash 4.5%. Spending means taking the monthly cash flow; interest stays in the account.</li>
+          <li><b>No-refinancing comparison:</b> identical rules, but equity is never borrowed against. Reinvested cash flow can still buy houses.</li>
+          <li><b>Selling:</b> results assume everything is sold in the final year at 3.3% selling costs.</li>
+          <li><b>Downturn case:</b> values fall 5% in each of years 2 and 3, then flat to year 5, then grow 2% a year; vacancy 10% in years 2 to 5; running costs up 10% from year 2; renewals at 7%.</li>
+          <li><b>Not included:</b> income tax on rent, capital gains tax and CCA recapture, extended vacancy, major uninsured repairs, and changes to lending rules. Figures are nominal and pre-tax.</li>
         </ul>
       </details>
       <details>
@@ -254,8 +256,8 @@ footer p{max-width:100ch}
       </details>
 
       <div class="cta">
-        <h2>Want the full Spinning Wheel Report?</h2>
-        <p>It walks through 15 years of this strategy property by property, with stress tests and examples from my own portfolio. I'll send it to you, and I'm happy to talk through how the settings fit your situation.</p>
+        <h2>Want the full 15-year report?</h2>
+        <p>Year-by-year numbers for every path and scenario, on this same house, sent personally. I'm happy to talk through how the settings fit your situation.</p>
         <div class="btns">
           <a class="btn primary" id="mailBtn" href="mailto:eric@ericcoulombe.com">Email me for the report</a>
           <button class="btn ghost" id="copyBtn">Copy a link to this scenario</button><span class="copied" id="copied" role="status"></span>
@@ -268,129 +270,144 @@ footer p{max-width:100ch}
 
 <footer><div class="wrap">
   <p><b>Illustrative model, not a forecast.</b> Results come from the assumptions shown, which may not hold. Real outcomes depend on the property, the market, lender approval and your own circumstances. This is general information, not personalized financial, tax or legal advice. Consult qualified advisors before investing.</p>
-  <p>Eric Coulombe is a licensed real estate advisor with Engel &amp; Völkers Vancouver and owns investment properties in northern British Columbia.</p>
+  <p>I'm a licensed real estate advisor with Engel &amp; Völkers Vancouver. I own investment properties in northern British Columbia, and I earn a commission when clients buy or sell through me, including purchases made under this strategy.</p>
 </div></footer>
 
 <script>
-// Spinning Wheel engine. Annual steps, monthly amortization within each year.
-function swPmt(loan, r, years) {
-  const m = r / 12, n = years * 12;
-  return m ? loan * m / (1 - Math.pow(1 + m, -n)) : loan / n;
-}
-function swMaxLoan(noi, r, dscr, years) {
-  const pay = noi / dscr / 12, m = r / 12, n = years * 12;
-  return pay * (1 - Math.pow(1 + m, -n)) / m;
-}
-function swIrr(flows) {
-  const npv = r => flows.reduce((s, f, i) => s + f / Math.pow(1 + r, i), 0);
-  let lo = -0.99, hi = 1.5;
+// Spinning Wheel engine v2: one engine for the calculator and every investing page.
+// Built from the stated assumptions on ericcoulombe.com/one-house-fifteen-years.html.
+function swPmt(L, r, years) { const m = r / 12, n = years * 12; return m ? L * m / (1 - Math.pow(1 + m, -n)) : L / n; }
+function swBal(L, r, months, pay) { const m = r / 12; return L * Math.pow(1 + m, months) - pay * (Math.pow(1 + m, months) - 1) / m; }
+function swMaxLoan(noi, r, cov, years) { const pay = noi / cov / 12, m = r / 12, n = years * 12; return pay * (1 - Math.pow(1 + m, -n)) / m; }
+function swIrr(f) {
+  const npv = r => f.reduce((s, x, i) => s + x / Math.pow(1 + r, i), 0);
+  let lo = -0.99, hi = 2;
   if (npv(lo) * npv(hi) > 0) return NaN;
-  for (let k = 0; k < 200; k++) {
-    const mid = (lo + hi) / 2;
-    if (npv(lo) * npv(mid) <= 0) hi = mid; else lo = mid;
-  }
+  for (let k = 0; k < 200; k++) { const mid = (lo + hi) / 2; if (npv(lo) * npv(mid) <= 0) hi = mid; else lo = mid; }
   return (lo + hi) / 2;
 }
+const SW_DEFAULTS = {
+  appr: 0.035, rate: 0.05, ltv: 0.75, term: 5, reinvest: 1, years: 15,
+  price0: 565000, rentPct: 0.009, rentG: 0.025, vac: 0.03, opexPct: 0.30, opexG: 0.03,
+  down: 0.20, closing: 0.025, setup0: 10000, refiCost: 4000, reserve0: 15000,
+  rRes: 0.024, rCash: 0.045, sell: 0.033, covRefi: 1.35, covStress: 1.0, stressAdd: 0.02,
+  covBuy: 1.25, amort: 30, wheel: true,
+  // optional per-year overrides (index = year 1..years): apprByYear, vacByYear, renewRateByYear, opexShockYear, opexShock
+};
 function swRun(o) {
-  const p = Object.assign({
-    appr: 0.025, rate: 0.05, ltv: 0.80, every: 3, reinvest: 1, cap: 0.0702, years: 15,
-    price0: 500000, down: 0.20, closing: 0.02, sell: 0.04, refiCost: 2000, minPull: 5000,
-    dscr: 1.25, amort: 30, wheel: true
-  }, o || {});
-  const props = [];
-  const start = p.price0 * (p.down + p.closing);
-  let pool = start;
-  const buy = (t, first) => {
-    const price = p.price0 * Math.pow(1 + p.appr, t);
-    const noi = p.cap * price;
-    const loan = first ? price * (1 - p.down)
-      : Math.min(price * (1 - p.down), swMaxLoan(noi, p.rate, p.dscr, p.amort));
-    const cash = price - loan + p.closing * price;
-    if (cash > pool + 1e-6) return false;
-    props.push({ val: price, loan, pay: swPmt(loan, p.rate, p.amort), age: 0, bought: t });
-    pool -= cash;
-    return true;
+  const p = Object.assign({}, SW_DEFAULTS, o || {});
+  const g = t => (p.apprByYear && p.apprByYear[t] !== undefined) ? p.apprByYear[t] : p.appr;
+  const vac = t => (p.vacByYear && p.vacByYear[t] !== undefined) ? p.vacByYear[t] : p.vac;
+  const rateAt = t => (p.renewRateByYear && p.renewRateByYear[t] !== undefined) ? p.renewRateByYear[t] : p.rate;
+  const V = [1]; for (let t = 1; t <= p.years; t++) V[t] = V[t - 1] * (1 + g(t));
+  const houses = [];
+  const make = (t, first) => {
+    const price = p.price0 * V[t];
+    const rent = p.rentPct * p.price0 * Math.pow(1 + p.rentG, t) * 12;
+    const opex = p.opexPct * rent * (1 - p.vac);
+    const r = rateAt(t);
+    const loan = price * (1 - p.down);
+    const pay = swPmt(loan, r, p.amort);
+    if (!first && (rent * (1 - p.vac) - opex) / (12 * pay) < p.covBuy) return null;
+    return { t, val: price, rent, opex, loan, pay, r, amortLeft: p.amort, age: 0, reserve: p.reserve0 * V[t],
+             cost: price * (p.down + p.closing) + p.setup0 * V[t] + p.reserve0 * V[t] };
   };
-  buy(0, true);
+  const h0 = make(0, true); houses.push(h0);
+  const start = h0.cost;
+  let cash = 0, out = 0;
   const flows = [-start];
-  const years = [];
-  let takenOut = 0, cfLast = 0, refis = 0, pulled = 0;
-  years.push({ t: 0, homes: 1, walkAway: props[0].val * (1 - p.sell) - props[0].loan + pool, buys: 1, cf: 0, debt: props[0].loan, value: props[0].val });
+  const years = [{ t: 0, homes: 1, buys: 1, cf: 0, walkAway: h0.val * (1 - p.sell) - h0.loan + h0.reserve, value: h0.val, debt: h0.loan }];
+  let cfLast = 0, refis = 0;
   for (let t = 1; t <= p.years; t++) {
     let cf = 0;
-    const m = p.rate / 12;
-    for (const q of props) {
-      const noi = p.cap * q.val;
-      let bal = q.loan;
-      for (let k = 0; k < 12; k++) bal = bal * (1 + m) - q.pay;
-      cf += noi - 12 * q.pay;
-      q.loan = Math.max(bal, 0);
+    const shock = (p.opexShockYear && t >= p.opexShockYear) ? (1 + (p.opexShock || 0)) : 1;
+    for (const h of houses) {
+      const noi = h.rent * (1 - vac(t)) - h.opex * shock;
+      h.loan = Math.max(0, swBal(h.loan, h.r, 12, h.pay));
+      h.amortLeft -= 1;
+      cf += noi - 12 * h.pay;
+      h.rent *= 1 + p.rentG; h.opex *= 1 + p.opexG; h.val *= 1 + g(t); h.age += 1;
     }
-    cfLast = cf;
+    const resPool = houses.reduce((s, h) => s + h.reserve, 0);
+    const interest = cash * p.rCash + resPool * p.rRes;
     let dist = cf > 0 ? cf * (1 - p.reinvest) : 0;
-    pool += cf - dist;
-    if (pool < 0) { dist += pool; pool = 0; }
-    for (const q of props) { q.val *= 1 + p.appr; q.age += 1; }
-    if (p.wheel && t < p.years) {
-      for (const q of props) {
-        if (q.age % p.every === 0) {
-          const noi = p.cap * q.val;
-          const target = Math.min(p.ltv * q.val, swMaxLoan(noi, p.rate, p.dscr, p.amort));
-          if (target - q.loan > p.minPull) {
-            pool += target - q.loan - p.refiCost;
-            pulled += target - q.loan; refis++;
-            q.loan = target; q.pay = swPmt(target, p.rate, p.amort);
+    cash += cf + interest - dist;
+    if (cash < 0) { // draw on reserves before asking the owner for money
+      let need = -cash; cash = 0;
+      for (const h of houses) { const d = Math.min(h.reserve, need); h.reserve -= d; need -= d; }
+      if (need > 0) dist -= need;
+    }
+    out += dist; cfLast = cf;
+    // renewals: refinance if the wheel is on and the tests pass, otherwise renew at the going rate
+    for (const h of houses) {
+      if (t < p.years && h.age % p.term === 0) {
+        const r = rateAt(t);
+        const noi = h.rent * (1 - p.vac) - h.opex * shock;
+        let done = false;
+        if (p.wheel) {
+          const tgt = Math.min(p.ltv * h.val, swMaxLoan(noi, r, p.covRefi, p.amort), swMaxLoan(noi, r + p.stressAdd, p.covStress, p.amort));
+          if (tgt > h.loan + p.refiCost) {
+            cash += tgt - h.loan - p.refiCost;
+            h.loan = tgt; h.r = r; h.amortLeft = p.amort; h.pay = swPmt(tgt, r, p.amort); refis++; done = true;
           }
         }
+        if (!done && h.r !== r && h.loan > 0) { h.r = r; h.pay = swPmt(h.loan, r, Math.max(1, h.amortLeft)); }
       }
     }
+    // top reserves back up from cash before buying anything
+    for (const h of houses) { const target = p.reserve0 * V[h.t]; if (h.reserve < target && cash > 0) { const d = Math.min(cash, target - h.reserve); h.reserve += d; cash -= d; } }
     let nb = 0;
-    if (t < p.years) { while (buy(t, false)) nb++; }
-    takenOut += dist;
-    const equity = props.reduce((s, q) => s + q.val * (1 - p.sell) - q.loan, 0);
-    years.push({
-      t, homes: props.length, buys: nb, cf,
-      walkAway: equity + pool + takenOut,
-      value: props.reduce((s, q) => s + q.val, 0),
-      debt: props.reduce((s, q) => s + q.loan, 0)
-    });
-    flows.push(t === p.years ? dist + equity + pool : dist);
+    if (t < p.years) {
+      while (true) {
+        const c = p.price0 * V[t] * (p.down + p.closing) + p.setup0 * V[t] + p.reserve0 * V[t];
+        if (cash < c) break;
+        const nh = make(t, false); if (!nh) break;
+        cash -= nh.cost; houses.push(nh); nb++;
+      }
+    }
+    const equity = houses.reduce((s, h) => s + h.val * (1 - p.sell) - h.loan + h.reserve, 0);
+    const value = houses.reduce((s, h) => s + h.val, 0), debt = houses.reduce((s, h) => s + h.loan, 0);
+    years.push({ t, homes: houses.length, buys: nb, cf, walkAway: equity + cash + out, netWorth: equity + cash, value, debt, cash });
+    flows.push(t === p.years ? dist + equity + cash : dist);
   }
-  const total = flows.slice(1).reduce((a, b) => a + b, 0);
+  const last = years[years.length - 1];
   return {
-    irr: swIrr(flows), multiple: total / start, endValue: total, start,
-    homes: props.length, monthlyCf: cfLast / 12, takenOut, refis, pulled,
-    buys: props.map(q => q.bought), years
+    irr: swIrr(flows), start, endValue: last.walkAway, netWorth: last.netWorth, multiple: last.walkAway / start,
+    homes: houses.length, buys: houses.map(h => h.t), monthlyCf: cfLast / 12, takenOut: out,
+    ltv: last.debt / last.value, cashWaiting: last.cash, refis, years
   };
 }
 
 
 (function(){
-  const S = {appr:0.025, rate:0.05, ltv:0.80, every:3, reinvest:1, cap:0.0702, years:15};
+  const S = {appr:0.035, rate:0.05, ltv:0.75, term:5, reinvest:1, rentPct:0.009, years:15, downturn:0};
+  const DOWN = {apprByYear:{2:-0.05,3:-0.05,4:0,5:0}, vacByYear:{2:0.1,3:0.1,4:0.1,5:0.1}, opexShockYear:2, opexShock:0.10};
+  const downOpts = s => { const o = Object.assign({}, DOWN, {appr:0.02}); o.renewRateByYear = {}; for (let y=1; y<=s.years; y++) o.renewRateByYear[y] = Math.max(s.rate, 0.07); return o; };
   const PRESETS = {
-    planning:{appr:0.025, rate:0.05, ltv:0.80, every:3, reinvest:1, cap:0.0702},
-    conservative:{appr:0.015, rate:0.055, ltv:0.75, every:3, reinvest:1, cap:0.0702},
-    strong:{appr:0.045, rate:0.05, ltv:0.80, every:3, reinvest:1, cap:0.0702},
-    weak:{appr:0.0, rate:0.065, ltv:0.80, every:3, reinvest:1, cap:0.0702}
+    base:{appr:0.035, rate:0.05, ltv:0.75, term:5, rentPct:0.009, downturn:0},
+    catchup:{appr:0.053, rate:0.05, ltv:0.75, term:5, rentPct:0.009, downturn:0},
+    flat:{appr:0, rate:0.05, ltv:0.75, term:5, rentPct:0.009, downturn:0},
+    downturn:{appr:0.02, rate:0.05, ltv:0.75, term:5, rentPct:0.009, downturn:1},
+    aggressive:{appr:0.035, rate:0.05, ltv:0.80, term:3, rentPct:0.009, downturn:0}
   };
+  const opts = (extra) => Object.assign({}, S, S.downturn ? downOpts(S) : {}, extra || {});
   const $ = id => document.getElementById(id);
   const money = v => { const a=Math.abs(v); const s=v<0?'−':'';
-    if (a>=1e6) return s+'$'+(a/1e6).toFixed(a>=1e7?1:2)+'M';
-    if (a>=1e4) return s+'$'+Math.round(a/1000)+'K';
-    return s+'$'+Math.round(a).toLocaleString('en-CA'); };
-  const full = v => (v<0?'−':'')+'$'+Math.round(Math.abs(v)).toLocaleString('en-CA');
+    if (a>=1e6) return s+'C$'+(a/1e6).toFixed(a>=1e7?1:2)+'M';
+    if (a>=1e4) return s+'C$'+Math.round(a/1000)+'K';
+    return s+'C$'+Math.round(a).toLocaleString('en-CA'); };
+  const full = v => (v<0?'−':'')+'C$'+Math.round(Math.abs(v)).toLocaleString('en-CA');
   const pct = (v,d=1) => isFinite(v) ? (v*100).toFixed(d)+'%' : 'n/a';
-  const capName = {0.0702:'Baseline', 0.0778:'Strong', 0.0861:'Premium'};
   const reinvName = {0:'Spend it', 0.5:'Half', 1:'Reinvest'};
 
   function syncControls(){
     $('appr').value = S.appr*100; $('rate').value = S.rate*100;
-    $('apprOut').textContent = (S.appr*100).toFixed(1)+'%';
     $('rateOut').textContent = (S.rate*100).toFixed(2)+'%';
     $('ltvOut').textContent = Math.round(S.ltv*100)+'%';
-    $('everyOut').textContent = S.every+' years';
+    $('termOut').textContent = S.term+' years';
     $('reinvOut').textContent = reinvName[S.reinvest];
-    $('capOut').textContent = (S.cap*100).toFixed(1)+'%';
+    $('rentOut').textContent = (S.rentPct*100).toFixed(1)+'% a month';
+    $('apprOut').textContent = S.downturn ? 'Downturn' : (S.appr*100).toFixed(1)+'%';
     $('yearsOut').textContent = S.years;
     document.querySelectorAll('.seg').forEach(g => {
       const k = g.dataset.key;
@@ -398,7 +415,7 @@ function swRun(o) {
     });
     document.querySelectorAll('.presets button').forEach(b => {
       const p = PRESETS[b.dataset.preset];
-      const on = Object.keys(p).every(k => Math.abs(p[k]-S[k])<1e-9);
+      const on = Object.keys(p).every(k => Math.abs(p[k]-S[k])<1e-9) && S.reinvest === 1;
       b.setAttribute('aria-pressed', String(on));
     });
   }
@@ -447,8 +464,8 @@ function swRun(o) {
       tip.innerHTML = `<b>${t===0?'Start':'Year '+t}</b>`+
         `<div class="row"><span><span class="sw red"></span>Wheel</span><span>${full(a.walkAway)}</span></div>`+
         `<div class="row"><span><span class="sw blue"></span>No refinancing</span><span>${full(b.walkAway)}</span></div>`+
-        `<div class="row" style="color:#6E6E6A"><span>Homes</span><span>${a.homes} vs ${b.homes}</span></div>`+
-        (a.buys>0 && t>0 ? `<div style="color:#6E6E6A">Wheel buys ${a.buys} home${a.buys>1?'s':''} this year</div>` : '');
+        `<div class="row" style="color:#6E6E6A"><span>Houses</span><span>${a.homes} vs ${b.homes}</span></div>`+
+        (a.buys>0 && t>0 ? `<div style="color:#6E6E6A">Wheel buys ${a.buys} house${a.buys>1?'s':''} this year</div>` : '');
       const left = x(t) / W * r.width;
       tip.style.left = Math.min(Math.max(0, left + 12), r.width - 190) + 'px';
       tip.style.top = '8px'; tip.style.opacity = '1';
@@ -465,18 +482,18 @@ function swRun(o) {
     let rows = '';
     for (let t=0; t<=S.years; t++){
       const a=w.years[t], b=h.years[t];
-      rows += `<tr><td>${t===0?'Start':t}</td><td>${a.homes}</td><td>${full(a.cf/12)}</td><td>${full(a.walkAway)}</td><td>${b.homes}</td><td>${full(b.cf/12)}</td><td>${full(b.walkAway)}</td></tr>`;
+      rows += `<tr><td>${t===0?'Start':t}</td><td>${a.homes}</td><td>${t?full(a.cf/12):'–'}</td><td>${full(a.walkAway)}</td><td>${b.homes}</td><td>${t?full(b.cf/12):'–'}</td><td>${full(b.walkAway)}</td></tr>`;
     }
-    $('tblWrap').innerHTML = `<table><thead><tr><th>Year</th><th>Wheel homes</th><th>Wheel cash flow / mo</th><th>Wheel walk-away</th><th>No-refi homes</th><th>No-refi cash flow / mo</th><th>No-refi walk-away</th></tr></thead><tbody>${rows}</tbody></table>`;
+    $('tblWrap').innerHTML = `<table><thead><tr><th>Year</th><th>Wheel houses</th><th>Wheel cash flow / mo</th><th>Wheel walk-away</th><th>No-refi houses</th><th>No-refi cash flow / mo</th><th>No-refi walk-away</th></tr></thead><tbody>${rows}</tbody></table>`;
   }
 
   const PAGE = 'https://ericcoulombe.com/spinning-wheel-calculator.html';
-  const KEYS = ['appr','rate','ltv','every','reinvest','cap','years'];
+  const KEYS = ['appr','rate','ltv','term','reinvest','rentPct','years','downturn'];
   const enc = () => 's=' + KEYS.map(k => +S[k].toFixed(4)).join('_');
   function readHash(h){
     const m = /s=([\d._]+)/.exec(h || ''); if (!m) return;
     const v = m[1].split('_').map(Number);
-    const ok = {appr:[0,0.06], rate:[0.03,0.08], ltv:[0.75,0.80], every:[2,5], reinvest:[0,1], cap:[0.07,0.087], years:[10,15]};
+    const ok = {appr:[0,0.06], rate:[0.03,0.08], ltv:[0.75,0.80], term:[3,5], reinvest:[0,1], rentPct:[0.008,0.01], years:[10,15], downturn:[0,1]};
     KEYS.forEach((k,i) => { const x = v[i]; if (isFinite(x) && x >= ok[k][0]-1e-9 && x <= ok[k][1]+1e-9) S[k] = x; });
   }
   readHash(location.hash);
@@ -485,41 +502,39 @@ function swRun(o) {
   let last = null;
   function render(){
     syncControls();
-    const w = swRun(S), h = swRun(Object.assign({}, S, {wheel:false}));
+    const w = swRun(opts()), h = swRun(opts({wheel:false}));
     last = {w, h};
     $('yrA').textContent = S.years;
     $('bigNum').textContent = full(w.endValue);
-    $('bigSub').textContent = `That's ${w.multiple.toFixed(1)}× your money, or ${pct(w.irr)} a year, from one $110,000 down payment and no new contributions. Without refinancing, the same $110,000 becomes ${full(h.endValue)}.`;
+    $('bigSub').textContent = `That's ${w.multiple.toFixed(1)}× your money, or ${pct(w.irr)} a year, from one contribution and no top-ups${w.takenOut>1000?`, including ${full(w.takenOut)} of cash flow taken out along the way`:''}. Without refinancing, the same C$152,125 becomes ${full(h.endValue)}.`;
     $('wIrr').textContent = pct(w.irr); $('wMult').textContent = w.multiple.toFixed(1)+'×';
-    $('wHomes').textContent = w.homes; $('wCf').textContent = full(w.monthlyCf);
+    $('wHomes').textContent = w.homes; $('wHomesK').textContent = w.homes>1 ? `houses at the end (bought in years ${w.buys.slice(1).join(', ')})` : 'house at the end'; $('wCf').textContent = full(w.monthlyCf);
     $('hIrr').textContent = pct(h.irr); $('hMult').textContent = h.multiple.toFixed(1)+'×';
-    $('hHomes').textContent = h.homes; $('hCf').textContent = full(h.monthlyCf);
+    $('hHomes').textContent = h.homes; $('hHomesK').textContent = h.homes>1 ? `houses at the end (bought in years ${h.buys.slice(1).join(', ')})` : 'house at the end'; $('hCf').textContent = full(h.monthlyCf);
     const dv = w.endValue - h.endValue, dp = (w.irr - h.irr)*100;
     $('delta').innerHTML = dv >= 0
-      ? `<b>The wheel added ${full(dv)}</b> and ${dp.toFixed(1)} points a year in this scenario, by putting the same money to work in ${w.homes} homes instead of ${h.homes}.`
-      : `<b>In this scenario the wheel cost you ${full(-dv)}</b> (${Math.abs(dp).toFixed(1)} points a year). Borrowing costs more than the properties earn, so each refinance subtracts.`;
+      ? (dv < 1000 ? `<b>Here the wheel adds nothing.</b> The coverage tests stop any refinance or purchase, which is what they're for.` : `<b>Refinancing added ${full(dv)}</b>${dp>=0.05?` and ${dp.toFixed(1)} points a year`:''} in this scenario, by putting the same money to work in ${w.homes} houses instead of ${h.homes}.`)
+      : `<b>In this scenario refinancing cost ${full(-dv)}</b> (${Math.abs(dp).toFixed(1)} points a year). Borrowed money earned less than it cost.`;
     drawChart(w, h);
     if (!$('tblWrap').hidden) table(w, h);
-    // stress: same settings, zero growth and rate +1.5
-    const sr = Math.min(0.08, S.rate + 0.015);
-    const sw = swRun(Object.assign({}, S, {appr:0, rate:sr})), sh = swRun(Object.assign({}, S, {appr:0, rate:sr, wheel:false}));
-    $('stressLbl').textContent = `Values flat for ${S.years} years and a ${(sr*100).toFixed(2)}% mortgage rate, everything else as set.`;
-    $('sW').textContent = `${full(sw.endValue)} · ${pct(sw.irr)} a year · ${sw.homes} home${sw.homes>1?'s':''}`;
-    $('sH').textContent = `${full(sh.endValue)} · ${pct(sh.irr)} a year · ${sh.homes} home${sh.homes>1?'s':''}`;
-    $('stressNote').textContent = sw.irr >= sh.irr
-      ? 'Even here the wheel holds its own, because the safety rule stops it borrowing when rent no longer covers the payments comfortably.'
-      : 'Here the wheel does worse than holding. Borrowed money costs more than it earns, which is exactly why every refinance has to pass a coverage test.';
+    // stress: the same settings through the downturn case
+    const base = Object.assign({}, S, downOpts(S));
+    const sw = swRun(base), sh = swRun(Object.assign({}, base, {wheel:false}));
+    $('stressLbl').textContent = `Values down about 10% over years 2 and 3, 10% vacancy for four years, running costs up 10%, renewals at ${(Math.max(S.rate,0.07)*100).toFixed(0)}%, then 2% a year growth. Everything else as set.`;
+    $('sW').textContent = `${full(sw.endValue)} · ${pct(sw.irr)} a year · ${sw.homes} house${sw.homes>1?'s':''}`;
+    $('sH').textContent = `${full(sh.endValue)} · ${pct(sh.irr)} a year · ${sh.homes} house${sh.homes>1?'s':''}`;
+    $('stressNote').textContent = 'A downturn stalls the wheel rather than breaking it: refinancing stops for years and purchases wait, but nobody has to add money or sell into the fall. The coverage tests and the reserves are why.';
     if (!EMBED) { try { history.replaceState(null, '', '#' + enc()); } catch (e) {} }
     postHeight();
     const summary = scenarioText(w, h) + '\n' + shareUrl();
     $('mailBtn').href = 'mailto:eric@ericcoulombe.com?subject=' + encodeURIComponent('Spinning Wheel Report request') + '&body=' + encodeURIComponent('Hi Eric,\n\nI tried the Spinning Wheel Calculator and would like the full report.\n\n' + summary + '\n\nName:\nPhone (optional):\n');
   }
   function scenarioText(w, h){
-    return `My scenario: values grow ${(S.appr*100).toFixed(1)}%/yr, mortgage ${(S.rate*100).toFixed(2)}%, refinance to ${Math.round(S.ltv*100)}% every ${S.every} years, cash flow: ${reinvName[S.reinvest]}, quality: ${capName[S.cap]}, ${S.years} years.\n`+
-      `Spinning Wheel: ${full(w.endValue)} (${pct(w.irr)}/yr, ${w.homes} homes). No refinancing: ${full(h.endValue)} (${pct(h.irr)}/yr, ${h.homes} homes).`;
+    return `My scenario: ${S.downturn?'downturn case':'values grow '+(S.appr*100).toFixed(1)+'%/yr'}, mortgage ${(S.rate*100).toFixed(2)}%, refinance to ${Math.round(S.ltv*100)}% at ${S.term}-year renewals, cash flow: ${reinvName[S.reinvest]}, rent ${(S.rentPct*100).toFixed(1)}% of price, ${S.years} years.\n`+
+      `Spinning Wheel: ${full(w.endValue)} (${pct(w.irr)}/yr, ${w.homes} houses). No refinancing: ${full(h.endValue)} (${pct(h.irr)}/yr, ${h.homes} houses).`;
   }
 
-  $('appr').addEventListener('input', e => { S.appr = parseFloat(e.target.value)/100; render(); });
+  $('appr').addEventListener('input', e => { S.appr = parseFloat(e.target.value)/100; S.downturn = 0; render(); });
   $('rate').addEventListener('input', e => { S.rate = parseFloat(e.target.value)/100; render(); });
   document.querySelectorAll('.seg').forEach(g => g.addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
