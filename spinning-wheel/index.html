@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Spinning Wheel Calculator | Eric Coulombe</title>
 <meta name="description" content="See what one rental-property down payment can become when its equity is recycled into the next property, and what happens in a weak decade. An interactive model by Eric Coulombe, Engel &amp; Völkers Vancouver.">
-<link rel="canonical" href="https://ericcoulombe.com/spinning-wheel-calculator.html">
+<link rel="canonical" href="https://ericcoulombe.com/spinning-wheel.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&family=Public+Sans:wght@400;500;600;700&display=swap">
 <style>
@@ -317,7 +317,7 @@ function swRun(o) {
   let cash = 0, out = 0;
   const flows = [-start];
   const years = [{ t: 0, homes: 1, buys: 1, cf: 0, walkAway: h0.val * (1 - p.sell) - h0.loan + h0.reserve, value: h0.val, debt: h0.loan }];
-  let cfLast = 0, refis = 0;
+  let cfLast = 0, refis = 0, refiCash = 0, cfKept = 0;
   for (let t = 1; t <= p.years; t++) {
     let cf = 0;
     const shock = (p.opexShockYear && t >= p.opexShockYear) ? (1 + (p.opexShock || 0)) : 1;
@@ -337,7 +337,7 @@ function swRun(o) {
       for (const h of houses) { const d = Math.min(h.reserve, need); h.reserve -= d; need -= d; }
       if (need > 0) dist -= need;
     }
-    out += dist; cfLast = cf;
+    out += dist; cfLast = cf; cfKept += cf - Math.max(0, dist);
     // renewals: refinance if the wheel is on and the tests pass, otherwise renew at the going rate
     for (const h of houses) {
       if (t < p.years && h.age % p.term === 0) {
@@ -347,7 +347,7 @@ function swRun(o) {
         if (p.wheel) {
           const tgt = Math.min(p.ltv * h.val, swMaxLoan(noi, r, p.covRefi, p.amort), swMaxLoan(noi, r + p.stressAdd, p.covStress, p.amort));
           if (tgt > h.loan + p.refiCost) {
-            cash += tgt - h.loan - p.refiCost;
+            cash += tgt - h.loan - p.refiCost; refiCash += tgt - h.loan - p.refiCost;
             h.loan = tgt; h.r = r; h.amortLeft = p.amort; h.pay = swPmt(tgt, r, p.amort); refis++; done = true;
           }
         }
@@ -374,7 +374,7 @@ function swRun(o) {
   return {
     irr: swIrr(flows), start, endValue: last.walkAway, netWorth: last.netWorth, multiple: last.walkAway / start,
     homes: houses.length, buys: houses.map(h => h.t), monthlyCf: cfLast / 12, takenOut: out,
-    ltv: last.debt / last.value, cashWaiting: last.cash, refis, years
+    ltv: last.debt / last.value, cashWaiting: last.cash, refis, refiCash, cfKept, years
   };
 }
 
@@ -487,7 +487,7 @@ function swRun(o) {
     $('tblWrap').innerHTML = `<table><thead><tr><th>Year</th><th>Wheel houses</th><th>Wheel cash flow / mo</th><th>Wheel walk-away</th><th>No-refi houses</th><th>No-refi cash flow / mo</th><th>No-refi walk-away</th></tr></thead><tbody>${rows}</tbody></table>`;
   }
 
-  const PAGE = 'https://ericcoulombe.com/spinning-wheel-calculator.html';
+  const PAGE = 'https://ericcoulombe.com/spinning-wheel.html';
   const KEYS = ['appr','rate','ltv','term','reinvest','rentPct','years','downturn'];
   const enc = () => 's=' + KEYS.map(k => +S[k].toFixed(4)).join('_');
   function readHash(h){
