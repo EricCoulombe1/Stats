@@ -1,0 +1,339 @@
+<!-- EC page block: The Spinning Wheel (spinning-wheel.html) v1.0 2026-11-08. Replaces real-estate-flywheel.html and real-estate-income-vs-growth.html. Figures from the Spinning Wheel engine (C$565K reference house). -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600&display=swap">
+<style>
+#ec-sw{--red:#B7202E;--ink:#1F2124;--char:#262626;--body:#45484D;--muted:#5E6166;--line:#E2E2DF;--off:#F4F4F2;color:var(--body);font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.6}
+#ec-sw *{box-sizing:border-box}
+#ec-sw p,#ec-sw li,#ec-sw td,#ec-sw th{font-family:'Inter',system-ui,sans-serif}
+#ec-sw .w{max-width:1160px;margin:0 auto;padding:0 32px}
+#ec-sw .sec{padding:88px 0;border-top:1px solid var(--line)}
+#ec-sw .sec.off{background:var(--off);border-top:0}
+#ec-sw .kick{margin:0 0 14px;font-size:12px !important;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+#ec-sw h1,#ec-sw h2,#ec-sw h3{font-family:'Inter Tight','Inter',sans-serif;color:var(--ink);font-weight:600;margin:0;text-wrap:balance;text-transform:none}
+#ec-sw h1{font-size:60px;line-height:1.04;letter-spacing:-.02em}
+#ec-sw h2{font-size:38px;line-height:1.12;letter-spacing:-.01em;max-width:820px}
+#ec-sw h3{font-size:20px;line-height:1.3}
+#ec-sw p{margin:0}
+#ec-sw .lede{font-size:20px !important;max-width:680px;margin-top:20px}
+#ec-sw .intro{max-width:760px;margin-top:18px}
+#ec-sw .note{font-size:13px !important;color:var(--muted);margin-top:20px;line-height:1.55}
+#ec-sw .crumb{margin:0 0 14px;font-size:13px !important;color:var(--muted)}
+#ec-sw .crumb b{color:var(--ink);font-weight:600}
+#ec-sw .crumb a{color:var(--red);font-weight:600;text-decoration:none}
+#ec-sw .plain{margin-top:24px;background:var(--off);border-left:4px solid var(--red);padding:16px 20px;max-width:700px}
+#ec-sw .plain strong{display:block;font-size:12px !important;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+#ec-sw .plain p{font-size:16px !important;color:var(--ink);line-height:1.55}
+#ec-sw .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:72px 0 88px}
+#ec-sw .ring{max-width:480px;width:100%;margin:0 auto}
+#ec-sw .ring svg{width:100%;height:auto;display:block}
+#ec-sw .race{margin-top:36px;padding-top:24px;border-top:1px solid var(--line)}
+#ec-sw .race .cap{font-size:14px !important;color:var(--muted);margin-bottom:14px}
+#ec-sw .race .r{display:grid;grid-template-columns:200px 1fr 84px;gap:14px;align-items:center;font-size:15px;margin-top:12px}
+#ec-sw .race i{display:block;height:14px;border-radius:0 4px 4px 0;background:#C9CBCE}
+#ec-sw .race .hi i{background:var(--red)}
+#ec-sw .race .mid i{background:var(--ink)}
+#ec-sw .race em{font-style:normal;font-weight:600;color:var(--ink);text-align:right;font-variant-numeric:tabular-nums}
+#ec-sw .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;font-size:15px;font-weight:600;text-decoration:none;border:1px solid var(--ink)}
+#ec-sw .btn.red{background:var(--red);border-color:var(--red);color:#fff}
+#ec-sw .btn.ghost{color:var(--ink);background:#fff}
+#ec-sw .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+#ec-sw .eg{display:grid;gap:28px;margin-top:40px}
+#ec-sw .g2{grid-template-columns:repeat(2,1fr)}
+#ec-sw .g3{grid-template-columns:repeat(3,1fr)}
+#ec-sw .card{background:#fff;border-top:3px solid var(--ink);padding:24px 24px 28px;display:flex;flex-direction:column;gap:10px}
+#ec-sw .card.red{border-top-color:var(--red)}
+#ec-sw .card .n{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+#ec-sw .card p{font-size:16px}
+#ec-sw .stat b{display:block;font-family:'Inter Tight','Inter',sans-serif;font-size:40px;line-height:1.05;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+#ec-sw .stat span{display:block;font-size:14px;color:var(--muted);margin-top:8px;line-height:1.45}
+#ec-sw .tw{overflow-x:auto;margin-top:36px;-webkit-overflow-scrolling:touch}
+#ec-sw table{width:100%;border-collapse:collapse;font-size:15px;font-variant-numeric:tabular-nums;min-width:620px}
+#ec-sw th{text-align:left;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:10px 12px;border-bottom:2px solid var(--ink);vertical-align:bottom}
+#ec-sw td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--body)}
+#ec-sw td.num,#ec-sw th.num{text-align:right}
+#ec-sw tr.hl td{background:#fff;color:var(--ink);font-weight:600}
+#ec-sw .sec.off tr.hl td{background:#fff}
+#ec-sw td small{display:block;font-size:13px;color:var(--muted);font-weight:400}
+#ec-sw .seg{display:inline-flex;border:1px solid var(--ink);margin-top:28px}
+#ec-sw .seg button{font:600 14px 'Inter',system-ui,sans-serif;padding:10px 16px;border:0;background:#fff;color:var(--ink);cursor:pointer}
+#ec-sw .seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+#ec-sw .pts{list-style:none;margin:36px 0 0;padding:0;display:grid;gap:0}
+#ec-sw .pts li{display:grid;grid-template-columns:260px 1fr;gap:24px;padding:18px 0;border-top:1px solid var(--line)}
+#ec-sw .pts li strong{color:var(--ink);font-weight:600}
+#ec-sw .dark{background:var(--char);color:#C9CBCE}
+#ec-sw .dark h2{color:#fff}
+#ec-sw .dark .kick{color:#E8A0A6}
+#ec-sw .rules{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px}
+#ec-sw .rules li{padding:18px 0;border-top:1px solid #3A3A3A;color:#C9CBCE;font-size:16px}
+#ec-sw .rules li strong{display:block;color:#fff;margin-bottom:4px}
+#ec-sw .calc{background:#FAFAF8;border-top:1px solid var(--line)}
+#ec-sw .calc .hd{padding:72px 0 8px}
+#ec-sw .calc iframe{display:block;width:100%;border:0;min-height:1900px;background:#FAFAF8}
+#ec-sw .formula{margin-top:28px;background:#fff;border-left:4px solid var(--ink);padding:18px 22px;max-width:760px;font-size:17px;color:var(--ink)}
+#ec-sw .src{font-size:13px;color:var(--muted);line-height:1.6;padding:48px 0 64px;border-top:1px solid var(--line)}
+#ec-sw .src p{font-size:13px !important}
+#ec-sw .src p+p{margin-top:8px}
+#ec-sw .src a{color:var(--muted)}
+#ec-sw .nx{padding:64px 0;border-top:1px solid var(--line);background:#fff}
+#ec-sw .nx .g{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+#ec-sw .nx a{display:block;background:var(--off);border-top:3px solid var(--ink);padding:20px 22px 22px;text-decoration:none;color:var(--body)}
+#ec-sw .nx a.r{border-top-color:var(--red)}
+#ec-sw .nx em{display:block;font-style:normal;font-size:12px !important;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+#ec-sw .nx b{display:block;font-family:'Inter Tight','Inter',sans-serif;font-size:19px !important;color:var(--ink);margin-top:8px;font-weight:600;line-height:1.3}
+#ec-sw .nx small{display:block;font-size:14px !important;margin-top:6px;line-height:1.5}
+#ec-sw .nx span{display:block;color:var(--red);font-weight:600;font-size:15px !important;margin-top:12px}
+@media (max-width:900px){
+  #ec-sw .w{padding:0 20px}
+  #ec-sw .sec{padding:56px 0}
+  #ec-sw h1{font-size:40px}
+  #ec-sw h2{font-size:28px}
+  #ec-sw .hero{grid-template-columns:1fr;gap:36px;padding:40px 0 56px}
+  #ec-sw .g2,#ec-sw .g3,#ec-sw .rules,#ec-sw .nx .g{grid-template-columns:1fr}
+  #ec-sw .race .r{grid-template-columns:118px 1fr 70px;font-size:14px}
+  #ec-sw .pts li{grid-template-columns:1fr;gap:6px}
+  #ec-sw .ring{max-width:280px}
+  #ec-sw .calc .hd{padding:48px 0 8px}
+  #ec-sw .nx{padding:48px 0}
+}
+</style>
+
+<div id="ec-sw">
+
+<!-- HERO -->
+<div class="w">
+  <div class="hero">
+    <div>
+      <p class="crumb">Investing › <b>Building a portfolio</b> · November 2026 · 12-minute read · New to this? <a href="investing.html">Start here</a></p>
+      <p class="kick">Part 4 of 5 · The Spinning Wheel</p>
+      <h1>The Spinning Wheel</h1>
+      <p class="lede">Buy a rental. Let the tenants pay down the mortgage while the house grows in value. Borrow against that growth for the next down payment. Repeat, but only when the rules say it's safe.</p>
+      <div class="plain">
+        <strong>In plain English</strong>
+        <p>Instead of buying one house and only holding it, you refinance at renewal and use the money to buy the next one. On the same C$565,000 house used throughout this series, it adds about C$360,000 over 15 years when values grow and rents keep up. When they don't, the rules slow it down, and it ends up close to where simply holding would.</p>
+      </div>
+      <div class="race" role="img" aria-label="What C$152,125 can become over 15 years, reinvesting the cash flow: Spinning Wheel C$1.50 million, holding the one house C$1.14 million, a 7% stock index fund C$0.42 million.">
+        <p class="cap">What C$152,125 can become in 15 years, reinvesting the cash flow (after selling costs)</p>
+        <div class="r hi"><span>The Spinning Wheel</span><i style="width:100%"></i><em>C$1.50M</em></div>
+        <div class="r mid"><span>Hold the one house</span><i style="width:75.8%"></i><em>C$1.14M</em></div>
+        <div class="r"><span>Stock index fund at 7%</span><i style="width:28%"></i><em>C$0.42M</em></div>
+      </div>
+      <div class="ctas"><a class="btn red" href="#sw-calc">Run it on your numbers ↓</a><a class="btn ghost" href="#sw-rules">See the rules</a></div>
+    </div>
+    <div class="ring">
+      <svg viewBox="-70 0 560 420" role="img" aria-label="The Spinning Wheel: buy, hold, refinance, redeploy, then around again">
+        <circle cx="210" cy="210" r="150" fill="none" stroke="#E2E2DF" stroke-width="2"/>
+        <path d="M210 60 A150 150 0 0 1 360 210 A150 150 0 0 1 210 360 A150 150 0 0 1 60 210 A150 150 0 0 1 210 60" fill="none" stroke="#B7202E" stroke-width="3"/>
+        <polygon points="354,196 360,212 366,196" fill="#B7202E"/>
+        <polygon points="224,354 208,360 224,366" fill="#B7202E"/>
+        <polygon points="54,224 60,208 66,224" fill="#B7202E"/>
+        <polygon points="196,66 212,60 196,54" fill="#B7202E"/>
+        <g font-family="Inter, system-ui, sans-serif" fill="#1F2124">
+          <circle cx="210" cy="60" r="7" fill="#1F2124"/><text x="210" y="32" text-anchor="middle" font-size="21" font-weight="600">Buy</text>
+          <circle cx="360" cy="210" r="7" fill="#1F2124"/><text x="376" y="204" text-anchor="start" font-size="21" font-weight="600">Hold</text>
+          <circle cx="210" cy="360" r="7" fill="#1F2124"/><text x="210" y="398" text-anchor="middle" font-size="21" font-weight="600">Refinance</text>
+          <circle cx="60" cy="210" r="7" fill="#1F2124"/><text x="44" y="204" text-anchor="end" font-size="21" font-weight="600">Redeploy</text>
+          <text x="210" y="200" text-anchor="middle" font-size="18" fill="#5E6166">Equity goes</text>
+          <text x="210" y="224" text-anchor="middle" font-size="18" fill="#5E6166">back to work</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- THE BOTTOM LINE -->
+<section class="sec off">
+  <div class="w">
+    <p class="kick">The bottom line</p>
+    <h2>It pays when values grow and rents keep up. When they don't, the rules stop it.</h2>
+    <div class="eg g3">
+      <div class="card red stat"><span class="n">The edge</span><b>+C$362K</b><span>More than holding the one house after 15 years, reinvesting the cash flow (C$1.50M vs C$1.14M). About C$148K more if you spend the cash flow instead.</span></div>
+      <div class="card stat"><span class="n">The limit</span><b>±C$55K</b><span>In flat values, a downturn, 5.5% mortgages, or prices running ahead of rents, it finishes within about C$55K of holding, ahead in some and behind in others.</span></div>
+      <div class="card stat"><span class="n">The trade-off</span><b>+C$125K</b><span>What refinancing to 80% every 3 years adds in the base case. It carries the most debt in every scenario we ran and has the weakest result in a downturn.</span></div>
+    </div>
+    <p class="note">All figures for one C$565,000 suited house bought with C$152,125, before tax, after 3.3% selling costs. Walk-away value is what you'd have if you sold everything, plus any cash already paid to you. Illustrative, not a forecast.</p>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc" id="sw-calc">
+  <div class="w hd">
+    <p class="kick">Run it yourself</p>
+    <h2>The Spinning Wheel Calculator</h2>
+    <p class="intro">Change the growth rate, the mortgage rate, how far you refinance and what you do with the cash flow. The downturn check underneath runs the same settings through a bad decade, so you can set the risk at your own comfort level.</p>
+  </div>
+  <iframe id="ec-calc" src="https://stats.ericcoulombe.com/spinning-wheel/?embed=1" title="The Spinning Wheel Calculator" scrolling="no" loading="lazy"></iframe>
+</section>
+
+<!-- WHERE THE MONEY COMES FROM -->
+<section class="sec">
+  <div class="w">
+    <p class="kick">Where the money comes from</p>
+    <h2>Every recycled dollar is either borrowed or earned. I report which.</h2>
+    <p class="intro">Holding has a quiet problem. As the tenants pay down the loan and the house grows in value, equity piles up while the income grows only with rents, so your return on that equity falls every year. Refinancing puts the idle equity back to work. Here is what went back to work over 15 years in the base case, reinvesting.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Source</th><th class="num">Amount</th><th>What it really is</th></tr></thead>
+        <tbody>
+          <tr><td>Refinancing at renewal</td><td class="num">C$317K</td><td>Borrowed against the paydown your tenants made and the growth in value. It's debt, not income, and growth-driven equity disappears in a flat or falling market.</td></tr>
+          <tr><td>Cash flow kept and reinvested</td><td class="num">C$447K</td><td>Real earned cash, after the mortgage, operating costs and reserves.</td></tr>
+          <tr class="hl"><td>Total put back to work</td><td class="num">C$764K</td><td>About 5 times the original C$152,125, buying three more houses in years 7, 10 and 13.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3 style="margin-top:56px">Why moving a dollar can raise its return, and why not by as much as you'd think</h3>
+    <p class="intro">A refinanced dollar costs the mortgage rate and, in the next house, earns roughly what houses earn. You keep the difference. Measured against what you first put in:</p>
+    <p class="formula"><b>Return on your original cash ≈ return without moving + (amount moved ÷ original cash) × (what the next house earns − the mortgage rate)</b></p>
+    <p class="intro">Move C$50,000 out of a C$152,000 stake into a house earning 15% while borrowing at 5%, and your original cash earns about 3.3 points more a year (50 ÷ 152 × 10) for as long as that holds. In practice it holds only part of the time. Refinancing waits for renewals, every move costs closing and refinance fees, cash can sit idle until a house passes the purchase test, and when prices run ahead of rents no house does. In the model, the net effect over 15 years is about 2 points a year (16.5% vs 14.3% for holding), not the 30% figures promoted in some courses.</p>
+  </div>
+</section>
+
+<!-- INCOME VS GROWTH -->
+<section class="sec off">
+  <div class="w">
+    <p class="kick">Income now, or a bigger engine later</p>
+    <h2>Spend the cash flow, keep half, or reinvest all of it</h2>
+    <p class="intro">Once the houses pay you, you choose. Spending gives you income from year one and the wheel still turns, because refinancing alone buys the next house. Reinvesting builds a bigger portfolio that pays more later.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Cash flow</th><th class="num">Hold the one house</th><th class="num">Spinning Wheel</th><th class="num">Paid to you along the way</th><th class="num">Houses at year 15</th><th class="num">Cash flow a month, year 15</th><th class="num">Annual return (IRR)</th></tr></thead>
+        <tbody>
+          <tr><td>Spend it</td><td class="num">C$925K</td><td class="num">C$1,073K</td><td class="num">C$303K</td><td class="num">2</td><td class="num">C$2,942</td><td class="num">17.6%</td></tr>
+          <tr><td>Keep half</td><td class="num">C$973K</td><td class="num">C$1,119K</td><td class="num">C$152K</td><td class="num">2</td><td class="num">C$2,942</td><td class="num">15.9%</td></tr>
+          <tr class="hl"><td>Reinvest it</td><td class="num">C$1,136K</td><td class="num">C$1,498K</td><td class="num">C$0</td><td class="num">4</td><td class="num">C$5,418</td><td class="num">16.5%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Walk-away values at year 15, including cash already paid to you. The house starts at about C$1,026 a month of cash flow. Spending shows the highest annual return because money paid to you early counts for more in an IRR; reinvesting shows the biggest total because it waits longer.</p>
+  </div>
+</section>
+
+<!-- STRESS TESTS -->
+<section class="sec">
+  <div class="w">
+    <p class="kick">Stress tests</p>
+    <h2>In a bad market the rules protect you. How hard you push decides how much.</h2>
+    <div class="seg" role="group" aria-label="Cash flow"><button type="button" data-v="r" aria-pressed="true">Reinvesting</button><button type="button" data-v="s" aria-pressed="false">Spending</button></div>
+    <div class="tw" style="margin-top:20px">
+      <table id="sw-stress">
+        <thead><tr><th>Scenario</th><th class="num">Hold the one house</th><th class="num">Spinning Wheel<br>(75%, 5-year)</th><th class="num">Aggressive<br>(80%, 3-year)</th></tr></thead>
+        <tbody data-v="r">
+          <tr class="hl"><td>Base case<small>Values +3.5% a year, 5.0% mortgages</small></td><td class="num">C$1,136K</td><td class="num">C$1,498K</td><td class="num">C$1,623K</td></tr>
+          <tr><td>Flat values<small>No growth for 15 years</small></td><td class="num">C$814K</td><td class="num">C$868K</td><td class="num">C$944K</td></tr>
+          <tr><td>Prices outrun rents<small>Values +5.3% a year, rents +2.5%</small></td><td class="num">C$1,291K</td><td class="num">C$1,268K</td><td class="num">C$1,255K</td></tr>
+          <tr><td>Higher rates<small>5.5% mortgages throughout</small></td><td class="num">C$978K</td><td class="num">C$950K</td><td class="num">C$1,217K</td></tr>
+          <tr><td>Downturn<small>Values −5% in years 2–3, 10% vacancy for four years, costs +10%, renewals at 7%, then +2% a year</small></td><td class="num">C$588K</td><td class="num">C$632K</td><td class="num">C$586K</td></tr>
+        </tbody>
+        <tbody data-v="s" hidden>
+          <tr class="hl"><td>Base case<small>Values +3.5% a year, 5.0% mortgages</small></td><td class="num">C$925K</td><td class="num">C$1,073K</td><td class="num">C$1,108K</td></tr>
+          <tr><td>Flat values<small>No growth for 15 years</small></td><td class="num">C$556K</td><td class="num">C$538K</td><td class="num">C$528K</td></tr>
+          <tr><td>Prices outrun rents<small>Values +5.3% a year, rents +2.5%</small></td><td class="num">C$1,196K</td><td class="num">C$1,187K</td><td class="num">C$1,179K</td></tr>
+          <tr><td>Higher rates<small>5.5% mortgages throughout</small></td><td class="num">C$893K</td><td class="num">C$874K</td><td class="num">C$862K</td></tr>
+          <tr><td>Downturn<small>Values −5% in years 2–3, 10% vacancy for four years, costs +10%, renewals at 7%, then +2% a year</small></td><td class="num">C$493K</td><td class="num">C$479K</td><td class="num">C$438K</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Walk-away value at year 15, before tax, after selling costs, including cash paid to you. Starting with C$152,125 in every case.</p>
+    <ul class="pts">
+      <li><strong>A downturn stalls it; it doesn't break it</strong><span>Refinancing stops for years and purchases wait, but nobody has to add money or sell into the fall. The coverage tests and the reserves are why.</span></li>
+      <li><strong>When prices outrun rents, it stops buying</strong><span>Houses get too expensive for their rent to pass the purchase test, so refinanced money sits in the bank earning less than it costs. Holding does slightly better. That's the rule working, not failing.</span></li>
+      <li><strong>Rates matter more than growth</strong><span>At 5.5% the conservative version can't find a house that passes the test, and it finishes a little behind holding. The aggressive version's 3-year cycle happened to fit one more purchase in, which is luck of timing, not a reason to push harder.</span></li>
+      <li><strong>Pushing harder is a bet on good markets</strong><span>Refinancing to 80% every 3 years adds about C$125K in the base case, carries the most debt in every scenario, and has the weakest result in the downturn when you're spending the cash flow.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- RULES -->
+<section class="sec dark" id="sw-rules">
+  <div class="w">
+    <p class="kick">How I run it</p>
+    <h2>The rules that keep the wheel safe</h2>
+    <ul class="rules">
+      <li><strong>Leverage</strong>Buy at 80% loan-to-value. Refinance to 75% at most (80% on the aggressive version), and never past what the coverage tests allow.</li>
+      <li><strong>Purchase test</strong>Net rent covers the new mortgage 1.25 times at today's rate, or I add equity or pass.</li>
+      <li><strong>Refinance test</strong>After refinancing, net rent still covers the payment 1.35 times, and at least 1.00 times if rates rise 2 points.</li>
+      <li><strong>Timing</strong>Refinance only at a 5-year renewal, never mid-term, so there are no break penalties. Only if it frees more than the roughly C$4,000 it costs.</li>
+      <li><strong>Reserves</strong>About C$15,000 per house, growing with values, topped up before any purchase. Shortfalls come from reserves first.</li>
+      <li><strong>Stop switch</strong>Recycling stops if portfolio coverage falls below 1.25 times, five-year rates pass 7%, or local vacancy passes 8%. (An operating rule; the calculator models the coverage tests.)</li>
+      <li><strong>Appraisal cushion</strong>Lender value sets the loan. I plan refinances for a 10% lower appraisal and never count on refinance money for a deposit.</li>
+      <li><strong>Reporting</strong>Every recycled dollar is reported by source: tenants' paydown, growth in value, or cash flow.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FRICTION AND RISK -->
+<section class="sec off">
+  <div class="w">
+    <p class="kick">What slows the wheel</p>
+    <h2>Friction and risk, and what I do about each</h2>
+    <ul class="pts">
+      <li><strong>Borrowing capacity</strong><span>Banks count only part of the rent, so room shrinks as you add houses. I build the lender ladder early: bank, credit union, monoline lender, then commercial or CMHC-insured debt.</span></li>
+      <li><strong>Renewal shock</strong><span>A renewal at 7% instead of 5% can push a well-covered house below a lender's minimum. Staggered maturities and the refinance test's 2-point cushion are the defence.</span></li>
+      <li><strong>Vacancy and repairs</strong><span>Energy towns are cyclical. I stress-test at 8–10% vacancy and budget maintenance inside operating costs.</span></li>
+      <li><strong>Concentration</strong><span>Every house in one region tied to one industry is a real risk. Spreading across towns helps; it doesn't remove it.</span></li>
+      <li><strong>Selling takes time</strong><span>An index fund sells in a day. A house takes months and costs about 3.3% to sell.</span></li>
+      <li><strong>Tax</strong><span>All figures are before tax. Refinance money is borrowed, so it isn't taxed. Selling triggers capital gains and recapture of depreciation claimed, while an index fund in a TFSA grows tax-free. Get your accountant's view on structure first.</span></li>
+      <li><strong>Management</strong><span>More houses means more decisions, lender work and oversight, even with local property management.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- WHO IT SUITS -->
+<section class="sec">
+  <div class="w">
+    <p class="kick">Who it suits</p>
+    <h2>Which version fits which investor</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th>If you…</th><th>Best fit</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Have steady income, a 10-year-plus horizon, and will hold reserves</td><td><b>The Spinning Wheel</b> (75%, 5-year)</td><td>Most of the upside, and close to holding in every bad case we ran</td></tr>
+          <tr><td>Want income now, to top up or replace a salary</td><td>The Spinning Wheel, spending the cash flow</td><td>Income from year one while refinancing alone adds houses, as long as reserves stay funded</td></tr>
+          <tr><td>Want stability, or plan to retire within 5 years</td><td>Hold the one house</td><td>Debt falls to about a third of value by year 15 and the cash flow keeps rising</td></tr>
+          <tr><td>Are hands-on, with lenders lined up and time to manage refinances</td><td>The aggressive version (80%, 3-year)</td><td>More upside in good markets, the most debt, and the weakest result in a downturn</td></tr>
+          <tr><td>Want growth that's liquid and hands-off</td><td>A stock index fund, or a blend</td><td>Lower expected return, but no concentration, no management, and it can grow tax-free</td></tr>
+          <tr><td>Want 80% every 3 years whatever the coverage</td><td>I'll decline</td><td>The extra return is mostly unpriced leverage and liquidity risk</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES -->
+<section class="nx" aria-label="Where to next">
+  <div class="w">
+    <p class="kick">Where to next</p>
+    <div class="g">
+      <a href="one-house-fifteen-years.html"><em>← Before this</em><b>One House, Fifteen Years</b><small>The same C$565,000 house, year by year, with the money put in once and nothing added.</small><span>Read it →</span></a>
+      <a href="fort-st-john-investor-brief.html"><em>Next →</em><b>Fort St. John</b><small>Why this town, what the numbers look like there, and the risks of an energy market.</small><span>Read the brief →</span></a>
+      <a class="r" href="request-reports.html"><em>Take a step</em><b>Request the Spinning Wheel Report</b><small>The full 15-year model with every scenario, plus the Fort St. John report and current properties.</small><span>Ask for it →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCES -->
+<div class="w src">
+  <p><b>How the model works.</b> One C$565,000 suited house: 20% down, 2.5% closing costs, C$10,000 setup and a C$15,000 reserve (C$152,125 in total). Rent 0.9% of price a month, growing 2.5% a year; 3% vacancy; operating costs 30% of collected rent, growing 3% a year. Mortgages at a 5.0% long-term planning rate over 30 years; values growing 3.5% a year; 3.3% selling costs. Cash earns 4.5%, reserves 2.4%. New houses are bought at that year's price and must pass the purchase test. Debt rules follow the coverage tests above; lending limits per OSFI Guideline B-20. The stock index comparison grows C$152,125 at 7% a year, net of fees, with no market drops. Every figure on this page comes from the same model as the calculator and the One House, Fifteen Years page.</p>
+  <p><b>Disclosure.</b> I'm a licensed real estate advisor with Engel &amp; Völkers Vancouver. I own investment properties in northern British Columbia, and I earn a commission when clients buy or sell through me, including purchases made under this strategy. Operating assumptions come from my own suited houses over recent years.</p>
+  <p>Illustrative, not a forecast, a financing approval or tax advice. For education and discussion only; not individualized financial, legal or tax advice. Talk to your lender, accountant and lawyer before you act.</p>
+</div>
+
+</div>
+
+<script>
+(function(){
+  var f=document.getElementById('ec-calc');
+  if(f){
+    var base='https://stats.ericcoulombe.com/spinning-wheel/?embed=1';
+    if(/^#s=/.test(location.hash)){f.src=base+location.hash;f.removeAttribute('loading');}
+    window.addEventListener('message',function(e){
+      if(e.origin!=='https://stats.ericcoulombe.com')return;
+      var d=e.data; if(d&&d.type==='ec-calc-height'&&d.h>200){f.style.height=d.h+'px';f.style.minHeight='0';}
+    });
+  }
+  var seg=document.querySelectorAll('#ec-sw .seg button'), bodies=document.querySelectorAll('#sw-stress tbody');
+  for(var i=0;i<seg.length;i++){seg[i].addEventListener('click',function(){
+    var v=this.getAttribute('data-v');
+    for(var j=0;j<seg.length;j++)seg[j].setAttribute('aria-pressed',seg[j]===this?'true':'false');
+    for(var k=0;k<bodies.length;k++)bodies[k].hidden=bodies[k].getAttribute('data-v')!==v;
+  });}
+})();
+</script>
