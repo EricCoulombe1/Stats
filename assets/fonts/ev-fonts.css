@@ -1,0 +1,7 @@
+/* Engel & Völkers brand fonts — shared by stats.ericcoulombe.com and ericcoulombe.com.
+   Usage approved by Eric Coulombe's E&V brokerage (Nov 2026). Remove everywhere if he leaves E&V. */
+@font-face{font-family:"Engel Voelkers Head";src:url("EngelVoelkersHead_Rg.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Engel Voelkers Head";src:url("EngelVoelkersHead_Bd.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Engel Voelkers Text";src:url("EngelVoelkersText_Lt.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Engel Voelkers Text";src:url("EngelVoelkersText_Rg.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Engel Voelkers Text";src:url("EngelVoelkersText_Bd.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
