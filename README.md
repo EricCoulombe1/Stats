@@ -13,3 +13,7 @@ Greater Vancouver REALTORS® Stats Centre share links.
   bar and reports its height to the host page).
 
 Photos: Unsplash, see `assets/img/CREDITS.md`.
+
+Also hosted here: `spinning-wheel/index.html`, the Spinning Wheel Calculator
+(embedded on ericcoulombe.com/spinning-wheel-calculator.html with `?embed=1`;
+scenario links use `#s=appr_rate_ltv_every_reinvest_cap_years`).

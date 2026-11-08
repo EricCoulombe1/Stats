@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Spinning Wheel Calculator | Eric Coulombe</title>
+<meta name="description" content="See what one rental-property down payment can become when its equity is recycled into the next property, and what happens in a weak decade. An interactive model by Eric Coulombe, Engel &amp; Völkers Vancouver.">
+<link rel="canonical" href="https://ericcoulombe.com/spinning-wheel-calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --paper:#FAFAF8; --paper-2:#F1F1EE; --card:#FFFFFF; --ink:#1B1B1B; --ink-2:#4A4A48; --muted:#6E6E6A;
+  --rule:#DADAD5; --grid:#E6E6E1; --red:#B7202E; --blue:#2F6DB5; --tint:#F8ECEC;
+  --display:'Work Sans',Arial,sans-serif; --body:'Public Sans',Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--rule);background:var(--card)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:600;letter-spacing:.02em}
+.brand small{display:block;font-family:var(--body);font-weight:500;font-size:.78rem;color:var(--ink-2);letter-spacing:0}
+.toplink{font-size:.85rem;color:var(--ink-2)}
+.hero{padding:clamp(40px,7vw,80px) 0 clamp(24px,4vw,40px)}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+h1{font-family:var(--display);font-weight:300;font-size:clamp(2.2rem,5.4vw,4.4rem);line-height:1.04;letter-spacing:-.03em;margin:.35em 0 .3em;max-width:16ch}
+h2{font-family:var(--display);font-weight:500;font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.15;letter-spacing:-.015em;margin:0 0 .4em}
+h3{font-size:1rem;font-weight:600;margin:0 0 .3em}
+p{margin:0 0 .8em}
+.lede{font-size:clamp(1.05rem,1.4vw,1.25rem);color:var(--ink-2);max-width:62ch}
+.layout{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:start;padding-bottom:48px}
+@media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--card);border:1px solid var(--rule);padding:22px}
+.controls{position:sticky;top:16px}
+@media (max-width:900px){.controls{position:static}}
+.ctl{padding:14px 0;border-top:1px solid var(--grid)}
+.ctl:first-of-type{border-top:none;padding-top:4px}
+.ctl label,.ctl .lbl{display:flex;justify-content:space-between;align-items:baseline;font-weight:600;font-size:.92rem;margin-bottom:8px;gap:8px}
+.ctl output{font-family:var(--display);font-weight:500;font-size:1.05rem;font-variant-numeric:tabular-nums}
+.hint{font-size:.8rem;color:var(--muted);margin-top:6px;line-height:1.4}
+input[type=range]{width:100%;accent-color:var(--red);height:28px}
+.seg{display:flex;border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+.seg button{flex:1;font:inherit;font-size:.86rem;padding:8px 6px;border:0;background:var(--card);color:var(--ink-2);cursor:pointer;border-left:1px solid var(--rule);min-height:40px}
+.seg button:first-child{border-left:0}
+.seg button[aria-pressed=true]{background:var(--ink);color:#fff}
+.presets{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.presets button{font:inherit;font-size:.82rem;border:1px solid var(--ink);background:transparent;color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer;min-height:34px}
+.presets button[aria-pressed=true]{background:var(--ink);color:#fff}
+button:focus-visible,input:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.answer{border-left:4px solid var(--red);padding:2px 0 2px 20px;margin-bottom:22px}
+.answer .big{font-family:var(--display);font-weight:400;font-size:clamp(2.4rem,5.5vw,4.2rem);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.answer .sub{color:var(--ink-2);margin-top:8px;max-width:60ch}
+.compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:20px}
+@media (max-width:560px){.compare{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--card);border:1px solid var(--rule);padding:18px 20px}
+.card .key{display:flex;align-items:center;gap:8px;font-weight:600;font-size:.92rem;margin-bottom:10px}
+.sw{width:22px;height:0;border-top:3px solid;display:inline-block}
+.sw.red{border-color:var(--red)}
+.sw.blue{border-color:var(--blue);border-top-style:dashed}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px}
+.stat .v{font-family:var(--display);font-size:1.45rem;font-weight:500;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat .k{font-size:.78rem;color:var(--muted)}
+.delta{background:var(--tint);padding:12px 16px;font-size:.95rem;margin-bottom:22px}
+.chartcard{background:var(--card);border:1px solid var(--rule);padding:18px 20px 12px;margin-bottom:22px}
+.chartcard .head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.legend{display:flex;gap:16px;font-size:.84rem;color:var(--ink-2);flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.linkbtn{font:inherit;font-size:.82rem;border:1px solid var(--rule);background:var(--card);padding:5px 10px;border-radius:6px;cursor:pointer;color:var(--ink-2)}
+.chart{position:relative}
+.chart svg{width:100%;height:auto;display:block;overflow:visible}
+.tip{position:absolute;pointer-events:none;background:var(--card);border:1px solid var(--rule);box-shadow:0 4px 14px rgba(0,0,0,.08);padding:8px 10px;font-size:.8rem;line-height:1.45;min-width:170px;opacity:0;transition:opacity .1s}
+.tip b{font-weight:600}
+.tip .row{display:flex;justify-content:space-between;gap:12px}
+.tip .row span:first-child{display:inline-flex;align-items:center;gap:6px}
+.tablewrap{overflow-x:auto;margin-top:10px}
+table{border-collapse:collapse;width:100%;font-size:.86rem;font-variant-numeric:tabular-nums}
+th,td{padding:7px 10px;border-bottom:1px solid var(--grid);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font-weight:600;color:var(--ink-2);border-bottom:2px solid var(--ink);font-size:.78rem}
+.stress{border:1px solid var(--rule);background:var(--paper-2);padding:18px 20px;margin-bottom:22px}
+.stress .row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:10px 0}
+@media (max-width:560px){.stress .row2{grid-template-columns:minmax(0,1fr)}}
+.rule{border-left:4px solid var(--ink);padding:4px 0 4px 18px;margin-bottom:22px;color:var(--ink-2)}
+details{background:var(--card);border:1px solid var(--rule);padding:14px 20px;margin-bottom:14px}
+summary{cursor:pointer;font-weight:600}
+details ul{margin:10px 0 4px;padding-left:20px;color:var(--ink-2);font-size:.92rem}
+details li{margin-bottom:5px}
+.cta{background:var(--ink);color:var(--paper);padding:clamp(28px,4vw,44px);margin:28px 0}
+.cta h2{color:var(--paper)}
+.cta p{color:#CFCFC9;max-width:60ch}
+.cta .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+.cta a.btn,.cta button.btn{font:inherit;font-weight:600;font-size:.92rem;padding:11px 18px;border-radius:999px;text-decoration:none;cursor:pointer;border:1px solid var(--paper)}
+.cta a.primary{background:var(--red);border-color:var(--red);color:#fff}
+.cta .ghost{background:transparent;color:var(--paper)}
+.cta .small{font-size:.82rem;color:#BDBDB7;margin-top:12px}
+.copied{font-size:.82rem;color:#E8E8E3;margin-left:6px}
+footer{border-top:1px solid var(--rule);padding:24px 0 40px;font-size:.8rem;color:var(--muted)}
+footer p{max-width:100ch}
+.embed header.top,.embed .hero,.embed footer{display:none}
+.embed main{padding-top:24px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="brand">Eric Coulombe<small>Real Estate Advisor · Engel &amp; Völkers Vancouver</small></div>
+  <div class="toplink">Investment Properties · Enough by Design</div>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow">Interactive model</div>
+    <h1>The Spinning Wheel Calculator</h1>
+    <p class="lede">Buy a rental. Let the tenants pay down the mortgage while the value grows. Then borrow against that growth to fund the next down payment, and repeat. Move the settings to see what one down payment can become, and what happens in a decade when the wheel works against you.</p>
+  </section>
+
+  <div class="layout">
+    <aside class="panel controls" aria-label="Model settings">
+      <div class="lbl" style="font-weight:600;font-size:.92rem;margin-bottom:8px">Start from a case</div>
+      <div class="presets" role="group" aria-label="Preset cases">
+        <button data-preset="planning">Planning case</button>
+        <button data-preset="conservative">Conservative</button>
+        <button data-preset="strong">Strong decade</button>
+        <button data-preset="weak">Weak decade</button>
+      </div>
+
+      <div class="ctl">
+        <label for="appr">Property values grow <output id="apprOut"></output></label>
+        <input type="range" id="appr" min="0" max="6" step="0.5">
+        <div class="hint">Per year. Rents are assumed to move with values.</div>
+      </div>
+      <div class="ctl">
+        <label for="rate">Mortgage rate <output id="rateOut"></output></label>
+        <input type="range" id="rate" min="3" max="8" step="0.25">
+        <div class="hint">Held for the whole period, on every mortgage.</div>
+      </div>
+      <div class="ctl">
+        <div class="lbl">Refinance up to <output id="ltvOut"></output></div>
+        <div class="seg" data-key="ltv" role="group" aria-label="Refinance limit">
+          <button data-v="0.75">75%</button><button data-v="0.80">80%</button>
+        </div>
+        <div class="hint">Of each property's value. 80% is the usual bank maximum.</div>
+      </div>
+      <div class="ctl">
+        <div class="lbl">Refinance every <output id="everyOut"></output></div>
+        <div class="seg" data-key="every" role="group" aria-label="Refinance frequency">
+          <button data-v="2">2 yrs</button><button data-v="3">3 yrs</button><button data-v="5">5 yrs</button>
+        </div>
+        <div class="hint">Typically at each mortgage renewal.</div>
+      </div>
+      <div class="ctl">
+        <div class="lbl">Monthly cash flow <output id="reinvOut"></output></div>
+        <div class="seg" data-key="reinvest" role="group" aria-label="What happens to cash flow">
+          <button data-v="0">Spend it</button><button data-v="0.5">Half</button><button data-v="1">Reinvest</button>
+        </div>
+      </div>
+      <div class="ctl">
+        <div class="lbl">Property quality <output id="capOut"></output></div>
+        <div class="seg" data-key="cap" role="group" aria-label="Property quality">
+          <button data-v="0.0702">Baseline</button><button data-v="0.0778">Strong</button><button data-v="0.0861">Premium</button>
+        </div>
+        <div class="hint">Net rent after operating costs, as a share of price (the cap rate).</div>
+      </div>
+      <div class="ctl">
+        <div class="lbl">Years <output id="yearsOut"></output></div>
+        <div class="seg" data-key="years" role="group" aria-label="Time horizon">
+          <button data-v="10">10</button><button data-v="15">15</button>
+        </div>
+      </div>
+    </aside>
+
+    <section aria-live="polite">
+      <div class="answer">
+        <div class="eyebrow">Your $110,000, if sold at year <span id="yrA">15</span></div>
+        <div class="big" id="bigNum">$0</div>
+        <div class="sub" id="bigSub"></div>
+      </div>
+
+      <div class="compare">
+        <div class="card">
+          <div class="key"><span class="sw red" aria-hidden="true"></span>Spinning Wheel</div>
+          <div class="stats">
+            <div class="stat"><div class="v" id="wIrr"></div><div class="k">a year, after selling costs</div></div>
+            <div class="stat"><div class="v" id="wMult"></div><div class="k">your money back</div></div>
+            <div class="stat"><div class="v" id="wHomes"></div><div class="k">homes owned at the end</div></div>
+            <div class="stat"><div class="v" id="wCf"></div><div class="k">cash flow a month, final year</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="key"><span class="sw blue" aria-hidden="true"></span>Same rules, no refinancing</div>
+          <div class="stats">
+            <div class="stat"><div class="v" id="hIrr"></div><div class="k">a year, after selling costs</div></div>
+            <div class="stat"><div class="v" id="hMult"></div><div class="k">your money back</div></div>
+            <div class="stat"><div class="v" id="hHomes"></div><div class="k">homes owned at the end</div></div>
+            <div class="stat"><div class="v" id="hCf"></div><div class="k">cash flow a month, final year</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="delta" id="delta"></div>
+
+      <div class="chartcard">
+        <div class="head">
+          <div>
+            <h3>What you'd walk away with, year by year</h3>
+            <div class="hint" style="margin-top:0">If everything were sold that year, after 4% selling costs, plus any cash already taken out.</div>
+          </div>
+          <div class="legend">
+            <span><span class="sw red" aria-hidden="true"></span>Spinning Wheel</span>
+            <span><span class="sw blue" aria-hidden="true"></span>No refinancing</span>
+            <span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="4" fill="#B7202E" stroke="#fff" stroke-width="2"/></svg>A purchase</span>
+          </div>
+        </div>
+        <div class="chart" id="chart"><div class="tip" id="tip" role="status"></div></div>
+        <button class="linkbtn" id="tblBtn" aria-expanded="false">Show the numbers as a table</button>
+        <div class="tablewrap" id="tblWrap" hidden></div>
+      </div>
+
+      <div class="stress">
+        <h3>Stress check: the same settings in a weak decade</h3>
+        <div class="hint" style="margin-top:0" id="stressLbl"></div>
+        <div class="row2">
+          <div><span class="sw red" aria-hidden="true"></span> <b>Spinning Wheel:</b> <span id="sW"></span></div>
+          <div><span class="sw blue" aria-hidden="true"></span> <b>No refinancing:</b> <span id="sH"></span></div>
+        </div>
+        <p style="margin:0;font-size:.92rem;color:var(--ink-2)" id="stressNote"></p>
+      </div>
+
+      <div class="rule"><b>The rule of thumb.</b> Each turn of the wheel adds roughly <i>(amount moved ÷ your original cash) × (what the next property earns − what the borrowed money costs)</i>. When the properties earn more than the mortgage rate, every turn adds. When they earn less, every turn subtracts. Recycling equity doesn't change what a property earns. It changes how much property each original dollar controls.</div>
+
+      <details>
+        <summary>How this model works</summary>
+        <ul>
+          <li><b>Starting point:</b> one $110,000 contribution, never topped up. That's 20% down on a $500,000 suited home or duplex, plus about 2% in closing costs.</li>
+          <li><b>Every mortgage:</b> 80% of the price, 30-year amortization, at the rate you set, held constant through renewals.</li>
+          <li><b>Rent:</b> net operating income starts at the cap rate you choose (Baseline 7.0%) and grows with property values. Strong and Premium represent newer, top-of-range rentals.</li>
+          <li><b>Refinancing:</b> on the schedule you set, each property is refinanced up to your limit. Each refinance costs $2,000, starts a fresh 30-year amortization, and is skipped if it would free up less than $5,000.</li>
+          <li><b>Safety rule:</b> no refinance or purchase may push a property's rent below 1.25 times its mortgage payment. At higher rates this limits how much you can borrow, so you need a bigger down payment.</li>
+          <li><b>Buying:</b> once the cash pool covers 20% down plus closing costs on a home at that year's price, the model buys it. No purchase in the final year.</li>
+          <li><b>No refinancing comparison:</b> identical rules, but equity is never borrowed against. Reinvested cash flow can still buy homes.</li>
+          <li><b>Selling:</b> all results assume everything is sold in the final year at 4% selling costs.</li>
+          <li><b>Not included:</b> income tax, capital gains tax, vacancies beyond normal, major repairs, rate changes at renewal, mortgage penalties, and whether a lender will approve each loan. All figures are nominal and pre-tax.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>What could go wrong</summary>
+        <ul>
+          <li><b>Rates rise at renewal.</b> Payments climb on every mortgage at once. The model holds your rate constant, so test a higher one.</li>
+          <li><b>Values stall or fall.</b> The refinance capacity disappears for years, and purchases get pushed back. A falling market delays the wheel; being forced to sell is what breaks it.</li>
+          <li><b>Lenders tighten.</b> Qualifying for more mortgages gets harder as a portfolio grows, whatever the numbers say.</li>
+          <li><b>More debt, thinner margins.</b> Each refinance leaves the original property carrying more debt. Keep reserves outside this model.</li>
+        </ul>
+      </details>
+
+      <div class="cta">
+        <h2>Want the full Spinning Wheel Report?</h2>
+        <p>It walks through 15 years of this strategy property by property, with stress tests and examples from my own portfolio. I'll send it to you, and I'm happy to talk through how the settings fit your situation.</p>
+        <div class="btns">
+          <a class="btn primary" id="mailBtn" href="mailto:eric@ericcoulombe.com">Email me for the report</a>
+          <button class="btn ghost" id="copyBtn">Copy a link to this scenario</button><span class="copied" id="copied" role="status"></span>
+        </div>
+        <p class="small">eric@ericcoulombe.com · 604-764-8620</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer><div class="wrap">
+  <p><b>Illustrative model, not a forecast.</b> Results come from the assumptions shown, which may not hold. Real outcomes depend on the property, the market, lender approval and your own circumstances. This is general information, not personalized financial, tax or legal advice. Consult qualified advisors before investing.</p>
+  <p>Eric Coulombe is a licensed real estate advisor with Engel &amp; Völkers Vancouver and owns investment properties in northern British Columbia.</p>
+</div></footer>
+
+<script>
+// Spinning Wheel engine. Annual steps, monthly amortization within each year.
+function swPmt(loan, r, years) {
+  const m = r / 12, n = years * 12;
+  return m ? loan * m / (1 - Math.pow(1 + m, -n)) : loan / n;
+}
+function swMaxLoan(noi, r, dscr, years) {
+  const pay = noi / dscr / 12, m = r / 12, n = years * 12;
+  return pay * (1 - Math.pow(1 + m, -n)) / m;
+}
+function swIrr(flows) {
+  const npv = r => flows.reduce((s, f, i) => s + f / Math.pow(1 + r, i), 0);
+  let lo = -0.99, hi = 1.5;
+  if (npv(lo) * npv(hi) > 0) return NaN;
+  for (let k = 0; k < 200; k++) {
+    const mid = (lo + hi) / 2;
+    if (npv(lo) * npv(mid) <= 0) hi = mid; else lo = mid;
+  }
+  return (lo + hi) / 2;
+}
+function swRun(o) {
+  const p = Object.assign({
+    appr: 0.025, rate: 0.05, ltv: 0.80, every: 3, reinvest: 1, cap: 0.0702, years: 15,
+    price0: 500000, down: 0.20, closing: 0.02, sell: 0.04, refiCost: 2000, minPull: 5000,
+    dscr: 1.25, amort: 30, wheel: true
+  }, o || {});
+  const props = [];
+  const start = p.price0 * (p.down + p.closing);
+  let pool = start;
+  const buy = (t, first) => {
+    const price = p.price0 * Math.pow(1 + p.appr, t);
+    const noi = p.cap * price;
+    const loan = first ? price * (1 - p.down)
+      : Math.min(price * (1 - p.down), swMaxLoan(noi, p.rate, p.dscr, p.amort));
+    const cash = price - loan + p.closing * price;
+    if (cash > pool + 1e-6) return false;
+    props.push({ val: price, loan, pay: swPmt(loan, p.rate, p.amort), age: 0, bought: t });
+    pool -= cash;
+    return true;
+  };
+  buy(0, true);
+  const flows = [-start];
+  const years = [];
+  let takenOut = 0, cfLast = 0, refis = 0, pulled = 0;
+  years.push({ t: 0, homes: 1, walkAway: props[0].val * (1 - p.sell) - props[0].loan + pool, buys: 1, cf: 0, debt: props[0].loan, value: props[0].val });
+  for (let t = 1; t <= p.years; t++) {
+    let cf = 0;
+    const m = p.rate / 12;
+    for (const q of props) {
+      const noi = p.cap * q.val;
+      let bal = q.loan;
+      for (let k = 0; k < 12; k++) bal = bal * (1 + m) - q.pay;
+      cf += noi - 12 * q.pay;
+      q.loan = Math.max(bal, 0);
+    }
+    cfLast = cf;
+    let dist = cf > 0 ? cf * (1 - p.reinvest) : 0;
+    pool += cf - dist;
+    if (pool < 0) { dist += pool; pool = 0; }
+    for (const q of props) { q.val *= 1 + p.appr; q.age += 1; }
+    if (p.wheel && t < p.years) {
+      for (const q of props) {
+        if (q.age % p.every === 0) {
+          const noi = p.cap * q.val;
+          const target = Math.min(p.ltv * q.val, swMaxLoan(noi, p.rate, p.dscr, p.amort));
+          if (target - q.loan > p.minPull) {
+            pool += target - q.loan - p.refiCost;
+            pulled += target - q.loan; refis++;
+            q.loan = target; q.pay = swPmt(target, p.rate, p.amort);
+          }
+        }
+      }
+    }
+    let nb = 0;
+    if (t < p.years) { while (buy(t, false)) nb++; }
+    takenOut += dist;
+    const equity = props.reduce((s, q) => s + q.val * (1 - p.sell) - q.loan, 0);
+    years.push({
+      t, homes: props.length, buys: nb, cf,
+      walkAway: equity + pool + takenOut,
+      value: props.reduce((s, q) => s + q.val, 0),
+      debt: props.reduce((s, q) => s + q.loan, 0)
+    });
+    flows.push(t === p.years ? dist + equity + pool : dist);
+  }
+  const total = flows.slice(1).reduce((a, b) => a + b, 0);
+  return {
+    irr: swIrr(flows), multiple: total / start, endValue: total, start,
+    homes: props.length, monthlyCf: cfLast / 12, takenOut, refis, pulled,
+    buys: props.map(q => q.bought), years
+  };
+}
+
+
+(function(){
+  const S = {appr:0.025, rate:0.05, ltv:0.80, every:3, reinvest:1, cap:0.0702, years:15};
+  const PRESETS = {
+    planning:{appr:0.025, rate:0.05, ltv:0.80, every:3, reinvest:1, cap:0.0702},
+    conservative:{appr:0.015, rate:0.055, ltv:0.75, every:3, reinvest:1, cap:0.0702},
+    strong:{appr:0.045, rate:0.05, ltv:0.80, every:3, reinvest:1, cap:0.0702},
+    weak:{appr:0.0, rate:0.065, ltv:0.80, every:3, reinvest:1, cap:0.0702}
+  };
+  const $ = id => document.getElementById(id);
+  const money = v => { const a=Math.abs(v); const s=v<0?'−':'';
+    if (a>=1e6) return s+'$'+(a/1e6).toFixed(a>=1e7?1:2)+'M';
+    if (a>=1e4) return s+'$'+Math.round(a/1000)+'K';
+    return s+'$'+Math.round(a).toLocaleString('en-CA'); };
+  const full = v => (v<0?'−':'')+'$'+Math.round(Math.abs(v)).toLocaleString('en-CA');
+  const pct = (v,d=1) => isFinite(v) ? (v*100).toFixed(d)+'%' : 'n/a';
+  const capName = {0.0702:'Baseline', 0.0778:'Strong', 0.0861:'Premium'};
+  const reinvName = {0:'Spend it', 0.5:'Half', 1:'Reinvest'};
+
+  function syncControls(){
+    $('appr').value = S.appr*100; $('rate').value = S.rate*100;
+    $('apprOut').textContent = (S.appr*100).toFixed(1)+'%';
+    $('rateOut').textContent = (S.rate*100).toFixed(2)+'%';
+    $('ltvOut').textContent = Math.round(S.ltv*100)+'%';
+    $('everyOut').textContent = S.every+' years';
+    $('reinvOut').textContent = reinvName[S.reinvest];
+    $('capOut').textContent = (S.cap*100).toFixed(1)+'%';
+    $('yearsOut').textContent = S.years;
+    document.querySelectorAll('.seg').forEach(g => {
+      const k = g.dataset.key;
+      g.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(Math.abs(parseFloat(b.dataset.v)-S[k])<1e-9)));
+    });
+    document.querySelectorAll('.presets button').forEach(b => {
+      const p = PRESETS[b.dataset.preset];
+      const on = Object.keys(p).every(k => Math.abs(p[k]-S[k])<1e-9);
+      b.setAttribute('aria-pressed', String(on));
+    });
+  }
+
+  function drawChart(w, h){
+    const box = $('chart');
+    const W = Math.max(320, box.clientWidth || 640), H = W < 520 ? 240 : 300;
+    const m = {l:56, r:60, t:14, b:30};
+    const N = S.years;
+    const maxV = Math.max(...w.years.map(y=>y.walkAway), ...h.years.map(y=>y.walkAway));
+    const step = niceStep(maxV/4);
+    const top = Math.ceil(maxV/step)*step || step;
+    const x = t => m.l + (W-m.l-m.r)*t/N;
+    const y = v => m.t + (H-m.t-m.b)*(1 - v/top);
+    let g = '';
+    for (let v=0; v<=top+1; v+=step){
+      g += `<line x1="${m.l}" x2="${W-m.r}" y1="${y(v)}" y2="${y(v)}" stroke="#E6E6E1" stroke-width="1"/>`;
+      g += `<text x="${m.l-8}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="#6E6E6A">${money(v)}</text>`;
+    }
+    const tickEvery = N > 10 ? 3 : 2;
+    for (let t=0; t<=N; t++) if (t%tickEvery===0 || t===N)
+      g += `<text x="${x(t)}" y="${H-8}" text-anchor="middle" font-size="11" fill="#6E6E6A">${t===0?'Start':'Yr '+t}</text>`;
+    const path = arr => arr.map((p,i)=>`${i?'L':'M'}${x(p.t).toFixed(1)},${y(p.walkAway).toFixed(1)}`).join('');
+    g += `<path d="${path(h.years)}" fill="none" stroke="#2F6DB5" stroke-width="2" stroke-dasharray="6 4" stroke-linejoin="round" stroke-linecap="round"/>`;
+    g += `<path d="${path(w.years)}" fill="none" stroke="#B7202E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+    w.years.forEach(p => { if (p.t>0 && p.buys>0)
+      g += `<circle cx="${x(p.t)}" cy="${y(p.walkAway)}" r="4.5" fill="#B7202E" stroke="#fff" stroke-width="2"/>`; });
+    const lw = w.years[N], lh = h.years[N];
+        let ya = y(lw.walkAway)+4, yb = y(lh.walkAway)+4;
+    if (Math.abs(ya-yb) < 14) { if (ya <= yb) { ya -= 7; yb += 7; } else { ya += 7; yb -= 7; } }
+    g += `<text x="${x(N)+8}" y="${ya}" font-size="12" font-weight="600" fill="#1B1B1B">${money(lw.walkAway)}</text>`;
+    g += `<text x="${x(N)+8}" y="${yb}" font-size="12" fill="#4A4A48">${money(lh.walkAway)}</text>`;
+    
+    g += `<line id="xh" x1="0" x2="0" y1="${m.t}" y2="${H-m.b}" stroke="#4A4A48" stroke-width="1" opacity="0"/>`;
+    g += `<rect id="hit" x="${m.l}" y="${m.t}" width="${W-m.l-m.r}" height="${H-m.t-m.b}" fill="transparent"/>`;
+    const svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Line chart of what you would walk away with each year: Spinning Wheel ending at ${full(lw.walkAway)}, no refinancing ending at ${full(lh.walkAway)}.">${g}</svg>`;
+    box.querySelectorAll('svg').forEach(s=>s.remove());
+    box.insertAdjacentHTML('afterbegin', svg);
+    const tip = $('tip'), hit = box.querySelector('#hit'), xh = box.querySelector('#xh');
+    const show = ev => {
+      const r = box.querySelector('svg').getBoundingClientRect();
+      const px = (ev.clientX - r.left) * (W / r.width);
+      const t = Math.max(0, Math.min(N, Math.round((px - m.l) / (W-m.l-m.r) * N)));
+      const a = w.years[t], b = h.years[t];
+      xh.setAttribute('x1', x(t)); xh.setAttribute('x2', x(t)); xh.setAttribute('opacity','0.5');
+      tip.innerHTML = `<b>${t===0?'Start':'Year '+t}</b>`+
+        `<div class="row"><span><span class="sw red"></span>Wheel</span><span>${full(a.walkAway)}</span></div>`+
+        `<div class="row"><span><span class="sw blue"></span>No refinancing</span><span>${full(b.walkAway)}</span></div>`+
+        `<div class="row" style="color:#6E6E6A"><span>Homes</span><span>${a.homes} vs ${b.homes}</span></div>`+
+        (a.buys>0 && t>0 ? `<div style="color:#6E6E6A">Wheel buys ${a.buys} home${a.buys>1?'s':''} this year</div>` : '');
+      const left = x(t) / W * r.width;
+      tip.style.left = Math.min(Math.max(0, left + 12), r.width - 190) + 'px';
+      tip.style.top = '8px'; tip.style.opacity = '1';
+    };
+    hit.addEventListener('pointermove', show);
+    hit.addEventListener('pointerdown', show);
+    hit.addEventListener('pointerleave', () => { tip.style.opacity='0'; xh.setAttribute('opacity','0'); });
+  }
+  function niceStep(raw){
+    const p = Math.pow(10, Math.floor(Math.log10(raw||1))); const n = raw/p;
+    return (n<=1?1:n<=2?2:n<=2.5?2.5:n<=5?5:10)*p;
+  }
+  function table(w, h){
+    let rows = '';
+    for (let t=0; t<=S.years; t++){
+      const a=w.years[t], b=h.years[t];
+      rows += `<tr><td>${t===0?'Start':t}</td><td>${a.homes}</td><td>${full(a.cf/12)}</td><td>${full(a.walkAway)}</td><td>${b.homes}</td><td>${full(b.cf/12)}</td><td>${full(b.walkAway)}</td></tr>`;
+    }
+    $('tblWrap').innerHTML = `<table><thead><tr><th>Year</th><th>Wheel homes</th><th>Wheel cash flow / mo</th><th>Wheel walk-away</th><th>No-refi homes</th><th>No-refi cash flow / mo</th><th>No-refi walk-away</th></tr></thead><tbody>${rows}</tbody></table>`;
+  }
+
+  const PAGE = 'https://ericcoulombe.com/spinning-wheel-calculator.html';
+  const KEYS = ['appr','rate','ltv','every','reinvest','cap','years'];
+  const enc = () => 's=' + KEYS.map(k => +S[k].toFixed(4)).join('_');
+  function readHash(h){
+    const m = /s=([\d._]+)/.exec(h || ''); if (!m) return;
+    const v = m[1].split('_').map(Number);
+    const ok = {appr:[0,0.06], rate:[0.03,0.08], ltv:[0.75,0.80], every:[2,5], reinvest:[0,1], cap:[0.07,0.087], years:[10,15]};
+    KEYS.forEach((k,i) => { const x = v[i]; if (isFinite(x) && x >= ok[k][0]-1e-9 && x <= ok[k][1]+1e-9) S[k] = x; });
+  }
+  readHash(location.hash);
+  const EMBED = new URLSearchParams(location.search).has('embed') && window.parent !== window;
+  const shareUrl = () => PAGE + '#' + enc();
+  let last = null;
+  function render(){
+    syncControls();
+    const w = swRun(S), h = swRun(Object.assign({}, S, {wheel:false}));
+    last = {w, h};
+    $('yrA').textContent = S.years;
+    $('bigNum').textContent = full(w.endValue);
+    $('bigSub').textContent = `That's ${w.multiple.toFixed(1)}× your money, or ${pct(w.irr)} a year, from one $110,000 down payment and no new contributions. Without refinancing, the same $110,000 becomes ${full(h.endValue)}.`;
+    $('wIrr').textContent = pct(w.irr); $('wMult').textContent = w.multiple.toFixed(1)+'×';
+    $('wHomes').textContent = w.homes; $('wCf').textContent = full(w.monthlyCf);
+    $('hIrr').textContent = pct(h.irr); $('hMult').textContent = h.multiple.toFixed(1)+'×';
+    $('hHomes').textContent = h.homes; $('hCf').textContent = full(h.monthlyCf);
+    const dv = w.endValue - h.endValue, dp = (w.irr - h.irr)*100;
+    $('delta').innerHTML = dv >= 0
+      ? `<b>The wheel added ${full(dv)}</b> and ${dp.toFixed(1)} points a year in this scenario, by putting the same money to work in ${w.homes} homes instead of ${h.homes}.`
+      : `<b>In this scenario the wheel cost you ${full(-dv)}</b> (${Math.abs(dp).toFixed(1)} points a year). Borrowing costs more than the properties earn, so each refinance subtracts.`;
+    drawChart(w, h);
+    if (!$('tblWrap').hidden) table(w, h);
+    // stress: same settings, zero growth and rate +1.5
+    const sr = Math.min(0.08, S.rate + 0.015);
+    const sw = swRun(Object.assign({}, S, {appr:0, rate:sr})), sh = swRun(Object.assign({}, S, {appr:0, rate:sr, wheel:false}));
+    $('stressLbl').textContent = `Values flat for ${S.years} years and a ${(sr*100).toFixed(2)}% mortgage rate, everything else as set.`;
+    $('sW').textContent = `${full(sw.endValue)} · ${pct(sw.irr)} a year · ${sw.homes} home${sw.homes>1?'s':''}`;
+    $('sH').textContent = `${full(sh.endValue)} · ${pct(sh.irr)} a year · ${sh.homes} home${sh.homes>1?'s':''}`;
+    $('stressNote').textContent = sw.irr >= sh.irr
+      ? 'Even here the wheel holds its own, because the safety rule stops it borrowing when rent no longer covers the payments comfortably.'
+      : 'Here the wheel does worse than holding. Borrowed money costs more than it earns, which is exactly why every refinance has to pass a coverage test.';
+    if (!EMBED) { try { history.replaceState(null, '', '#' + enc()); } catch (e) {} }
+    postHeight();
+    const summary = scenarioText(w, h) + '\n' + shareUrl();
+    $('mailBtn').href = 'mailto:eric@ericcoulombe.com?subject=' + encodeURIComponent('Spinning Wheel Report request') + '&body=' + encodeURIComponent('Hi Eric,\n\nI tried the Spinning Wheel Calculator and would like the full report.\n\n' + summary + '\n\nName:\nPhone (optional):\n');
+  }
+  function scenarioText(w, h){
+    return `My scenario: values grow ${(S.appr*100).toFixed(1)}%/yr, mortgage ${(S.rate*100).toFixed(2)}%, refinance to ${Math.round(S.ltv*100)}% every ${S.every} years, cash flow: ${reinvName[S.reinvest]}, quality: ${capName[S.cap]}, ${S.years} years.\n`+
+      `Spinning Wheel: ${full(w.endValue)} (${pct(w.irr)}/yr, ${w.homes} homes). No refinancing: ${full(h.endValue)} (${pct(h.irr)}/yr, ${h.homes} homes).`;
+  }
+
+  $('appr').addEventListener('input', e => { S.appr = parseFloat(e.target.value)/100; render(); });
+  $('rate').addEventListener('input', e => { S.rate = parseFloat(e.target.value)/100; render(); });
+  document.querySelectorAll('.seg').forEach(g => g.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    S[g.dataset.key] = parseFloat(b.dataset.v); render();
+  }));
+  document.querySelectorAll('.presets button').forEach(b => b.addEventListener('click', () => {
+    Object.assign(S, PRESETS[b.dataset.preset]); render();
+  }));
+  $('tblBtn').addEventListener('click', () => {
+    const w = $('tblWrap'); w.hidden = !w.hidden;
+    $('tblBtn').setAttribute('aria-expanded', String(!w.hidden));
+    $('tblBtn').textContent = w.hidden ? 'Show the numbers as a table' : 'Hide the table';
+    if (!w.hidden && last) table(last.w, last.h);
+  });
+  $('copyBtn').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(shareUrl()); $('copied').textContent = 'Link copied. Anyone who opens it sees these settings.'; }
+    catch (e) { $('copied').textContent = shareUrl(); }
+    setTimeout(() => $('copied').textContent = '', 6000);
+  });
+  let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => last && drawChart(last.w, last.h), 120); });
+  window.addEventListener('hashchange', () => { readHash(location.hash); render(); });
+  render();
+})();
+/* Embedded on ericcoulombe.com: report height to the host page so its frame never scrolls. */
+var lastH = 0;
+function postHeight(){
+  if (!new URLSearchParams(location.search).has('embed') || window.parent === window) return;
+  requestAnimationFrame(function(){ var h = Math.ceil(document.documentElement.scrollHeight); if (!(Math.abs(h - lastH) <= 2)) { lastH = h; window.parent.postMessage({type:'ec-calc-height', h:h}, '*'); } });
+}
+if (new URLSearchParams(location.search).has('embed')) {
+  document.documentElement.classList.add('embed');
+  document.addEventListener('click', function(e){ var a = e.target.closest('a[href]'); if (a && !a.target && !/^mailto:|^tel:/.test(a.getAttribute('href'))) a.target = '_top'; });
+  new ResizeObserver(postHeight).observe(document.body);
+  document.addEventListener('toggle', postHeight, true);
+}
+</script>
+</body>
+</html>
