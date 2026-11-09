@@ -1,0 +1,162 @@
+<style>
+#ec-pf .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:32px;border-top:2px solid var(--ink)}
+#ec-pf .facts div{padding:14px 16px 16px 0;border-bottom:1px solid var(--line)}
+#ec-pf .facts dt{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+#ec-pf .facts dd{margin:4px 0 0;font-size:17px;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+#ec-pf .facts dd small{display:block;font-size:13px;font-weight:400;color:var(--muted)}
+#ec-pf .two{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;margin-top:40px;align-items:start}
+#ec-pf table.cf td:last-child,#ec-pf table.cf th:last-child{text-align:right}
+#ec-pf table.cf tr.sub td{color:var(--ink);font-weight:600;border-top:2px solid var(--ink)}
+#ec-pf table.cf tr.tot td{background:#fff;color:var(--ink);font-weight:700;font-size:16px}
+#ec-pf .sec.off table.cf tr.tot td{background:#fff}
+#ec-pf .story p+p{margin-top:14px}
+#ec-pf .story p{font-size:17px}
+#ec-pf .tiles{display:grid;gap:16px}
+#ec-pf .tile{background:var(--off);border-top:3px solid var(--red);padding:20px 22px}
+#ec-pf .tile.ink{border-top-color:var(--ink)}
+#ec-pf .tile span{display:block;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+#ec-pf .tile b{display:block;font-family:'Inter Tight','Inter',sans-serif;font-size:40px;line-height:1.1;color:var(--ink);font-weight:600;margin-top:6px;font-variant-numeric:tabular-nums}
+#ec-pf .tile small{display:block;font-size:14px;color:var(--muted);margin-top:6px;line-height:1.45}
+@media (max-width:900px){#ec-pf .facts{grid-template-columns:repeat(2,1fr)}#ec-pf .two{grid-template-columns:1fr;gap:28px}}
+</style>
+
+<div id="ec-pf">
+
+<!-- HERO -->
+<div class="w">
+  <div class="hero">
+    <div>
+      <p class="crumb">Investing › <b>Our portfolio</b> · November 2026 · 6-minute read · New to this? <a href="investing.html">Start here</a></p>
+      <p class="kick">Our own rentals</p>
+      <h1>Our portfolio, by the numbers</h1>
+      <p class="lede">My wife and I own rental properties in the same northern BC towns I recommend to clients. Here are two of them with the real figures: rent, costs, mortgage, cash flow and today's assessed value, including the months that didn't go to plan.</p>
+      <div class="plain">
+        <strong>In plain English</strong>
+        <p>Both properties pay us every month after every cost and the mortgage. Neither looks like a windfall on assessed value right now. Both are doing the job they were bought for: steady, positive cash flow that doesn't depend on prices rising.</p>
+      </div>
+    </div>
+    <div class="tiles" role="list" aria-label="Monthly cash flow after all costs and the mortgage">
+      <div class="tile" role="listitem"><span>Kitimat townhouse</span><b>+C$887</b><small>a month after all costs and the mortgage, 2026</small></div>
+      <div class="tile ink" role="listitem"><span>Fort St. John house with suite</span><b>+C$690</b><small>a month on average in 2026, after a vacant month and two re-rentals</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- KITIMAT -->
+<section class="sec off" id="pf-kitimat">
+  <div class="w">
+    <p class="kick">Property 1 · Kitimat</p>
+    <h2>104-110 Baxter Avenue, Kitimat</h2>
+    <dl class="facts">
+      <div><dt>Type</dt><dd>Strata townhouse<small>2 bedrooms, about 1,050 sq ft</small></dd></div>
+      <div><dt>Built</dt><dd>2014</dd></div>
+      <div><dt>Bought</dt><dd>June 2020<small>C$294,000</small></dd></div>
+      <div><dt>Assessed value</dt><dd>C$324,000<small>BC Assessment 2026 (as of July 2025)</small></dd></div>
+      <div><dt>Refinanced</dt><dd>At a C$350,000 appraisal<small>after values rose post-COVID</small></dd></div>
+      <div><dt>Equity taken out</dt><dd>About C$50,000<small>put toward our next purchase</small></dd></div>
+      <div><dt>Mortgage today</dt><dd>C$256,700<small>September 2026 balance</small></dd></div>
+      <div><dt>Rent</dt><dd>C$2,981 a month<small>collected every month in 2026</small></dd></div>
+    </dl>
+    <div class="two">
+      <div class="tw" style="margin-top:0">
+        <table class="cf" style="min-width:0">
+          <thead><tr><th>A typical month, 2026</th><th>C$</th></tr></thead>
+          <tbody>
+            <tr><td>Rent</td><td>2,981</td></tr>
+            <tr><td>Property management</td><td>−313</td></tr>
+            <tr><td>Strata fees (about)</td><td>−220</td></tr>
+            <tr><td>Property tax</td><td>−196</td></tr>
+            <tr><td>Insurance (about)</td><td>−75</td></tr>
+            <tr><td>Repairs (last full year's actual)</td><td>−45</td></tr>
+            <tr class="sub"><td>Net operating income</td><td>2,132</td></tr>
+            <tr><td>Mortgage payment</td><td>−1,245</td></tr>
+            <tr class="tot"><td>Cash flow to us</td><td>+887</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="story">
+        <p>A small, simple complex in a quiet part of town backing onto Crown land: no elevators, parkade or shared boiler to go wrong. Kitimat's rents are driven by the aluminum smelter and the LNG Canada build.</p>
+        <p>This is the wheel in practice. After a post-COVID jump in values we refinanced and put about C$50,000 of equity to work on our next purchase. The bigger mortgage didn't break it: it still pays us close to C$900 a month.</p>
+        <p>The assessed value today is below that refinance appraisal. We show it anyway. We hold this one for income, and the income has held.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORT ST JOHN -->
+<section class="sec" id="pf-fsj">
+  <div class="w">
+    <p class="kick">Property 2 · Fort St. John</p>
+    <h2>8419 81 Street, Fort St. John</h2>
+    <dl class="facts">
+      <div><dt>Type</dt><dd>House with a suite<small>3-bedroom main home over a 2-bedroom suite, double garage</small></dd></div>
+      <div><dt>Built</dt><dd>Nearly new<small>when we bought it</small></dd></div>
+      <div><dt>Bought</dt><dd>January 2024<small>C$640,000</small></dd></div>
+      <div><dt>Assessed value</dt><dd>C$578,200<small>BC Assessment 2026 (as of July 2025)</small></dd></div>
+      <div><dt>Cash in</dt><dd>About C$139,500<small>20% down plus transfer tax and legal</small></dd></div>
+      <div><dt>Mortgage</dt><dd>C$512,000, 30 years<small>at 3.99% (shown simplified, see note)</small></dd></div>
+      <div><dt>Rent</dt><dd>C$6,000 a month<small>both units, since May 2026</small></dd></div>
+      <div><dt>Managed by</dt><dd>A local property manager<small>furnished where it pays</small></dd></div>
+    </dl>
+    <div class="two">
+      <div class="tw" style="margin-top:0">
+        <table class="cf" style="min-width:0">
+          <thead><tr><th>Average month, Jan 1 to Oct 22, 2026</th><th>C$</th></tr></thead>
+          <tbody>
+            <tr><td>Rent and utility recoveries collected</td><td>5,452</td></tr>
+            <tr><td>Property management</td><td>−545</td></tr>
+            <tr><td>Utilities and internet</td><td>−421</td></tr>
+            <tr><td>Re-renting fees (two placements)</td><td>−309</td></tr>
+            <tr><td>Cleaning, repairs and supplies</td><td>−308</td></tr>
+            <tr><td>Bank fees, GST and deposit interest</td><td>−79</td></tr>
+            <tr><td>Property tax</td><td>−467</td></tr>
+            <tr><td>Insurance</td><td>−199</td></tr>
+            <tr class="sub"><td>Net operating income</td><td>3,124</td></tr>
+            <tr><td>Mortgage payment</td><td>−2,432</td></tr>
+            <tr class="tot"><td>Cash flow to us</td><td>+692</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="story">
+        <p>The kind of property I look for: a newer house with a self-contained suite, so two rents share one roof, one lot and one mortgage. Separate meters and heating, extra soundproofing between floors.</p>
+        <p>2026 has been a real-world year. One month sat almost empty between tenants, and finding new ones cost C$3,000 in placement fees. Rent collected so far averages C$5,452 a month against a full C$6,000. It still paid us about C$690 a month after everything, and fully rented months have netted C$1,400 to C$1,900.</p>
+        <p>At a 5% mortgage rate, the cash flow so far would be about C$390 a month: thinner, still positive. The assessed value is about 10% below what we paid. The house wasn't bought to be sold soon, and the coverage tests I use are built for exactly this.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT THEY SHOW -->
+<section class="sec off">
+  <div class="w">
+    <p class="kick">What these two show</p>
+    <h2>Cash flow first, because prices don't move on schedule</h2>
+    <div class="eg g3">
+      <div class="card red"><span class="n">Refinancing</span><h3>The bigger mortgage didn't break it</h3><p>Kitimat gave back about C$50,000 of equity for the next purchase and still clears close to C$900 a month. That's what the refinance tests are for.</p></div>
+      <div class="card"><span class="n">Turnover</span><h3>Vacancy and re-renting are real costs</h3><p>A slow month, lower rents between tenants and two placements have cost Fort St. John about C$8,700 so far this year. Budget for it, and keep reserves for it.</p></div>
+      <div class="card"><span class="n">Values</span><h3>Prices move both ways</h3><p>Both assessments sit below an earlier mark. Neither changes the monthly income, which is why I buy for cash flow and treat appreciation as a bonus.</p></div>
+    </div>
+    <p class="note">See the rules I use for buying and refinancing on <a href="spinning-wheel.html#sw-rules" style="color:var(--red)">The Spinning Wheel</a> page.</p>
+  </div>
+</section>
+
+<!-- SERIES -->
+<section class="nx" aria-label="Where to next">
+  <div class="w">
+    <p class="kick">Where to next</p>
+    <div class="g">
+      <a href="spinning-wheel.html"><em>← The strategy</em><b>The Spinning Wheel</b><small>Buy, hold, refinance, redeploy: what it adds over 15 years, the stress tests, and a calculator.</small><span>Read it →</span></a>
+      <a href="investmentproperties.html"><em>Next →</em><b>Current opportunities</b><small>Properties on the market now that pass my tests, with my estimates.</small><span>See what's available →</span></a>
+      <a class="r" href="request-reports.html"><em>Take a step</em><b>Request the full reports</b><small>The Spinning Wheel Report, the Fort St. John report, and full numbers on current properties.</small><span>Ask for them →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCES -->
+<div class="w src">
+  <p><b>Where the numbers come from.</b> Rents and operating costs from our property managers' 2026 statements (Kitimat to October 8; Fort St. John January 1 to October 22, cash basis). Property taxes from the 2026 tax notices. Fort St. John insurance from the current policy. Kitimat strata fees and insurance are close estimates; repairs are the last full year's actual. Purchase prices and assessed values from BC Assessment records (2026 roll, valued July 1, 2025). Mortgage balance and payment for Kitimat from the September 2026 statement. All figures before income tax.</p>
+  <p><b>Financing note.</b> To keep the Fort St. John example simple and comparable, it is shown as a standard purchase with 20% down and a 30-year mortgage at 3.99%, our current rate on that property. Our actual financing history on it differs.</p>
+  <p><b>Disclosure.</b> I'm a licensed real estate advisor with Engel &amp; Völkers Vancouver. These are properties my wife and I own; they are not for sale and this page is not an offer. I earn a commission when clients buy or sell through me. Past results on two properties don't predict future results on any property. For education and discussion only; not financial, legal or tax advice.</p>
+</div>
+
+</div>
