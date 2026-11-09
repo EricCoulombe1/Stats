@@ -6,3 +6,5 @@ these photos from https://stats.ericcoulombe.com/listings/<listing>/img/.
 Fonts come from /assets/fonts (shared E&V brand fonts).
 
 Don't rename or delete a listing's folder while its page is live (including the Sold stage).
+
+`<listing>/page-block.html` is the source of the page's myRealPage Custom Code block (keep it in sync with what's live).

@@ -1,0 +1,508 @@
+<!-- 123-3440 W Broadway signature listing page | built by Eric Coulombe's team | stage: live -->
+<style>
+@font-face{font-family:"EV Head";src:url("https://stats.ericcoulombe.com/assets/fonts/EngelVoelkersHead_Rg.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"EV Head";src:url("https://stats.ericcoulombe.com/assets/fonts/EngelVoelkersHead_Bd.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"EV Text";src:url("https://stats.ericcoulombe.com/assets/fonts/EngelVoelkersText_Lt.woff2") format("woff2");font-weight:300;font-display:swap}
+@font-face{font-family:"EV Text";src:url("https://stats.ericcoulombe.com/assets/fonts/EngelVoelkersText_Rg.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"EV Text";src:url("https://stats.ericcoulombe.com/assets/fonts/EngelVoelkersText_Bd.woff2") format("woff2");font-weight:700;font-display:swap}
+#ec-lp{
+  --ink:#262626; --ink-2:#5b5753; --paper:#f6f3ee; --stone:#e4ddd2; --white:#fff; --charcoal:#2e2c2a;
+  --red:#8c2f1e; --red-dk:#6e2416; --sage:#5d6b55;
+  --head:"EV Head", Georgia, serif; --text:"EV Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --max:1200px;
+}
+#ec-lp *{box-sizing:border-box}
+#ec-lp{font-family:var(--text);font-weight:400;color:var(--ink);background:var(--paper);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+#ec-lp img{max-width:100%;display:block}
+#ec-lp a{color:var(--red)}
+#ec-lp a:hover{color:var(--red-dk)}
+#ec-lp .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+#ec-lp h1,#ec-lp h2,#ec-lp h3{font-family:var(--head);font-weight:400;line-height:1.08;margin:0;letter-spacing:-.01em}
+#ec-lp h2{font-size:clamp(32px,4.2vw,50px);margin-bottom:20px}
+#ec-lp h3{font-size:26px;margin-bottom:10px}
+#ec-lp p{margin:0 0 18px}
+#ec-lp .eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:14px}
+#ec-lp section{padding:96px 0}
+#ec-lp .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 26px;background:var(--red);color:#fff;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--red);cursor:pointer;font-family:var(--text)}
+#ec-lp .btn:hover{background:var(--red-dk);border-color:var(--red-dk);color:#fff}
+#ec-lp .btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+#ec-lp .btn.ghost:hover{background:var(--ink);color:#fff}
+#ec-lp .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;padding:0;overflow:hidden;background:#222}
+#ec-lp .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);animation:drift 22s ease-out forwards}
+@keyframes drift{to{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){#ec-lp .hero img.bg{animation:none;transform:none}}
+#ec-lp .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(18,16,14,.82) 0%,rgba(18,16,14,.35) 45%,rgba(18,16,14,.05) 75%)}
+#ec-lp .hero .wrap{position:relative;z-index:1;width:100%;padding-bottom:60px}
+#ec-lp .badge{display:inline-block;width:fit-content;background:var(--red);color:#fff;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;padding:8px 14px;margin-bottom:20px}
+#ec-lp .hero h1{font-size:clamp(42px,6.4vw,84px);max-width:13ch}
+#ec-lp .hero .addr{font-size:14px;letter-spacing:.18em;text-transform:uppercase;margin-top:18px;opacity:.95}
+#ec-lp .hero .meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 26px;margin-top:22px;font-size:16px}
+#ec-lp .hero .price{font-family:var(--head);font-size:40px;line-height:1}
+#ec-lp .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+#ec-lp .hero .btn.ghost{color:#fff;border-color:rgba(255,255,255,.85)}
+#ec-lp .hero .btn.ghost:hover{background:#fff;color:var(--ink)}
+#ec-lp .facts{background:var(--white);border-bottom:1px solid var(--stone);padding:0}
+#ec-lp .facts dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:0}
+#ec-lp .facts div{padding:22px 20px;border-right:1px solid var(--stone)}
+#ec-lp .facts dt{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+#ec-lp .facts dd{margin:6px 0 0;font-family:var(--head);font-size:22px;line-height:1.15}
+#ec-lp .intro .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center}
+#ec-lp .lede{font-family:var(--head);font-size:clamp(26px,2.6vw,34px);line-height:1.3;margin-bottom:24px}
+#ec-lp .intro img{aspect-ratio:4/5;object-fit:cover;width:100%}
+@media (max-width:900px){#ec-lp .intro .grid{grid-template-columns:1fr;gap:36px}}
+#ec-lp .scenes{padding-top:0}
+#ec-lp .scene{display:grid;grid-template-columns:1.25fr 1fr;gap:0;align-items:stretch;background:var(--white);margin-bottom:28px}
+#ec-lp .scene:nth-child(even){grid-template-columns:1fr 1.25fr}
+#ec-lp .scene:nth-child(even) .pic{order:2}
+#ec-lp .scene .pic{position:relative;min-height:440px}
+#ec-lp .scene .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#ec-lp .scene .copy{padding:56px 52px;display:flex;flex-direction:column;justify-content:center}
+#ec-lp .scene .time{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);font-weight:700;margin-bottom:12px}
+#ec-lp .scene h3{font-size:clamp(26px,2.6vw,34px);margin-bottom:16px}
+@media (max-width:900px){#ec-lp .scene,#ec-lp .scene:nth-child(even){grid-template-columns:1fr}
+#ec-lp .scene:nth-child(even) .pic{order:0}
+#ec-lp .scene .pic{min-height:300px}
+#ec-lp .scene .copy{padding:36px 28px}}
+#ec-lp .features{display:flex;flex-wrap:wrap;gap:8px;margin:34px 0 0;padding:0;list-style:none}
+#ec-lp .features li{font-size:13px;border:1px solid var(--stone);background:var(--white);padding:7px 13px}
+#ec-lp .dark{background:var(--charcoal);color:#efeae3}
+#ec-lp .dark h2{color:#fff}
+#ec-lp .dark .eyebrow{color:#e0a48f}
+#ec-lp .media-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:10px}
+@media (max-width:800px){#ec-lp .media-grid{grid-template-columns:1fr}}
+#ec-lp .frame{position:relative;aspect-ratio:16/10;background:#000;overflow:hidden}
+#ec-lp .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72;transition:opacity .3s,transform .6s}
+#ec-lp .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+#ec-lp .frame .launch{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;text-decoration:none;font-size:14px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+#ec-lp .frame:hover img{opacity:.55;transform:scale(1.03)}
+#ec-lp .frame .launch svg{width:72px;height:72px}
+#ec-lp .media-note{font-size:14px;color:#b9b0a5;margin-top:16px}
+#ec-lp .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:8px}
+#ec-lp .gallery-grid button{padding:0;border:0;cursor:zoom-in;background:#ddd;overflow:hidden}
+#ec-lp .gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+#ec-lp .gallery-grid button:hover img{transform:scale(1.04)}
+#ec-lp .gallery-grid .big{grid-column:span 2;grid-row:span 2}
+#ec-lp .gallery-grid .wide{grid-column:span 2}
+@media (max-width:800px){#ec-lp .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}
+#ec-lp .gallery-grid .wide{grid-column:span 2}}
+#ec-lp .lightbox{position:fixed;inset:0;z-index:60;background:rgba(14,13,12,.96);display:none;align-items:center;justify-content:center;padding:40px}
+#ec-lp .lightbox.open{display:flex}
+#ec-lp .lightbox img{max-height:86vh;max-width:92vw;object-fit:contain;background:#fff}
+#ec-lp .lightbox button{position:absolute;background:transparent;border:0;color:#fff;cursor:pointer;min-width:52px;min-height:52px;font-size:36px;font-family:var(--text)}
+#ec-lp .lb-close{top:12px;right:16px}
+#ec-lp .lb-prev{left:10px;top:50%;transform:translateY(-50%)}
+#ec-lp .lb-next{right:10px;top:50%;transform:translateY(-50%)}
+#ec-lp .lb-count{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:#cfc8bf;font-size:13px;letter-spacing:.12em}
+#ec-lp .two{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start}
+@media (max-width:900px){#ec-lp .two{grid-template-columns:1fr}}
+#ec-lp .plan button{padding:16px;border:1px solid var(--stone);background:#fff;cursor:zoom-in;width:100%}
+#ec-lp .areas{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;font-size:14px}
+#ec-lp .areas div{background:var(--white);border:1px solid var(--stone);padding:12px 14px}
+#ec-lp .areas b{display:block;font-family:var(--head);font-size:20px;font-weight:400}
+#ec-lp .suits{list-style:none;padding:0;margin:0}
+#ec-lp .suits li{padding:18px 0;border-bottom:1px solid var(--stone)}
+#ec-lp .suits li:first-child{border-top:1px solid var(--stone)}
+#ec-lp .suits b{font-family:var(--head);font-weight:400;font-size:22px;display:block;margin-bottom:4px}
+#ec-lp .own{background:var(--white)}
+#ec-lp .own .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+@media (max-width:900px){#ec-lp .own .grid{grid-template-columns:1fr}}
+#ec-lp .card{background:var(--paper);border:1px solid var(--stone);padding:36px}
+#ec-lp .card ul{padding-left:20px;margin:14px 0 22px}
+#ec-lp .card li{margin-bottom:8px}
+#ec-lp .calc{display:grid;gap:18px;margin:22px 0}
+#ec-lp .calc label{display:flex;justify-content:space-between;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+#ec-lp .calc label output{font-family:var(--head);font-size:18px;color:var(--ink);text-transform:none;letter-spacing:0}
+#ec-lp .calc input[type=range]{width:100%;accent-color:var(--red);height:28px}
+#ec-lp .toggle{display:flex;gap:6px}
+#ec-lp .toggle button{flex:1;min-height:42px;border:1px solid var(--stone);background:#fff;font-family:var(--text);font-size:13px;cursor:pointer}
+#ec-lp .toggle button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+#ec-lp .results{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--stone);border:1px solid var(--stone);margin-top:6px}
+#ec-lp .results div{background:#fff;padding:14px 16px}
+#ec-lp .results dt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+#ec-lp .results dd{margin:4px 0 0;font-family:var(--head);font-size:24px}
+#ec-lp .results .hl{grid-column:1/-1;background:#f3ece4}
+#ec-lp .results .hl dd{font-size:30px}
+#ec-lp .neg{color:var(--red)}
+#ec-lp .pos{color:var(--sage)}
+#ec-lp .fine{font-size:13px;color:var(--ink-2);line-height:1.55;margin-top:16px}
+#ec-lp .hood .points{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin:34px 0 44px}
+#ec-lp .hood .points div{border-top:2px solid var(--red);padding-top:16px}
+#ec-lp .hood .points b{display:block;font-family:var(--head);font-weight:400;font-size:24px;margin-bottom:4px}
+#ec-lp .links{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+#ec-lp .links a{display:block;text-decoration:none;color:var(--ink);border:1px solid var(--stone);padding:22px 24px;background:var(--white);transition:border-color .2s}
+#ec-lp .links a:hover{border-color:var(--red)}
+#ec-lp .links a span{display:block;font-size:14px;color:var(--ink-2);margin-top:4px}
+#ec-lp .links a b{font-family:var(--head);font-weight:400;font-size:22px}
+#ec-lp .contact{background:var(--white)}
+#ec-lp .contact .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px}
+@media (max-width:900px){#ec-lp .contact .grid{grid-template-columns:1fr}}
+#ec-lp .agent{margin:26px 0;font-size:16px;line-height:1.7}
+#ec-lp .agent b{font-family:var(--head);font-weight:400;font-size:24px}
+#ec-lp form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#ec-lp form .full{grid-column:1/-1}
+#ec-lp form label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);display:block;margin-bottom:6px}
+#ec-lp input,#ec-lp select,#ec-lp textarea{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1px solid #cfc6ba;background:#fff;color:var(--ink);min-height:48px;border-radius:0}
+#ec-lp textarea{min-height:120px}
+#ec-lp .thanks{display:none;grid-column:1/-1;background:#efe6da;padding:16px;font-size:15px}
+@media (max-width:560px){#ec-lp form{grid-template-columns:1fr}}
+#ec-lp footer{background:var(--charcoal);color:#b9b0a5;font-size:13px;padding:52px 0}
+#ec-lp footer .wrap{display:grid;gap:14px}
+#ec-lp footer b{color:#f1ece5}
+#ec-lp footer a{color:#e0a48f}
+#ec-lp [data-show]{display:none !important}
+#ec-lp[data-stage="soon"] [data-show~="soon"],#ec-lp[data-stage="live"] [data-show~="live"],#ec-lp[data-stage="sold"] [data-show~="sold"]{display:revert !important}
+#ec-lp{overflow-x:hidden}
+#ec-lp *{box-sizing:border-box}
+#ec-lp .jumpbar{background:#fff;border-bottom:1px solid var(--stone)}
+#ec-lp .jumpbar .wrap{display:flex;align-items:center;gap:22px;min-height:56px;flex-wrap:wrap;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase}
+#ec-lp .jumpbar a{color:var(--ink);text-decoration:none}
+#ec-lp .jumpbar a:hover{color:var(--red)}
+#ec-lp .jumpbar .btn{margin-left:auto;color:#fff;min-height:40px}
+@media (max-width:760px){#ec-lp .jumpbar a:not(.btn){display:none}#ec-lp .jumpbar .btn{margin:0 auto}}
+#ec-lp .hero{min-height:80vh}
+#ec-lp .formnote{background:var(--paper);border:1px solid var(--stone);padding:28px;align-self:end}
+#ec-lp .disclaimer{font-size:12.5px;color:var(--ink-2);padding:28px 24px 40px}
+#ec-lp h1,#ec-lp h2,#ec-lp h3{color:inherit;text-transform:none}
+#ec-lp p{color:inherit}
+
+</style>
+<div id="ec-lp" data-stage="live" data-embeds="inline">
+<nav class="jumpbar" aria-label="On this page"><div class="wrap">
+  <a href="#home">The Home</a><a href="#tour" data-show="live">3D Tour</a><a href="#gallery" data-show="live sold">Photos</a><a href="#plan" data-show="live">Floor Plan</a><a href="#ownership" data-show="soon live">Ownership</a><a href="#neighbourhood">Kitsilano</a>
+  <a class="btn" href="#contact"><span data-show="soon">Get first access</span><span data-show="live">Book a viewing</span><span data-show="sold">Talk to Eric</span></a></div></nav>
+
+<section class="hero" id="top" aria-label="123–3440 West Broadway">
+  <img class="bg" src="https://stats.ericcoulombe.com/listings/123-3440-w-broadway/img/17-patio-pergola.jpg" alt="Private garden patio under a wooden pergola, with teal chairs, a hanging egg chair and a bistro table">
+  <div class="wrap">
+    <div class="badge" data-show="soon">Coming Soon</div>
+    <div class="badge" data-show="live">Now Available</div>
+    <div class="badge" data-show="sold">Sold</div>
+    <h1>Room to live. Space to unwind. A Kitsilano address.</h1>
+    <div class="addr">123–3440 West Broadway &middot; Kitsilano, Vancouver</div>
+    <div class="meta">
+      <span class="price" data-show="live">$799,800</span>
+      <span>2 bedrooms + den + office</span><span>2 full baths</span><span>1,149 sq ft on two levels</span><span>Private garden patio</span>
+    </div>
+    <div class="ctas">
+      <a class="btn" href="#contact" data-show="soon">Register for first showings</a>
+      <a class="btn" href="#tour" data-show="live">Take the 3D tour</a>
+      <a class="btn ghost" href="#contact" data-show="live">Book a private viewing</a>
+      <a class="btn" href="#contact" data-show="sold">Thinking of selling? Let's talk</a>
+    </div>
+  </div>
+</section>
+
+<div class="facts" data-show="live">
+  <div class="wrap">
+    <dl>
+      <div><dt>Price</dt><dd>$799,800</dd></div>
+      <div><dt>Home</dt><dd>2-level townhome</dd></div>
+      <div><dt>Size</dt><dd>1,149 sq ft</dd></div>
+      <div><dt>Strata fee</dt><dd>$681/mo</dd></div>
+      <div><dt>Taxes (2025)</dt><dd>$2,937</dd></div>
+      <div><dt>Ownership</dt><dd>Prepaid leasehold to 2071</dd></div>
+      <div><dt>Parking</dt><dd>1 secure + locker</dd></div>
+    </dl>
+  </div>
+</div>
+
+<section class="intro" id="home">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">The Home</div>
+      <p class="lede">A different side of Kitsilano living: two levels, a garden you can actually live in, and room for more than the everyday.</p>
+      <p>With 1,149 sq ft, two bedrooms, two full bathrooms, a den and a windowed office, this patio home gives you the space most West Side condos can't. It feels like a little townhouse, with a private garden and your own gate to the lane.</p>
+      <p>Nine-foot ceilings and an open main floor connect the living, dining and kitchen areas. A floor-to-ceiling bookcase and tiled fireplace anchor the living room. Upstairs, the bedrooms and workspaces sit away from the everyday bustle.</p>
+      <a class="btn ghost" href="#scenes" style="margin-top:8px">See how it lives</a>
+    </div>
+    <img src="https://stats.ericcoulombe.com/listings/123-3440-w-broadway/img/05-living-room-shelves.jpg" alt="Living room with built-in bookshelves, tiled fireplace and garden doors" loading="lazy">
+  </div>
+</section>
+
+<section class="scenes" id="scenes" aria-label="A day at 123">
+  <div class="wrap">
+    <article class="scene">
+      <div class="pic"><img src="https://stats.ericcoulombe.com/listings/123-3440-w-broadway/img/14-patio-egg-chairs.jpg" alt="Two hanging egg chairs on the garden patio" loading="lazy"></div>
+      <div class="copy">
+        <div class="time">Morning</div>
+        <h3>Coffee in the garden</h3>
+        <p>Step out to a private, fenced patio with a pergola, mature planting and cedar fencing. It's a real outdoor room for morning coffee, long dinners and quiet afternoons.</p>
+        <p>Your own gate opens straight to the lane, which makes a bike ride or a dog walk easy. Dogs are welcome here, with strata restrictions.</p>
+      </div>
+    </article>
+    <article class="scene">
+      <div class="pic"><img src="https://stats.ericcoulombe.com/listings/123-3440-w-broadway/img/32-home-office.jpg" alt="Upstairs desk area with storage" loading="lazy"></div>
+      <div class="copy">
+        <div class="time">Workday</div>
+        <h3>An office with a window, and a den besides</h3>
+        <p>Working from home doesn't mean working from the kitchen table. Upstairs you'll find a windowed office/studio, a dedicated desk area and a den, so two people can each have their own space.</p>
+        <p>In-suite laundry and good storage round out the practical side.</p>
+      </div>
+    </article>
+    <article class="scene">
+      <div class="pic"><img src="https://stats.ericcoulombe.com/listings/123-3440-w-broadway/img/09-kitchen.jpg" alt="Kitchen with white shaker cabinets, gas range and peninsula" loading="lazy"></div>
+      <div class="copy">
+        <div class="time">Evening</div>
+        <h3>A kitchen that keeps the cook in the conversation</h3>
+        <p>White shaker cabinetry, a gas range, stainless-steel appliances and under-cabinet lighting, with a peninsula that looks out over the dining and living areas. You can make dinner and still keep an eye on the little ones while they play.</p>
+        <p>A full bathroom on the main floor means no running upstairs mid-meal, and on a summer night the party spills out through the patio doors.</p>
+      </div>
+    </article>
+    <article class="scene">
+      <div class="pic"><img src="https://stats.ericcoulombe.com/listings/123-3440-w-broadway/img/21-primary-bedroom.jpg" alt="Primary bedroom with corner windows and treetop views" loading="lazy"></div>
+      <div class="copy">
+        <div class="time">Night</div>
+        <h3>Kids asleep upstairs, grown-ups still up</h3>
+        <p>With the bedrooms on their own floor, the kids can go down while the adults keep entertaining below. The generous primary bedroom has corner windows looking into the trees, and the second bedroom and a second full bathroom are on the same level.</p>
+        <p>Just down the hall, the building has a large, skylit playroom for rainy days. The fully rainscreened building also has a residents' workshop and a shared rooftop deck with city and North Shore mountain views.</p>
+      </div>
+    </article>
+    <ul class="features" aria-label="Highlights">
+      <li>9-ft ceilings</li><li>Gas fireplace</li><li>Gas range</li><li>Private lane gate</li><li>Windowed office</li><li>Den</li><li>In-suite laundry</li><li>Skylit kids' playroom</li><li>Rooftop deck</li><li>Residents' workshop</li><li>Rainscreened building</li><li>Dogs welcome (restrictions)</li>
+    </ul>
+  </div>
+</section>
+
+<section class="dark" id="tour" data-show="live">
+  <div class="wrap">
+    <div class="eyebrow">Walk through it</div>
+    <h2>3D tour and video</h2>
+    <div class="media-grid">
+      <div class="frame">
+        <img src="https://stats.ericcoulombe.com/listings/123-3440-w-broadway/img/13-main-floor-overview.jpg" alt="" loading="lazy">
+        <a class="launch" href="https://my.matterport.com/show/?m=crF3LXeSMa4" target="_blank" rel="noopener" data-embed="https://my.matterport.com/show/?m=crF3LXeSMa4&amp;play=1&amp;brand=0" data-title="3D tour of 123–3440 West Broadway">
+          <svg viewBox="0 0 80 80" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2"><circle cx="40" cy="40" r="38"/><path d="M24 30l16-9 16 9v20l-16 9-16-9z"/><path d="M24 30l16 9 16-9M40 39v20"/></svg>
+          Start the 3D tour
+        </a>
+      </div>
+      <div class="frame">
+        <img src="https://stats.ericcoulombe.com/listings/123-3440-w-broadway/img/04-living-room-2.jpg" alt="" loading="lazy">
+        <a class="launch" href="https://vimeo.com/1181006597" target="_blank" rel="noopener" data-embed="https://player.vimeo.com/video/1181006597?autoplay=1&amp;title=0&amp;byline=0&amp;portrait=0" data-title="Video tour of 123–3440 West Broadway">
+          <svg viewBox="0 0 80 80" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2"><circle cx="40" cy="40" r="38"/><path d="M33 26l22 14-22 14z" fill="#fff"/></svg>
+          Play the video (1:13)
+        </a>
+      </div>
+    </div>
+    <p class="media-note">Both load only when you tap, so the page stays quick on your phone.</p>
+  </div>
+</section>
+
+<section id="gallery" data-show="live sold">
+  <div class="wrap">
+    <div class="eyebrow">Photos</div>
+    <h2>Inside and out</h2>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </div>
+</section>
+
+<section id="plan" data-show="live" style="padding-top:0">
+  <div class="wrap two">
+    <div class="plan">
+      <div class="eyebrow">Floor plan</div>
+      <h2>How it lives</h2>
+      <button id="plan-open" aria-label="Enlarge the floor plan"><img src="https://stats.ericcoulombe.com/listings/123-3440-w-broadway/img/floorplan.jpg" alt="Floor plan of 123–3440 West Broadway, main and upper levels" loading="lazy"></button>
+      <div class="areas">
+        <div><b>535 sq ft</b>Main floor</div>
+        <div><b>614 sq ft</b>Upper floor</div>
+        <div><b>182 sq ft</b>Deck</div>
+      </div>
+    </div>
+    <div>
+      <div class="eyebrow">Who it suits</div>
+      <h2>Made for</h2>
+      <ul class="suits">
+        <li><b>Young families</b>Bedrooms on their own floor, a bathroom on the main, a kitchen that looks over the play space, and a skylit playroom down the hall.</li>
+        <li><b>Two people working from home</b>An office, a desk area and a den mean nobody takes calls from the bedroom.</li>
+        <li><b>Downsizers who still want a garden</b>Townhouse-style living and a patio to putter in, without a house's upkeep.</li>
+        <li><b>Dog owners</b>A fenced patio, your own lane gate, and the Jericho and Kits beach paths a short ride away.</li>
+        <li><b>UBC and downtown commuters</b>A straight run along Broadway in either direction.</li>
+        <li><b>Investors</b>The leasehold price changes the rental math. See the numbers below.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="own" id="ownership" data-show="soon live">
+  <div class="wrap grid">
+    <div class="card">
+      <div class="eyebrow">Ownership</div>
+      <h3>Prepaid leasehold, explained</h3>
+      <p>This home is a prepaid strata leasehold, with a lease running to 2071. That's why you can own 1,149 sq ft with a private garden in Kitsilano at this price: in my experience, homes like this trade at more than 20% below similar freehold. You can put the difference to work elsewhere, or simply get a lot more home for the same money.</p>
+      <ul>
+        <li>The lease is prepaid, so there are no monthly land-lease payments.</li>
+        <li>Conventional financing is available through select lenders.</li>
+        <li>You pay strata fees and property taxes, as with any condo.</li>
+      </ul>
+      <p>With about 45 years left on the lease, I don't expect expiry to have a real effect on values for at least another 15 years. I'm happy to walk you through the lease summary and the lenders who work with it.</p>
+      <a class="btn ghost" href="#contact" data-want="docs">Request the document package</a>
+    </div>
+    <div class="card" id="invest">
+      <div class="eyebrow">For investors</div>
+      <h3>A Kitsilano rental that nearly carries itself</h3>
+      <p>Leasehold pricing changes the math. This should rent like any well-located West Side two-bedroom-plus-den, and at this price the rent covers most of the carrying cost while your tenant pays down the mortgage. Try your own numbers.</p>
+      <div class="calc">
+        <div><label for="c-down">Down payment <output id="o-down"></output></label><input id="c-down" type="range" min="20" max="50" step="1" value="20"></div>
+        <div><label for="c-rent">Monthly rent <output id="o-rent"></output></label><input id="c-rent" type="range" min="3400" max="4400" step="50" value="3900"></div>
+        <div><label for="c-rate">Mortgage rate <output id="o-rate"></output></label><input id="c-rate" type="range" min="3.5" max="6.5" step="0.05" value="4.6"></div>
+        <div><label>Management</label><div class="toggle" role="group" aria-label="Management"><button type="button" id="m-self" aria-pressed="true">Self-managed</button><button type="button" id="m-pm" aria-pressed="false">Property manager (8%)</button></div></div>
+      </div>
+      <dl class="results">
+        <div><dt>Cash flow / month</dt><dd id="r-cf"></dd></div>
+        <div><dt>Principal paid down / month</dt><dd id="r-pr" class="pos"></dd></div>
+        <div class="hl"><dt>Cash flow + paydown / month</dt><dd id="r-total"></dd></div>
+        <div><dt>Cap rate</dt><dd id="r-cap"></dd></div>
+        <div><dt>Cash in (incl. transfer tax)</dt><dd id="r-cash"></dd></div>
+      </dl>
+      <p class="fine">Illustration only, not a forecast or advice. Assumes a 30-year amortization, a 3% vacancy allowance, strata $681/mo, 2025 property taxes, ~$1,500/yr for insurance and upkeep, and BC property transfer tax plus ~$2,000 in legal costs. Rents reflect October 2026 Kitsilano listings for similar 2-bed, 2-bath homes. Principal paydown is year one. Confirm financing terms with your own mortgage broker, and tax treatment with your accountant. I represent the seller.</p>
+    </div>
+  </div>
+</section>
+
+<section class="hood" id="neighbourhood">
+  <div class="wrap">
+    <div class="eyebrow">The Neighbourhood</div>
+    <h2>Broadway &amp; Collingwood, Kitsilano</h2>
+    <p style="max-width:64ch">Cafés, restaurants, groceries, parks and transit are all close by, with easy access to Kitsilano and Jericho beaches, UBC, downtown and the Arbutus Greenway.</p>
+    <div class="points">
+      <div><b>Transit</b>Buses along Broadway, west to UBC and east toward downtown connections</div>
+      <div><b>Beaches</b>Kits and Jericho, a short ride downhill</div>
+      <div><b>Everyday errands</b>Groceries, cafés and restaurants within walking distance</div>
+      <div><b>Arbutus Greenway</b>Walk or bike north to the water or south through the West Side</div>
+    </div>
+    <div class="links">
+      <a href="https://ericcoulombe.com/kitsilano-market-stats.html"><b>Kitsilano market stats</b><span>Benchmark prices, sales and listings, updated monthly</span></a>
+      <a href="https://ericcoulombe.com/vancouver-market-report.html"><b>The Split Market report</b><span>What's moving in Vancouver right now, and why</span></a>
+      <a href="https://ericcoulombe.com/buying.html"><b>Buying with Eric</b><span>How I work with buyers, from first look to keys</span></a>
+      <a href="https://ericcoulombe.com/investing.html" data-show="soon live"><b>Investing with Eric</b><span>Cash-flow-first rental investing, explained</span></a>
+      <a href="https://ericcoulombe.com/selling.html" data-show="sold"><b>Selling with Eric</b><span>How I'd market your home</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow" data-show="soon">Coming soon</div>
+      <div class="eyebrow" data-show="live">Book a viewing</div>
+      <div class="eyebrow" data-show="sold">Sold by Eric Coulombe</div>
+      <h2 data-show="soon">Be first through the door</h2>
+      <h2 data-show="live">Come and see it</h2>
+      <h2 data-show="sold">Thinking about your own move?</h2>
+      <p data-show="soon">This home comes to market soon. Register and I'll send you the photos, 3D tour and showing times before it's on MLS.</p>
+      <p data-show="live">Private viewings are easy to arrange. Tell me what suits you, or ask for the strata and lease documents, and I'll get right back to you.</p>
+      <p data-show="sold">This Kitsilano home has sold. If you're wondering what it means for your own home's value, I'm happy to walk you through it, with no pressure.</p>
+      <div class="agent">
+        <b>Eric Coulombe</b><br>
+        Real Estate Advisor, Engel &amp; Völkers Vancouver<br>
+        <a href="tel:+16047648620">604-764-8620</a><br>
+        <a href="mailto:eric@ericcoulombe.com">eric@ericcoulombe.com</a>
+      </div>
+    </div>
+    <div class="formnote" id="form-anchor"><p>Send me a note using the form below, or call or text <a href="tel:+16047648620">604-764-8620</a>.</p></div>
+  </div>
+</section>
+
+<div class="disclaimer wrap">MLS&reg; R3175329. Information is believed reliable but not guaranteed and should be verified by the buyer. Measurements are approximate. Investment figures are illustrations only and not financial advice. Presented by Eric Coulombe, Engel &amp; Völkers Vancouver.</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" id="lb-close" aria-label="Close">&times;</button>
+  <button class="lb-prev" id="lb-prev" aria-label="Previous photo">&#8249;</button>
+  <img id="lb-img" alt="">
+  <button class="lb-next" id="lb-next" aria-label="Next photo">&#8250;</button>
+  <div class="lb-count" id="lb-count"></div>
+</div>
+</div>
+<script>
+
+(function(){
+  var root=document.getElementById('ec-lp');
+  // [file, alt, showWhenSold, layoutClass]
+  var photos=[
+    ['17-patio-pergola','Garden patio under the pergola',1,'big'],
+    ['13-main-floor-overview','Open main floor',0,''],
+    ['03-living-room','Living room with fireplace',0,''],
+    ['15-patio-from-door','Patio seen from the living room door',1,'wide'],
+    ['09-kitchen','Kitchen with gas range and peninsula',0,''],
+    ['10-kitchen-2','Kitchen',0,''],
+    ['07-dining-room','Dining area',0,''],
+    ['06-den','Den by the garden doors',0,''],
+    ['18-patio-pergola-2','Patio dining under the pergola',1,'wide'],
+    ['21-primary-bedroom','Primary bedroom with corner windows',0,''],
+    ['22-primary-bedroom-2','Primary bedroom',0,''],
+    ['26-office-bedroom','Windowed office/studio',0,''],
+    ['32-home-office','Desk area',0,''],
+    ['25-bedroom-2','Upper hall and second bedroom',0,''],
+    ['12-bathroom-main','Main-floor bathroom',0,''],
+    ['14-patio-egg-chairs','Hanging egg chairs on the patio',1,''],
+    ['16-patio-pergola-overhead','Patio from above',1,'wide'],
+    ['01-exterior','Lane-side garden gate and pergola',1,'']
+  ];
+  var grid=document.getElementById('gallery-grid'), current=[], idx=0, lastFocus;
+  function src(p){return p.indexOf('/')>-1?p:'https://stats.ericcoulombe.com/listings/123-3440-w-broadway/img/'+p+'.jpg'}
+  function build(){
+    var sold=root.dataset.stage==='sold';
+    current=photos.filter(function(p){return !sold||p[2]});
+    grid.innerHTML='';
+    current.forEach(function(p,i){
+      var b=document.createElement('button');
+      if(p[3]) b.className=p[3];
+      b.setAttribute('aria-label','Open photo: '+p[1]);
+      var im=document.createElement('img'); im.src=src(p[0]); im.alt=p[1]; im.loading='lazy';
+      b.appendChild(im); b.addEventListener('click',function(){open(i)}); grid.appendChild(b);
+    });
+  }
+  var lb=document.getElementById('lightbox'), lbImg=document.getElementById('lb-img'), lbCount=document.getElementById('lb-count'), saved=null;
+  function show(){var p=current[idx]; lbImg.src=src(p[0]); lbImg.alt=p[1]; lbCount.textContent=current.length>1?(idx+1)+' / '+current.length:'';}
+  function open(i){idx=i; lastFocus=document.activeElement; show(); lb.classList.add('open'); document.getElementById('lb-close').focus();}
+  function close(){lb.classList.remove('open'); if(saved){current=saved; saved=null;} if(lastFocus) lastFocus.focus();}
+  function step(d){idx=(idx+d+current.length)%current.length; show();}
+  document.getElementById('lb-close').onclick=close;
+  document.getElementById('lb-prev').onclick=function(){step(-1)};
+  document.getElementById('lb-next').onclick=function(){step(1)};
+  document.addEventListener('keydown',function(e){ if(!lb.classList.contains('open'))return; if(e.key==='Escape')close(); if(e.key==='ArrowRight')step(1); if(e.key==='ArrowLeft')step(-1);});
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.getElementById('plan-open').onclick=function(){saved=current; current=[['https://stats.ericcoulombe.com/listings/123-3440-w-broadway/img/floorplan.jpg','Floor plan']]; open(0);};
+
+  // Tour/video: embed in place on the live site; open in a new tab in preview
+  document.querySelectorAll('.launch').forEach(function(a){a.addEventListener('click',function(e){
+    if(root.dataset.embeds!=='inline') return;
+    e.preventDefault();
+    var f=document.createElement('iframe'); f.src=a.dataset.embed; f.title=a.dataset.title;
+    f.allow='autoplay; fullscreen; xr-spatial-tracking; picture-in-picture'; f.allowFullscreen=true;
+    a.parentNode.appendChild(f); a.remove();
+  });});
+
+  // Document-package buttons preselect the form
+  
+  // Investor calculator
+  var PRICE=799800, STRATA=681*12, TAX=2937, INS_UPKEEP=1500, VAC=0.03;
+  var pm=false;
+  var $=function(id){return document.getElementById(id)};
+  var money=function(n){var s=Math.round(Math.abs(n)).toLocaleString('en-CA'); return (n<0?'−$':'$')+s;};
+  function calc(){
+    var down=+$('c-down').value/100, rent=+$('c-rent').value, rate=+$('c-rate').value/100;
+    $('o-down').textContent=Math.round(down*100)+'% ('+money(PRICE*down)+')';
+    $('o-rent').textContent=money(rent);
+    $('o-rate').textContent=rate*100%1===0?(rate*100).toFixed(1)+'%':(rate*100).toFixed(2)+'%';
+    var loan=PRICE*(1-down), i=Math.pow(1+rate/2,1/6)-1, n=360;
+    var pmt=loan*i/(1-Math.pow(1+i,-n));
+    var egi=rent*12*(1-VAC), noi=egi-STRATA-TAX-INS_UPKEEP-(pm?0.08*egi:0);
+    var cf=(noi-pmt*12)/12;
+    var bal=loan; for(var k=0;k<12;k++){bal-=pmt-bal*i;} var pr=(loan-bal)/12;
+    var ptt=2000+0.02*(PRICE-200000), cash=PRICE*down+ptt+2000;
+    $('r-cf').textContent=money(cf); $('r-cf').className=cf<0?'neg':'pos';
+    $('r-pr').textContent='+'+money(pr);
+    var t=cf+pr; $('r-total').textContent=(t>=0?'+':'')+money(t); $('r-total').className=t<0?'neg':'pos';
+    $('r-cap').textContent=(noi/PRICE*100).toFixed(1)+'%';
+    $('r-cash').textContent=money(cash);
+  }
+  ['c-down','c-rent','c-rate'].forEach(function(id){$(id).addEventListener('input',calc)});
+  $('m-self').onclick=function(){pm=false;this.setAttribute('aria-pressed','true');$('m-pm').setAttribute('aria-pressed','false');calc();};
+  $('m-pm').onclick=function(){pm=true;this.setAttribute('aria-pressed','true');$('m-self').setAttribute('aria-pressed','false');calc();};
+  calc();
+
+  
+    build();
+})();
+
+</script>
