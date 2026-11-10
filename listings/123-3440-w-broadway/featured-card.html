@@ -1,0 +1,41 @@
+<!-- Featured listing card: 123-3440 W Broadway (used on Home and Featured Listings pages) -->
+<style>
+#ec-feat{--red:#8c2f1e;--red-dk:#6e2416;--ink:#262626;background:#2e2c2a;color:#efeae3;font-family:"Engel Voelkers Text",system-ui,sans-serif}
+#ec-feat *{box-sizing:border-box}
+#ec-feat .inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.25fr 1fr;align-items:stretch}
+#ec-feat a.pic{position:relative;display:block;min-height:420px;overflow:hidden}
+#ec-feat a.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}
+#ec-feat a.pic:hover img{transform:scale(1.03)}
+#ec-feat .badge{position:absolute;left:20px;top:20px;background:var(--red);color:#fff;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;padding:7px 12px}
+#ec-feat .copy{padding:52px 48px;display:flex;flex-direction:column;justify-content:center}
+#ec-feat .eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#e0a48f;font-weight:700;margin:0 0 14px}
+#ec-feat .title{font-family:"Engel Voelkers Head",Georgia,serif;font-weight:400;font-size:clamp(30px,3.2vw,42px);line-height:1.1;color:#fff;margin:0 0 6px}
+#ec-feat .area{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#cfc8bf;margin:0 0 20px}
+#ec-feat .price{font-family:"Engel Voelkers Head",Georgia,serif;font-size:34px;color:#fff;margin:0 0 10px}
+#ec-feat .facts{font-size:15px;line-height:1.6;color:#e4ded6;margin:0 0 26px}
+#ec-feat .ctas{display:flex;gap:10px;flex-wrap:wrap}
+#ec-feat .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;background:var(--red);border:1px solid var(--red);color:#fff;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+#ec-feat .btn:hover{background:var(--red-dk);border-color:var(--red-dk);color:#fff}
+#ec-feat .btn.ghost{background:transparent;border-color:rgba(255,255,255,.8)}
+#ec-feat .btn.ghost:hover{background:#fff;color:var(--ink)}
+@media (max-width:860px){#ec-feat .inner{grid-template-columns:1fr}#ec-feat a.pic{min-height:280px}#ec-feat .copy{padding:34px 24px 40px}}
+</style>
+<section id="ec-feat" aria-label="Featured listing: 123-3440 West Broadway">
+  <div class="inner">
+    <a class="pic" href="/123-3440-w-broadway.html" aria-label="See 123-3440 West Broadway">
+      <img src="https://stats.ericcoulombe.com/listings/123-3440-w-broadway/img/17-patio-pergola.jpg" alt="Private garden patio under a pergola at 123-3440 West Broadway" loading="lazy">
+      <span class="badge">Now available</span>
+    </a>
+    <div class="copy">
+      <p class="eyebrow">Featured listing</p>
+      <h2 class="title">Room to live. Space to unwind. A Kitsilano address.</h2>
+      <p class="area">123–3440 West Broadway &middot; Kitsilano</p>
+      <p class="price">$799,800</p>
+      <p class="facts">Two-level garden townhome &middot; 2 bedrooms + den + office &middot; 2 full baths &middot; 1,149 sq ft &middot; private patio with its own lane gate</p>
+      <div class="ctas">
+        <a class="btn" href="/123-3440-w-broadway.html">Explore the home</a>
+        <a class="btn ghost" href="/123-3440-w-broadway.html#tour">Take the 3D tour</a>
+      </div>
+    </div>
+  </div>
+</section>
