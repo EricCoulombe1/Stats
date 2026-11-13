@@ -106,6 +106,7 @@
       "page": "cambie/",
       "hub_hidden": true,
       "host_url": "https://ericcoulombe.com/cambie-market-stats.html",
+      "photo": "assets/img/ec-cambie-qe-park-skyline.jpg",
       "headline": "Detached (All)",
       "charts": {
         "hpi": {"csv": "tdhnb-4NU", "kind": "money", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 200000, "max": 12000000, "required": true},
@@ -134,6 +135,7 @@
       "page": "mount-pleasant/",
       "hub_hidden": true,
       "host_url": "https://ericcoulombe.com/mount-pleasant-market-stats.html",
+      "photo": "assets/img/ec-mount-pleasant-mural.jpg",
       "headline": "Apartment",
       "charts": {
         "hpi": {"csv": "td274-3c0", "kind": "money", "cols": ["Apartment", "Townhouse"], "min": 200000, "max": 12000000, "required": true},
@@ -148,6 +150,7 @@
       "page": "main/",
       "hub_hidden": true,
       "host_url": "https://ericcoulombe.com/main-street-market-stats.html",
+      "photo": "assets/img/ec-main-riley-park-aerial.jpg",
       "headline": "Detached (All)",
       "charts": {
         "hpi": {"csv": "tdhnZ-VSj", "kind": "money", "cols": ["Detached (All)", "Apartment"], "min": 200000, "max": 12000000, "required": true},
@@ -162,6 +165,7 @@
       "page": "fraser/",
       "hub_hidden": true,
       "host_url": "https://ericcoulombe.com/fraser-market-stats.html",
+      "photo": "assets/img/ec-fraser-kensington-aerial.jpg",
       "headline": "Detached (All)",
       "charts": {
         "hpi": {"csv": "tdhnf-b6B", "kind": "money", "cols": ["Detached (All)", "Apartment"], "min": 200000, "max": 12000000, "required": true},
@@ -176,6 +180,7 @@
       "page": "grandview/",
       "hub_hidden": true,
       "host_url": "https://ericcoulombe.com/grandview-woodland-market-stats.html",
+      "photo": "assets/img/ec-grandview-commercial-drive.jpg",
       "headline": "Detached (All)",
       "charts": {
         "hpi": {"csv": "tdhnY-ULH", "kind": "money", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 200000, "max": 12000000, "required": true},
@@ -190,6 +195,7 @@
       "page": "strathcona/",
       "hub_hidden": true,
       "host_url": "https://ericcoulombe.com/strathcona-market-stats.html",
+      "photo": "assets/img/ec-strathcona-heritage-houses.jpg",
       "headline": "Detached (All)",
       "charts": {
         "hpi": {"csv": "tdhn7-YcO", "kind": "money", "cols": ["Detached (All)", "Apartment"], "min": 200000, "max": 12000000, "required": true},
@@ -204,6 +210,7 @@
       "page": "downtown-east/",
       "hub_hidden": true,
       "host_url": "https://ericcoulombe.com/downtown-east-market-stats.html",
+      "photo": "assets/img/ec-gastown-steam-clock.jpg",
       "headline": "Apartment",
       "charts": {
         "hpi": {"csv": "tdhnm-roQ", "kind": "money", "cols": ["Apartment"], "min": 200000, "max": 12000000, "required": true},
