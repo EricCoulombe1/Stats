@@ -130,17 +130,16 @@
     },
     "mount-pleasant": {
       "name": "Mount Pleasant",
-      "full_name": "Mount Pleasant: East & West",
+      "full_name": "Mount Pleasant",
       "page": "mount-pleasant/",
       "hub_hidden": true,
       "host_url": "https://ericcoulombe.com/mount-pleasant-market-stats.html",
-      "headline": "VVEMP - Mount Pleasant VE",
-      "headline_label": "Mount Pleasant East condo benchmark",
+      "headline": "Apartment",
       "charts": {
-        "hpi": {"csv": "tdhnX-83O", "kind": "money", "cols": ["VVEMP - Mount Pleasant VE", "VVWMP - Mount Pleasant VW"], "min": 200000, "max": 12000000, "required": true},
-        "ratio": {"csv": "tdhns-FBs", "kind": "ratio", "cols": ["VVEMP - Mount Pleasant VE", "VVWMP - Mount Pleasant VW"], "min": 0, "max": 2, "required": false},
-        "dom": {"csv": "tdhnz-d3R", "kind": "days", "cols": ["VVEMP - Mount Pleasant VE", "VVWMP - Mount Pleasant VW"], "min": 0, "max": 400, "required": false},
-        "pctorig": {"csv": "tdhnr-KEM", "kind": "pct", "cols": ["VVEMP - Mount Pleasant VE", "VVWMP - Mount Pleasant VW"], "min": 50, "max": 150, "required": false}
+        "hpi": {"csv": "td274-3c0", "kind": "money", "cols": ["Apartment", "Townhouse"], "min": 200000, "max": 12000000, "required": true},
+        "ratio": {"csv": "td27e-kTy", "kind": "ratio", "cols": ["Apartment", "Townhouse"], "min": 0, "max": 2, "required": false},
+        "dom": {"csv": "td27k-aaE", "kind": "days", "cols": ["Apartment", "Townhouse"], "min": 0, "max": 400, "required": false},
+        "pctorig": {"csv": "td279-zZh", "kind": "pct", "cols": ["Apartment", "Townhouse"], "min": 50, "max": 150, "required": false}
       }
     },
     "main": {
@@ -151,10 +150,10 @@
       "host_url": "https://ericcoulombe.com/main-street-market-stats.html",
       "headline": "Detached (All)",
       "charts": {
-        "hpi": {"csv": "tdhnZ-VSj", "kind": "money", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 200000, "max": 12000000, "required": true},
+        "hpi": {"csv": "tdhnZ-VSj", "kind": "money", "cols": ["Detached (All)", "Apartment"], "min": 200000, "max": 12000000, "required": true},
         "ratio": {"csv": "tdhnj-dmF", "kind": "ratio", "cols": ["Detached (All)", "Apartment"], "min": 0, "max": 2, "required": false},
-        "dom": {"csv": "tdhnO-NKg", "kind": "days", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 0, "max": 400, "required": false},
-        "pctorig": {"csv": "tdhnu-0VW", "kind": "pct", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 50, "max": 150, "required": false}
+        "dom": {"csv": "tdhnO-NKg", "kind": "days", "cols": ["Detached (All)", "Apartment"], "min": 0, "max": 400, "required": false},
+        "pctorig": {"csv": "tdhnu-0VW", "kind": "pct", "cols": ["Detached (All)", "Apartment"], "min": 50, "max": 150, "required": false}
       }
     },
     "fraser": {
@@ -165,10 +164,10 @@
       "host_url": "https://ericcoulombe.com/fraser-market-stats.html",
       "headline": "Detached (All)",
       "charts": {
-        "hpi": {"csv": "tdhnf-b6B", "kind": "money", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 200000, "max": 12000000, "required": true},
+        "hpi": {"csv": "tdhnf-b6B", "kind": "money", "cols": ["Detached (All)", "Apartment"], "min": 200000, "max": 12000000, "required": true},
         "ratio": {"csv": "tdhnP-vHC", "kind": "ratio", "cols": ["Detached (All)", "Apartment"], "min": 0, "max": 2, "required": false},
-        "dom": {"csv": "tdhnA-2dF", "kind": "days", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 0, "max": 400, "required": false},
-        "pctorig": {"csv": "tdhnq-9Pm", "kind": "pct", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 50, "max": 150, "required": false}
+        "dom": {"csv": "tdhnA-2dF", "kind": "days", "cols": ["Detached (All)", "Apartment"], "min": 0, "max": 400, "required": false},
+        "pctorig": {"csv": "tdhnq-9Pm", "kind": "pct", "cols": ["Detached (All)", "Apartment"], "min": 50, "max": 150, "required": false}
       }
     },
     "grandview": {
@@ -193,10 +192,10 @@
       "host_url": "https://ericcoulombe.com/strathcona-market-stats.html",
       "headline": "Detached (All)",
       "charts": {
-        "hpi": {"csv": "tdhn7-YcO", "kind": "money", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 200000, "max": 12000000, "required": true},
-        "ratio": {"csv": "tdhnT-tOj", "kind": "ratio", "cols": ["Detached (All)", "Apartment"], "min": 0, "max": 2, "required": false},
-        "dom": {"csv": "tdhnR-GIP", "kind": "days", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 0, "max": 400, "required": false},
-        "pctorig": {"csv": "tdhn8-EDf", "kind": "pct", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 50, "max": 150, "required": false}
+        "hpi": {"csv": "tdhn7-YcO", "kind": "money", "cols": ["Detached (All)", "Apartment"], "min": 200000, "max": 12000000, "required": true},
+        "ratio": {"csv": "tdhnT-tOj", "kind": "ratio", "cols": ["Apartment"], "min": 0, "max": 2, "required": false},
+        "dom": {"csv": "tdhnR-GIP", "kind": "days", "cols": ["Apartment"], "min": 0, "max": 400, "required": false},
+        "pctorig": {"csv": "tdhn8-EDf", "kind": "pct", "cols": ["Apartment"], "min": 50, "max": 150, "required": false}
       }
     },
     "downtown-eastside": {

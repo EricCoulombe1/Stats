@@ -142,36 +142,24 @@
     },
     "mount-pleasant": {
       "h1": "Mount Pleasant",
-      "lede": "Mount Pleasant sits just south of False Creek, with Main Street's cafés, breweries and vintage shops running through the middle of it. Greater Vancouver REALTORS® reports it as two areas, Mount Pleasant East and Mount Pleasant West, so you'll see both side by side. Condos make up most of the sales on both sides, and that's what we track here. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
-      "desc": "Mount Pleasant condo market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
-      "ogdesc": "Where Mount Pleasant condo values are heading on both the East and West sides, how fast homes are selling, and how much room buyers have to negotiate.",
-      "note": "All figures are for apartments (condos), using GVR's Mount Pleasant VE and Mount Pleasant VW areas, shown side by side.",
-      "segments": {
-        "VVEMP - Mount Pleasant VE": {
-          "label": "Mount Pleasant East",
-          "nut": "Mount Pleasant East condo",
-          "color": "--s-apt"
-        },
-        "VVWMP - Mount Pleasant VW": {
-          "label": "Mount Pleasant West",
-          "nut": "Mount Pleasant West condo",
-          "color": "--s-th"
-        }
-      }
+      "lede": "Mount Pleasant sits just south of False Creek, with Main Street's cafés, breweries and vintage shops running through the middle of it. Condos and townhouses make up most of the sales here, so that's what we track. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
+      "desc": "Mount Pleasant condo and townhouse market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
+      "ogdesc": "Where Mount Pleasant condo and townhouse values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
+      "note": "Figures are for GVR's Mount Pleasant VE area, which has most of the neighbourhood's sales. GVR's separate Mount Pleasant VW area sees only a couple of sales a month, too few to chart reliably, and detached sales here are too few as well."
     },
     "main": {
       "h1": "Main Street",
-      "lede": "GVR's Main area takes in the stretch of Main Street south of Mount Pleasant, around Riley Park and Little Mountain, with its independent shops and restaurants and blocks of character houses, many with suites. Newer townhouses and low-rise condos are filling in along the arterials, so we track all three. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
-      "desc": "Main Street detached, apartment and townhouse market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
-      "ogdesc": "Where house, condo and townhouse values along Main Street are heading, how fast homes are selling, and how much room buyers have to negotiate.",
-      "note": "Townhouse sales in this area are too few to show a reliable sales-to-listings ratio, so that chart shows detached homes and apartments only."
+      "lede": "GVR's Main area takes in the stretch of Main Street south of Mount Pleasant, around Riley Park and Little Mountain, with its independent shops and restaurants and blocks of character houses, many with suites. Low-rise condos are filling in along the arterials, so we track houses and condos. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
+      "desc": "Main Street detached and apartment market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
+      "ogdesc": "Where house and condo values along Main Street are heading, how fast homes are selling, and how much room buyers have to negotiate.",
+      "note": "Townhouse sales in this area are too few to chart reliably, so townhouses are not shown."
     },
     "fraser": {
       "h1": "Fraser",
-      "lede": "Fraser runs along Fraser Street through the heart of East Vancouver, with a long run of local restaurants, bakeries and grocers. It's mostly character and newer detached homes, many with suites, plus a growing number of townhouses and low-rise condos, so we track all three. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
-      "desc": "Fraser detached, apartment and townhouse market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
-      "ogdesc": "Where Fraser house, condo and townhouse values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
-      "note": "Townhouse sales in this area are too few to show a reliable sales-to-listings ratio, so that chart shows detached homes and apartments only."
+      "lede": "Fraser runs along Fraser Street through the heart of East Vancouver, with a long run of local restaurants, bakeries and grocers. It's mostly character and newer detached homes, many with suites, plus a growing number of low-rise condos, so we track houses and condos. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
+      "desc": "Fraser detached and apartment market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
+      "ogdesc": "Where Fraser house and condo values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
+      "note": "Townhouse sales in this area are too few to chart reliably, so townhouses are not shown."
     },
     "grandview": {
       "h1": "Grandview-Woodland",
@@ -182,9 +170,9 @@
     "strathcona": {
       "h1": "Strathcona",
       "lede": "Strathcona is Vancouver's oldest residential neighbourhood, with colourful heritage houses, community gardens and a short walk to Chinatown, Gastown and Railtown. It's a small area with relatively few sales, so its numbers can move more from month to month. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
-      "desc": "Strathcona detached, apartment and townhouse market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
-      "ogdesc": "Where Strathcona house, condo and townhouse values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
-      "note": "Strathcona has few townhouse sales, so its sales-to-listings ratio chart shows detached homes and apartments only."
+      "desc": "Strathcona detached and apartment market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
+      "ogdesc": "Where Strathcona house and condo values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
+      "note": "Strathcona sees only about one detached sale a month, so detached homes appear in the benchmark price only; the selling-speed and negotiating charts show condos. Townhouse sales are too few to show."
     },
     "downtown-eastside": {
       "h1": "Downtown Eastside",

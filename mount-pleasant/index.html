@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Mount Pleasant Real Estate Market Stats | Eric Coulombe</title>
-<meta name="description" content="Mount Pleasant condo market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.">
+<meta name="description" content="Mount Pleasant condo and townhouse market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.">
 <link rel="canonical" href="https://ericcoulombe.com/mount-pleasant-market-stats.html">
 <meta property="og:title" content="Mount Pleasant Market Stats, updated monthly">
-<meta property="og:description" content="Where Mount Pleasant condo values are heading on both the East and West sides, how fast homes are selling, and how much room buyers have to negotiate.">
+<meta property="og:description" content="Where Mount Pleasant condo and townhouse values are heading, how fast homes are selling, and how much room buyers have to negotiate.">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="https://stats.ericcoulombe.com/assets/fonts/ev-fonts.css">
 <style>
@@ -171,9 +171,9 @@ footer p { margin: 0; }
 <path d="M258.815 389.472 L276.797 389.472 L276.797 394.855 L264.647 394.855 L264.647 399.789 L276.125 399.789 L276.125 405.173 L264.647 405.173 L264.647 410.555 L277.470 410.555 L277.470 415.939 L258.815 415.939 L258.815 389.472" class="r"/>
 </svg><div class="who">Real Estate Advisor<br>Engel &amp; Völkers Vancouver</div></div>
     <header class="hero-copy">
-      <div class="eyebrow">Market Insight · Mount Pleasant: East &amp; West</div>
+      <div class="eyebrow">Market Insight · Mount Pleasant</div>
       <h1>Mount Pleasant <span class="accent">Market</span></h1>
-      <p class="lede">Mount Pleasant sits just south of False Creek, with Main Street's cafés, breweries and vintage shops running through the middle of it. Greater Vancouver REALTORS® reports it as two areas, Mount Pleasant East and Mount Pleasant West, so you'll see both side by side. Condos make up most of the sales on both sides, and that's what we track here. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.</p>
+      <p class="lede">Mount Pleasant sits just south of False Creek, with Main Street's cafés, breweries and vintage shops running through the middle of it. Condos and townhouses make up most of the sales here, so that's what we track. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.</p>
       <div class="stamp" id="stamp"></div>
     </header>
   </div>
@@ -240,14 +240,14 @@ footer p { margin: 0; }
 
   <footer>
     <p id="src"></p>
-    <p>All figures are for apartments (condos), using GVR's Mount Pleasant VE and Mount Pleasant VW areas, shown side by side.</p>
+    <p>Figures are for GVR's Mount Pleasant VE area, which has most of the neighbourhood's sales. GVR's separate Mount Pleasant VW area sees only a couple of sales a month, too few to chart reliably, and detached sales here are too few as well.</p>
     <p>MLS® and the MLS® Home Price Index are trademarks of the Canadian Real Estate Association. Data from Greater Vancouver REALTORS® Stats Centre, © ShowingTime Plus, LLC. Figures are not a valuation of any specific property.</p>
     <p>Eric Coulombe · Engel &amp; Völkers Vancouver · 604-764-8620 · eric@ericcoulombe.com</p>
   </footer>
 </div>
 
 <script>
-const CFG = {"key": "mount-pleasant", "name": "Mount Pleasant", "segs": {"Detached (All)": {"label": "Detached", "nut": "Detached", "color": "--s-det"}, "Apartment": {"label": "Apartment", "nut": "Apartment", "color": "--s-apt"}, "Townhouse": {"label": "Townhouse", "nut": "Townhouse", "color": "--s-th"}, "VVEMP - Mount Pleasant VE": {"label": "Mount Pleasant East", "nut": "Mount Pleasant East condo", "color": "--s-apt"}, "VVWMP - Mount Pleasant VW": {"label": "Mount Pleasant West", "nut": "Mount Pleasant West condo", "color": "--s-th"}}};
+const CFG = {"key": "mount-pleasant", "name": "Mount Pleasant", "segs": {"Detached (All)": {"label": "Detached", "nut": "Detached", "color": "--s-det"}, "Apartment": {"label": "Apartment", "nut": "Apartment", "color": "--s-apt"}, "Townhouse": {"label": "Townhouse", "nut": "Townhouse", "color": "--s-th"}}};
 const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const MONTHS_L = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 function monthAt(start, i) { const [y, m] = start.split("-").map(Number); const t = (m - 1) + i; return { y: y + Math.floor(t / 12), m: t % 12 }; }
