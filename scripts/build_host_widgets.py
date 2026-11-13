@@ -6,16 +6,23 @@ ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 OUT={}
 p=json.load(open('pages.json'))['pages']; reg=json.load(open('registry.json'))['areas']
-slug={'ubc':'ubc-market-stats.html','point-grey':'point-grey-market-stats.html','dunbar':'dunbar-mackenzie-heights-market-stats.html','kerrisdale':'kerrisdale-market-stats.html','arbutus':'arbutus-market-stats.html','kitsilano':'kitsilano-market-stats.html','fairview':'fairview-market-stats.html','downtown':'downtown-peninsula-market-stats.html'}
+slug={'ubc':'ubc-market-stats.html','point-grey':'point-grey-market-stats.html','dunbar':'dunbar-mackenzie-heights-market-stats.html','kerrisdale':'kerrisdale-market-stats.html','arbutus':'arbutus-market-stats.html','kitsilano':'kitsilano-market-stats.html','fairview':'fairview-market-stats.html','downtown':'downtown-peninsula-market-stats.html','cambie':'cambie-market-stats.html','mount-pleasant':'mount-pleasant-market-stats.html','main':'main-street-market-stats.html','fraser':'fraser-market-stats.html','grandview':'grandview-woodland-market-stats.html','strathcona':'strathcona-market-stats.html','downtown-eastside':'downtown-eastside-market-stats.html'}
 cover={'point-grey':'detached homes and apartments (condos) in Greater Vancouver REALTORS&reg; sub-area &ldquo;Point Grey&rdquo;. Point Grey has too few townhouse sales to chart reliably',
 'dunbar':'detached homes in the Greater Vancouver REALTORS&reg; sub-areas &ldquo;Dunbar&rdquo; and &ldquo;MacKenzie Heights&rdquo;, shown separately. MacKenzie Heights is a small area with relatively few sales, so its numbers can move more from month to month',
 'kerrisdale':'detached homes, apartments (condos) and townhouses in Greater Vancouver REALTORS&reg; sub-area &ldquo;Kerrisdale&rdquo;',
 'arbutus':'detached homes in Greater Vancouver REALTORS&reg; sub-area &ldquo;Arbutus&rdquo;, which reports figures for detached homes only',
 'kitsilano':'detached homes, apartments (condos) and townhouses in Greater Vancouver REALTORS&reg; sub-area &ldquo;Kitsilano&rdquo;',
 'fairview':'apartments (condos) and townhouses in Greater Vancouver REALTORS&reg; sub-area &ldquo;Fairview VW&rdquo;. Detached homes are rare in Fairview and are not shown',
-'downtown':'apartments (condos) in the Greater Vancouver REALTORS&reg; sub-areas &ldquo;Downtown VW&rdquo;, &ldquo;Yaletown&rdquo;, &ldquo;Coal Harbour&rdquo; and &ldquo;West End VW&rdquo;, shown side by side'}
-short={'ubc':'UBC','point-grey':'Point Grey','dunbar':'Dunbar &amp; MacKenzie Heights','kerrisdale':'Kerrisdale','arbutus':'Arbutus','kitsilano':'Kitsilano','fairview':'Fairview','downtown':'Downtown Peninsula'}
-order=['ubc','point-grey','dunbar','kerrisdale','arbutus','kitsilano','fairview','downtown']
+'downtown':'apartments (condos) in the Greater Vancouver REALTORS&reg; sub-areas &ldquo;Downtown VW&rdquo;, &ldquo;Yaletown&rdquo;, &ldquo;Coal Harbour&rdquo; and &ldquo;West End VW&rdquo;, shown side by side',
+'cambie':'detached homes, apartments (condos) and townhouses in Greater Vancouver REALTORS&reg; sub-area &ldquo;Cambie&rdquo;',
+'mount-pleasant':'apartments (condos) in the Greater Vancouver REALTORS&reg; sub-areas &ldquo;Mount Pleasant VE&rdquo; and &ldquo;Mount Pleasant VW&rdquo;, shown side by side',
+'main':'detached homes, apartments (condos) and townhouses in Greater Vancouver REALTORS&reg; sub-area &ldquo;Main&rdquo;. Townhouse sales are too few for a reliable sales-to-listings ratio, so that chart shows detached homes and apartments only',
+'fraser':'detached homes, apartments (condos) and townhouses in Greater Vancouver REALTORS&reg; sub-area &ldquo;Fraser VE&rdquo;. Townhouse sales are too few for a reliable sales-to-listings ratio, so that chart shows detached homes and apartments only',
+'grandview':'detached homes, apartments (condos) and townhouses in Greater Vancouver REALTORS&reg; sub-area &ldquo;Grandview Woodland&rdquo;',
+'strathcona':'detached homes, apartments (condos) and townhouses in Greater Vancouver REALTORS&reg; sub-area &ldquo;Strathcona&rdquo;. Townhouse sales are too few for a reliable sales-to-listings ratio, so that chart shows detached homes and apartments only',
+'downtown-eastside':'apartments (condos) in Greater Vancouver REALTORS&reg; sub-area &ldquo;Downtown VE&rdquo;, which includes the Downtown Eastside'}
+short={'ubc':'UBC','point-grey':'Point Grey','dunbar':'Dunbar &amp; MacKenzie Heights','kerrisdale':'Kerrisdale','arbutus':'Arbutus','kitsilano':'Kitsilano','fairview':'Fairview','downtown':'Downtown Peninsula','cambie':'Cambie','mount-pleasant':'Mount Pleasant','main':'Main Street','fraser':'Fraser','grandview':'Grandview-Woodland','strathcona':'Strathcona','downtown-eastside':'Downtown Eastside'}
+order=['ubc','point-grey','dunbar','kerrisdale','arbutus','kitsilano','fairview','cambie','downtown','mount-pleasant','main','fraser','grandview','strathcona','downtown-eastside']
 def ent(s): return s.replace('·','&middot;').replace('®','&reg;').replace("’","&rsquo;").replace("'","&rsquo;").replace('ö','&ouml;').replace('é','&eacute;')
 STYLE="""<link rel="stylesheet" href="https://stats.ericcoulombe.com/assets/fonts/ev-fonts.css">
 <style>
@@ -61,7 +68,7 @@ hubhero='<section class="ech"><div class="sh" style="background:radial-gradient(
 hub=f"""{STYLE}
 {hubhero}
 <iframe id="ec-stats" src="https://stats.ericcoulombe.com/?embed=1&bare=1" title="Vancouver neighbourhood market statistics" scrolling="no" style="display:block;width:100%;border:0;min-height:900px;background:#f4f4f3"></iframe>
-<section class="ecb"><p class="bt"><a href="tel:16047648620" style="background:#B7202E;color:#fff">Call Eric &middot; 604-764-8620</a></p><details><summary>About these numbers</summary><p>Each neighbourhood page tracks benchmark prices, how quickly listings are selling, how long homes take to get an accepted offer and how much negotiating room buyers have, using Greater Vancouver REALTORS&reg; data for Vancouver&rsquo;s Westside and Downtown. Market statistics describe whole neighbourhoods, not any one home.</p></details>{links(None,'Neighbourhoods:')}</section>
+<section class="ecb"><p class="bt"><a href="tel:16047648620" style="background:#B7202E;color:#fff">Call Eric &middot; 604-764-8620</a></p><details><summary>About these numbers</summary><p>Each neighbourhood page tracks benchmark prices, how quickly listings are selling, how long homes take to get an accepted offer and how much negotiating room buyers have, using Greater Vancouver REALTORS&reg; data for neighbourhoods across Vancouver, from the Westside to the East Side. Market statistics describe whole neighbourhoods, not any one home.</p></details>{links(None,'Neighbourhoods:')}</section>
 {SCRIPT}"""
 OUT['hub']=hub
 
