@@ -136,47 +136,47 @@
     },
     "cambie": {
       "h1": "Cambie",
-      "lede": "Cambie follows the Canada Line south through Cambie Village and past Queen Elizabeth Park. The side streets are mostly character and newer detached homes, while the corridor itself keeps adding condos and townhouses, so we track all three. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
+      "lede": "Cambie is about as central as Vancouver gets. Cambie Village has a good stretch of heritage-listed homes, Queen Elizabeth Park crowns Little Mountain at the city's highest point, and the Canada Line runs right underneath, which is why the corridor keeps filling in with new condos and townhouses. The side streets are still mostly character and newer detached homes, so we track all three. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
       "desc": "Cambie detached, apartment and townhouse market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
       "ogdesc": "Where Cambie house, condo and townhouse values are heading, how fast homes are selling, and how much room buyers have to negotiate."
     },
     "mount-pleasant": {
       "h1": "Mount Pleasant",
-      "lede": "Mount Pleasant sits just south of False Creek, with Main Street's cafés, breweries and vintage shops running through the middle of it. Condos and townhouses make up most of the sales here, so that's what we track. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
+      "lede": "Mount Pleasant is one of Vancouver's oldest neighbourhoods, and you can feel it: heritage houses and older low-rises on the side streets, with a newer wave of condos closer to Main and Broadway. The area grew up around Brewery Creek, and today's craft breweries along Main, plus the murals that go up every summer, keep that spirit going. Condos and townhouses make up most of the sales here, so that's what we track. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
       "desc": "Mount Pleasant condo and townhouse market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
       "ogdesc": "Where Mount Pleasant condo and townhouse values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
       "note": "Figures are for GVR's Mount Pleasant VE area, which has most of the neighbourhood's sales. GVR's separate Mount Pleasant VW area sees only a couple of sales a month, too few to chart reliably, and detached sales here are too few as well."
     },
     "main": {
       "h1": "Main Street",
-      "lede": "GVR's Main area takes in the stretch of Main Street south of Mount Pleasant, around Riley Park and Little Mountain, with its independent shops and restaurants and blocks of character houses, many with suites. Low-rise condos are filling in along the arterials, so we track houses and condos. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
+      "lede": "South of Mount Pleasant, Main Street turns into a long run of independent shops, vintage furniture dealers, cafés and neighbourhood restaurants, with Riley Park close by and Queen Elizabeth Park up on Little Mountain. The side streets are full of character houses, many with suites, and low-rise condos are filling in along the arterials, so we track houses and condos. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
       "desc": "Main Street detached and apartment market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
       "ogdesc": "Where house and condo values along Main Street are heading, how fast homes are selling, and how much room buyers have to negotiate.",
       "note": "Townhouse sales in this area are too few to chart reliably, so townhouses are not shown."
     },
     "fraser": {
       "h1": "Fraser",
-      "lede": "Fraser runs along Fraser Street through the heart of East Vancouver, with a long run of local restaurants, bakeries and grocers. It's mostly character and newer detached homes, many with suites, plus a growing number of low-rise condos, so we track houses and condos. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
+      "lede": "Fraser Street has become a real food destination. Locals call the stretch around Kingsway \"Fraserhood,\" and it's packed with bakeries, cafés and neighbourhood restaurants. Around it is classic family East Van: character and newer houses, many with suites, plus a growing number of low-rise condos, so we track houses and condos. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
       "desc": "Fraser detached and apartment market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
       "ogdesc": "Where Fraser house and condo values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
       "note": "Townhouse sales in this area are too few to chart reliably, so townhouses are not shown."
     },
     "grandview": {
       "h1": "Grandview-Woodland",
-      "lede": "Grandview-Woodland centres on Commercial Drive, with its cafés, delis and patios, surrounded by character houses and older low-rise apartments. There's a steady mix of detached homes, condos and townhouses, so we track all three. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
+      "lede": "Grandview-Woodland is the multicultural heart of East Van, built around Commercial Drive. The Drive is Vancouver's Little Italy, with a strong Portuguese thread as well, so you get old-school espresso bars, Italian delis, patios and live music, along with a counter-culture streak that's never really left. The side streets mix grand old character homes with older low-rise apartments, so we track houses, condos and townhouses. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
       "desc": "Grandview-Woodland detached, apartment and townhouse market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
       "ogdesc": "Where Grandview-Woodland house, condo and townhouse values are heading, how fast homes are selling, and how much room buyers have to negotiate."
     },
     "strathcona": {
       "h1": "Strathcona",
-      "lede": "Strathcona is Vancouver's oldest residential neighbourhood, with colourful heritage houses, community gardens and a short walk to Chinatown, Gastown and Railtown. It's a small area with relatively few sales, so its numbers can move more from month to month. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
+      "lede": "Strathcona is Vancouver's oldest residential neighbourhood, a few blocks from Chinatown and Gastown, with colourful restored heritage houses, front porches and community gardens. It's long been a landing place for newcomers and a home for artists, and it's kept its bohemian streak: hundreds of artists open their studios during the Eastside Culture Crawl each November, and you'll meet plenty of film and creative types. It's a small market, so detached homes show in the benchmark price and condos carry the rest. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
       "desc": "Strathcona detached and apartment market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
       "ogdesc": "Where Strathcona house and condo values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
       "note": "Strathcona sees only about one detached sale a month, so detached homes appear in the benchmark price only; the selling-speed and negotiating charts show condos. Townhouse sales are too few to show."
     },
     "downtown-eastside": {
       "h1": "Downtown Eastside",
-      "lede": "This page uses GVR's Downtown VE area, the east side of downtown that includes the Downtown Eastside. Nearly every sale here is a condo, so that's what we track. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
+      "lede": "This page tracks GVR's Downtown VE area, the historic east side of downtown that takes in the eastern end of Gastown, Chinatown and the Downtown Eastside. It's home to some of the city's best warehouse loft conversions, with exposed brick, timber beams and tall windows, alongside newer mid-rise condos. Nearly every sale here is a condo, so that's what we track. It's very much a block-by-block market, so treat these numbers as the starting point. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
       "desc": "Downtown Eastside condo market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
       "ogdesc": "Where Downtown Eastside condo values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
       "note": "All figures are for apartments (condos) in GVR's Downtown VE area."
