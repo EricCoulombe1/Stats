@@ -174,11 +174,11 @@
       "ogdesc": "Where Strathcona house and condo values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
       "note": "Strathcona sees only about one detached sale a month, so detached homes appear in the benchmark price only; the selling-speed and negotiating charts show condos. Townhouse sales are too few to show."
     },
-    "downtown-eastside": {
-      "h1": "Downtown Eastside",
+    "downtown-east": {
+      "h1": "Downtown East",
       "lede": "This page tracks GVR's Downtown VE area, the historic east side of downtown that takes in the eastern end of Gastown, Chinatown and the Downtown Eastside. It's home to some of the city's best warehouse loft conversions, with exposed brick, timber beams and tall windows, alongside newer mid-rise condos. Nearly every sale here is a condo, so that's what we track. It's very much a block-by-block market, so treat these numbers as the starting point. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.",
-      "desc": "Downtown Eastside condo market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
-      "ogdesc": "Where Downtown Eastside condo values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
+      "desc": "Downtown East (Gastown, Chinatown and the Downtown Eastside) condo market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
+      "ogdesc": "Where condo and loft values in Gastown, Chinatown and the Downtown Eastside are heading, how fast homes are selling, and how much room buyers have to negotiate.",
       "note": "All figures are for apartments (condos) in GVR's Downtown VE area."
     }
   }

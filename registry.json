@@ -198,12 +198,12 @@
         "pctorig": {"csv": "tdhn8-EDf", "kind": "pct", "cols": ["Apartment"], "min": 50, "max": 150, "required": false}
       }
     },
-    "downtown-eastside": {
-      "name": "Downtown Eastside",
-      "full_name": "Downtown Eastside",
-      "page": "downtown-eastside/",
+    "downtown-east": {
+      "name": "Downtown East",
+      "full_name": "Downtown East: Gastown, Chinatown & the Downtown Eastside",
+      "page": "downtown-east/",
       "hub_hidden": true,
-      "host_url": "https://ericcoulombe.com/downtown-eastside-market-stats.html",
+      "host_url": "https://ericcoulombe.com/downtown-east-market-stats.html",
       "headline": "Apartment",
       "charts": {
         "hpi": {"csv": "tdhnm-roQ", "kind": "money", "cols": ["Apartment"], "min": 200000, "max": 12000000, "required": true},
