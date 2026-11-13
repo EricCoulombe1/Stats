@@ -1,0 +1,32 @@
+name: Fetch header photos
+
+# Downloads photos listed in assets/img/_incoming.json (the build sandbox
+# can't reach Wikimedia), resizes them and commits them to assets/img/.
+on:
+  push:
+    branches: [main]
+    paths: [assets/img/_incoming.json]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pillow
+      - run: python3 scripts/fetch_photos.py
+      - name: Commit photos
+        run: |
+          if [ -n "$(git status --porcelain assets/img)" ]; then
+            git config user.name "stats-bot"
+            git config user.email "${{ github.repository_owner }}@users.noreply.github.com"
+            git add assets/img
+            git commit -m "Add header photos"
+            git push
+          fi
