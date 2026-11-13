@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mount Pleasant Real Estate Market Stats | Eric Coulombe</title>
+<meta name="description" content="Mount Pleasant condo market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.">
+<link rel="canonical" href="https://ericcoulombe.com/mount-pleasant-market-stats.html">
+<meta property="og:title" content="Mount Pleasant Market Stats, updated monthly">
+<meta property="og:description" content="Where Mount Pleasant condo values are heading on both the East and West sides, how fast homes are selling, and how much room buyers have to negotiate.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="https://stats.ericcoulombe.com/assets/fonts/ev-fonts.css">
+<style>
+
+html, body { margin: 0; padding: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+/* Layout: one calm column, a 2x2 "at a glance" grid of chart cards, then one wide leasehold chart. */
+:root {
+  --bg: #f4f4f3;
+  --surface: #ffffff;
+  --ink: #15191e;
+  --ink-2: #4d555d;
+  --ink-3: #737b83;
+  --line: #e1e5e8;
+  --grid: #eceff1;
+  --accent: #b7202e;
+  --hero: #2e2f32;
+  --hero-ink: #f3f3f2;
+  --hero-ink-2: #c9cacc;
+  --s-apt: #2a78d6;
+  --s-th: #eb6834;
+  --s-vw: #8a9199;
+  --f-display: "Engel Voelkers Head", Georgia, serif;
+  --f-body: "Engel Voelkers Text", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111315; --surface: #191c1f; --ink: #eef0f2; --ink-2: #b4bcc4; --ink-3: #8c949c;
+    --line: #2b3035; --grid: #23272b; --accent: #d9535f; --hero: #1f2023;
+    --s-apt: #3987e5; --s-th: #d95926; --s-vw: #7d858d; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111315; --surface: #191c1f; --ink: #eef0f2; --ink-2: #b4bcc4; --ink-3: #8c949c;
+  --line: #2b3035; --grid: #23272b; --accent: #d9535f; --hero: #1f2023;
+  --s-apt: #3987e5; --s-th: #d95926; --s-vw: #7d858d; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 28px 56px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 40px; }
+.hero-band { background: var(--hero); color: var(--hero-ink); position: relative; overflow: hidden; }
+.hero-photo { position: absolute; inset: 0; margin: 0; }
+.hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center 78%; display: block; }
+.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18,20,23,.86) 0%, rgba(18,20,23,.66) 45%, rgba(18,20,23,.22) 100%), linear-gradient(0deg, rgba(18,20,23,.55) 0%, rgba(18,20,23,0) 40%); }
+.hero-credit { position: absolute; right: max(16px, env(safe-area-inset-right, 0px)); bottom: 10px; margin: 0; font-size: 11px; color: rgba(243,243,242,.78); letter-spacing: .02em; }
+.hero-credit a { color: inherit; }
+@media (max-width: 640px) { .hero-shade { background: linear-gradient(0deg, rgba(18,20,23,.86) 0%, rgba(18,20,23,.6) 55%, rgba(18,20,23,.38) 100%); } .hero-photo img { object-position: 60% 78%; } }
+.hero-inner { position: relative; max-width: 1120px; margin: 0 auto; padding-block: 22px 56px; min-height: 440px; align-content: space-between; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 34px; }
+.topbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
+.logo { height: 46px; width: auto; display: block; }
+.logo .r, .logo .g { fill: #ffffff; }
+.topbar .who { font-size: 13px; color: var(--hero-ink-2); border-left: 1px solid rgba(255,255,255,.25); padding-left: 16px; line-height: 1.35; }
+.topbar .proto { margin-left: auto; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--hero-ink-2); border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 3px 10px; }
+.hero-copy { display: grid; gap: 12px; max-width: 760px; }
+.hero-copy .eyebrow { color: var(--hero-ink-2); }
+.hero-copy .lede { margin: 0; font-size: 17px; color: var(--hero-ink-2); max-width: 54ch; }
+.hero-band .stamp span { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.18); color: var(--hero-ink); }
+.brand { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; font-size: 13px; color: var(--ink-2); border-bottom: 1px solid var(--line); padding-bottom: 14px; }
+.brand b { color: var(--ink); font-weight: 600; letter-spacing: .01em; }
+.brand .proto { margin-left: auto; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); font-weight: 600; }
+header.hero { display: grid; gap: 14px; }
+.eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-3); font-weight: 600; }
+h1 { font-family: var(--f-display); font-weight: 800; font-size: clamp(40px, 7vw, 76px); line-height: .95; margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+h1 .accent { color: var(--hero-ink); box-shadow: inset 0 -.12em 0 var(--accent); }
+.stamp { display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px; color: var(--ink-2); }
+.stamp span { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 3px 11px; }
+.nutshell { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.nut { background: var(--surface); padding: 18px 20px; display: grid; gap: 4px; align-content: start; }
+.nut .k { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3); font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.nut .k i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.nut .v { font-family: var(--f-display); font-weight: 700; font-size: 30px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.nut .d { font-size: 14px; color: var(--ink-2); }
+h2 { font-family: var(--f-display); font-weight: 700; font-size: 26px; margin: 0; line-height: 1.15; text-wrap: balance; }
+.sec { display: grid; gap: 18px; }
+.sec-head { display: grid; gap: 4px; max-width: 68ch; }
+.sec-head p { margin: 0; color: var(--ink-2); }
+.grid4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 18px 14px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.card .tag { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); font-weight: 600; }
+.card h3 { margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3; }
+.card .sub { margin: 0; font-size: 13px; color: var(--ink-3); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.legend i { width: 16px; height: 3px; border-radius: 2px; display: inline-block; }
+.chart { position: relative; min-width: 0; }
+.chart svg { display: block; width: 100%; overflow: visible; }
+.chart svg text { font-family: var(--f-body); font-size: 11px; fill: var(--ink-3); font-variant-numeric: tabular-nums; }
+.chart svg text.endlab { font-size: 12px; font-weight: 600; fill: var(--ink); }
+.multi { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 14px; }
+.mini-h { font-size: 13px; color: var(--ink-2); display: flex; align-items: center; gap: 7px; }
+.mini-h i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--surface); font-size: 12px; line-height: 1.45; padding: 7px 10px; border-radius: 6px; white-space: nowrap; transform: translate(-50%, calc(-100% - 10px)); z-index: 2; font-variant-numeric: tabular-nums; }
+.tip b { font-weight: 600; }
+.tip .row { display: flex; align-items: center; gap: 6px; }
+.tip .row i { width: 8px; height: 8px; border-radius: 2px; display: inline-block; }
+details.explain { border-top: 1px solid var(--line); padding-top: 8px; font-size: 14px; color: var(--ink-2); }
+details.explain summary { cursor: pointer; font-size: 13px; font-weight: 600; color: var(--ink); list-style: none; display: flex; align-items: center; gap: 6px; }
+details.explain summary::-webkit-details-marker { display: none; }
+details.explain summary::before { content: "+"; font-family: var(--f-display); font-weight: 700; color: var(--accent); width: 12px; }
+details.explain[open] summary::before { content: "\2212"; }
+details.explain p { margin: 8px 0 2px; max-width: 62ch; }
+.pending { border: 1px dashed var(--line); border-radius: 8px; min-height: 220px; display: grid; place-items: center; text-align: center; padding: 20px; color: var(--ink-3); font-size: 14px; }
+.pending b { display: block; color: var(--ink-2); font-weight: 600; margin-bottom: 4px; }
+.wide { padding: 22px 22px 16px; }
+.wide-top { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: flex-end; justify-content: space-between; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { font: 600 13px var(--f-body); color: var(--ink-2); background: transparent; border: 0; padding: 7px 13px; cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
+.seg button:focus-visible, details.explain summary:focus-visible { outline: 2px solid var(--s-apt); outline-offset: 2px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px 24px; border-top: 1px solid var(--line); padding-top: 14px; }
+.facts div { display: grid; gap: 2px; }
+.facts .v { font-family: var(--f-display); font-weight: 700; font-size: 24px; font-variant-numeric: tabular-nums; }
+.facts .k { font-size: 13px; color: var(--ink-2); }
+footer { border-top: 1px solid var(--line); padding-top: 18px; font-size: 13px; color: var(--ink-3); display: grid; gap: 6px; max-width: 80ch; }
+footer p { margin: 0; }
+@media (prefers-reduced-motion: no-preference) { .chart path.series { transition: d .35s ease; } }
+
+.embed .topbar { display: none; }
+.bare .hero-band { display: none; }
+.bare .wrap { padding-top: 24px; }
+.stamp-bare { display: none; }
+.bare .stamp-bare { display: flex; }
+.embed .hero-inner { min-height: 360px; padding-top: 34px; }
+.embed body, html.embed body { background: var(--bg); }
+
+/* Area-template additions */
+:root { --s-det: #1f8a5e; --s-p4: #7b55c7; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --s-det: #33a374; --s-p4: #9673de; } }
+:root[data-theme="dark"] { --s-det: #33a374; --s-p4: #9673de; }
+.hero-band.nophoto { background: radial-gradient(120% 140% at 100% 0%, #3a3c40 0%, #26272a 55%, #1d1e21 100%); }
+.hero-band.nophoto .hero-inner { min-height: 360px; }
+.embed .hero-band.nophoto .hero-inner { min-height: 300px; }
+.hero-copy .lede b { color: var(--hero-ink); font-weight: 600; }
+.bare .hero-band { display: none; }
+.bare .wrap { padding-top: 24px; }
+.stamp-bare { display: none; }
+.bare .stamp-bare { display: flex; }
+.more { font-size: 13px; }
+.more a { color: var(--ink-2); }
+</style>
+</head>
+<body>
+<div class="hero-band nophoto">
+  <div class="hero-inner">
+    <div class="topbar"><svg class="logo" role="img" aria-label="Eric Coulombe" xmlns="http://www.w3.org/2000/svg" viewBox="49.153 293.898 241.240 135.636">
+<path d="M185.320 378.108 L185.320 340.424 L191.444 340.424 L191.444 371.984 L233.518 371.984 L233.518 340.424 L239.642 340.424 L239.642 378.108 L185.320 378.108" class="g"/>
+<path d="M148.153 378.107 L148.153 306.822 L276.809 306.822 L276.809 378.107 L271.029 378.107 L271.029 312.424 L153.959 312.424 L153.959 378.107 L148.153 378.107" class="g"/>
+<path d="M63.657 351.690 L80.292 351.690 L80.292 354.605 L66.797 354.605 L66.797 362.905 L79.394 362.905 L79.394 365.821 L66.797 365.821 L66.797 375.241 L80.964 375.241 L80.964 378.157 L63.657 378.157 L63.657 351.690" class="r"/>
+<path d="M88.968 363.353 L91.770 363.353 C92.643 363.353 93.547 363.329 94.481 363.279 C95.414 363.228 96.275 363.067 97.060 362.792 C97.845 362.518 98.493 362.089 99.004 361.502 C99.515 360.918 99.771 360.077 99.771 358.980 C99.771 358.032 99.582 357.272 99.208 356.698 C98.837 356.126 98.344 355.684 97.733 355.372 C97.121 355.060 96.437 354.855 95.676 354.754 C94.916 354.656 94.149 354.605 93.379 354.605 L88.968 354.605 L88.968 363.353 M85.825 351.689 L92.591 351.689 C93.863 351.689 95.129 351.764 96.388 351.915 C97.644 352.063 98.773 352.388 99.771 352.887 C100.766 353.385 101.578 354.114 102.198 355.072 C102.822 356.032 103.135 357.334 103.135 358.980 C103.135 360.922 102.549 362.494 101.377 363.689 C100.206 364.886 98.588 365.645 96.519 365.969 L104.033 378.156 L100.181 378.156 L93.005 366.269 L88.968 366.269 L88.968 378.156 L85.825 378.156 L85.825 351.689" class="r"/>
+<path d="M108.667 351.690H111.810V378.157H108.667Z" class="r"/>
+<path d="M136.928 357.147 C136.131 356.076 135.145 355.273 133.974 354.736 C132.803 354.201 131.583 353.933 130.311 353.933 C128.842 353.933 127.488 354.231 126.256 354.831 C125.021 355.428 123.956 356.231 123.059 357.241 C122.161 358.250 121.465 359.423 120.966 360.755 C120.467 362.089 120.218 363.478 120.218 364.923 C120.218 366.468 120.467 367.907 120.966 369.241 C121.465 370.574 122.155 371.733 123.041 372.717 C123.926 373.703 124.985 374.480 126.220 375.053 C127.452 375.627 128.818 375.913 130.311 375.913 C131.933 375.913 133.378 375.597 134.650 374.960 C135.918 374.325 137.029 373.409 137.975 372.212 L140.329 374.194 C139.134 375.790 137.695 376.961 136.012 377.708 C134.330 378.456 132.429 378.829 130.311 378.829 C128.419 378.829 126.649 378.480 125.003 377.782 C123.360 377.085 121.933 376.120 120.722 374.886 C119.515 373.652 118.569 372.188 117.881 370.493 C117.197 368.799 116.856 366.941 116.856 364.923 C116.856 362.979 117.184 361.160 117.845 359.465 C118.505 357.771 119.432 356.300 120.631 355.054 C121.827 353.808 123.247 352.824 124.890 352.102 C126.536 351.379 128.343 351.017 130.311 351.017 C132.106 351.017 133.831 351.341 135.489 351.989 C137.147 352.637 138.537 353.696 139.657 355.167 L136.928 357.147" class="r"/>
+<path d="M80.804 396.350 C80.232 395.654 79.526 395.117 78.693 394.743 C77.856 394.370 76.892 394.183 75.793 394.183 C74.698 394.183 73.682 394.394 72.748 394.818 C71.814 395.241 71.005 395.833 70.318 396.594 C69.633 397.354 69.097 398.258 68.711 399.304 C68.325 400.350 68.130 401.485 68.130 402.705 C68.130 403.953 68.325 405.092 68.711 406.126 C69.097 407.161 69.627 408.058 70.299 408.817 C70.971 409.578 71.762 410.169 72.672 410.594 C73.582 411.017 74.561 411.228 75.608 411.228 C76.804 411.228 77.862 410.980 78.787 410.481 C79.709 409.982 80.466 409.284 81.066 408.388 L85.927 412.015 C84.804 413.584 83.384 414.743 81.665 415.490 C79.943 416.239 78.176 416.611 76.356 416.611 C74.287 416.611 72.380 416.287 70.637 415.639 C68.891 414.993 67.385 414.063 66.113 412.854 C64.842 411.646 63.850 410.182 63.141 408.463 C62.432 406.743 62.076 404.824 62.076 402.705 C62.076 400.588 62.432 398.668 63.141 396.948 C63.850 395.229 64.842 393.766 66.113 392.557 C67.385 391.348 68.891 390.419 70.637 389.771 C72.380 389.123 74.287 388.800 76.356 388.800 C77.105 388.800 77.884 388.868 78.693 389.005 C79.502 389.142 80.299 389.359 81.084 389.659 C81.869 389.958 82.623 390.357 83.347 390.856 C84.068 391.353 84.716 391.965 85.291 392.687 L80.804 396.350" class="r"/>
+<path d="M93.736 402.705 C93.736 403.952 93.931 405.092 94.317 406.126 C94.704 407.160 95.257 408.058 95.981 408.817 C96.702 409.577 97.569 410.169 98.579 410.593 C99.590 411.016 100.715 411.227 101.962 411.227 C103.207 411.227 104.335 411.016 105.345 410.593 C106.355 410.169 107.219 409.577 107.943 408.817 C108.664 408.058 109.221 407.160 109.607 406.126 C109.994 405.092 110.185 403.952 110.185 402.705 C110.185 401.485 109.994 400.350 109.607 399.304 C109.221 398.257 108.664 397.354 107.943 396.593 C107.219 395.832 106.355 395.241 105.345 394.818 C104.335 394.393 103.207 394.182 101.962 394.182 C100.715 394.182 99.590 394.393 98.579 394.818 C97.569 395.241 96.702 395.832 95.981 396.593 C95.257 397.354 94.704 398.257 94.317 399.304 C93.931 400.350 93.736 401.485 93.736 402.705 M87.682 402.705 C87.682 400.587 88.038 398.668 88.747 396.948 C89.456 395.229 90.447 393.766 91.719 392.556 C92.991 391.347 94.497 390.419 96.243 389.771 C97.986 389.123 99.894 388.799 101.962 388.799 C104.031 388.799 105.935 389.123 107.681 389.771 C109.424 390.419 110.934 391.347 112.205 392.556 C113.477 393.766 114.465 395.229 115.177 396.948 C115.886 398.668 116.242 400.587 116.242 402.705 C116.242 404.824 115.886 406.742 115.177 408.462 C114.465 410.181 113.477 411.646 112.205 412.853 C110.934 414.063 109.424 414.992 107.681 415.639 C105.935 416.287 104.031 416.611 101.962 416.611 C99.894 416.611 97.986 416.287 96.243 415.639 C94.497 414.992 92.991 414.063 91.719 412.853 C90.447 411.646 89.456 410.181 88.747 408.462 C88.038 406.742 87.682 404.824 87.682 402.705" class="r"/>
+<path d="M142.521 405.733 C142.521 407.303 142.284 408.749 141.809 410.070 C141.334 411.391 140.632 412.537 139.698 413.509 C138.764 414.481 137.599 415.241 136.202 415.789 C134.806 416.337 133.200 416.611 131.380 416.611 C129.537 416.611 127.916 416.337 126.519 415.789 C125.126 415.241 123.960 414.481 123.023 413.509 C122.090 412.537 121.387 411.391 120.912 410.070 C120.438 408.749 120.204 407.303 120.204 405.733 L120.204 389.471 L126.035 389.471 L126.035 405.508 C126.035 406.331 126.166 407.091 126.428 407.788 C126.689 408.486 127.055 409.091 127.529 409.602 C128.003 410.112 128.569 410.512 129.229 410.798 C129.890 411.085 130.608 411.227 131.380 411.227 C132.153 411.227 132.862 411.085 133.510 410.798 C134.158 410.512 134.721 410.112 135.192 409.602 C135.667 409.091 136.035 408.486 136.297 407.788 C136.558 407.091 136.689 406.331 136.689 405.508 L136.689 389.471 L142.521 389.471 L142.521 405.733" class="r"/>
+<path d="M148.125 389.472 L153.957 389.472 L153.957 410.555 L164.763 410.555 L164.763 415.939 L148.125 415.939 L148.125 389.472" class="r"/>
+<path d="M172.611 402.705 C172.611 403.952 172.806 405.092 173.192 406.126 C173.578 407.160 174.132 408.058 174.856 408.817 C175.577 409.577 176.444 410.169 177.454 410.593 C178.464 411.016 179.590 411.227 180.837 411.227 C182.081 411.227 183.210 411.016 184.220 410.593 C185.230 410.169 186.094 409.577 186.818 408.817 C187.539 408.058 188.096 407.160 188.482 406.126 C188.868 405.092 189.060 403.952 189.060 402.705 C189.060 401.485 188.868 400.350 188.482 399.304 C188.096 398.257 187.539 397.354 186.818 396.593 C186.094 395.832 185.230 395.241 184.220 394.818 C183.210 394.393 182.081 394.182 180.837 394.182 C179.590 394.182 178.464 394.393 177.454 394.818 C176.444 395.241 175.577 395.832 174.856 396.593 C174.132 397.354 173.578 398.257 173.192 399.304 C172.806 400.350 172.611 401.485 172.611 402.705 M166.557 402.705 C166.557 400.587 166.913 398.668 167.622 396.948 C168.331 395.229 169.322 393.766 170.594 392.556 C171.865 391.347 173.371 390.419 175.118 389.771 C176.861 389.123 178.768 388.799 180.837 388.799 C182.905 388.799 184.810 389.123 186.556 389.771 C188.299 390.419 189.808 391.347 191.080 392.556 C192.352 393.766 193.340 395.229 194.052 396.948 C194.761 398.668 195.117 400.587 195.117 402.705 C195.117 404.824 194.761 406.742 194.052 408.462 C193.340 410.181 192.352 411.646 191.080 412.853 C189.808 414.063 188.299 414.992 186.556 415.639 C184.810 416.287 182.905 416.611 180.837 416.611 C178.768 416.611 176.861 416.287 175.118 415.639 C173.371 414.992 171.865 414.063 170.594 412.853 C169.322 411.646 168.331 410.181 167.622 408.462 C166.913 406.742 166.557 404.824 166.557 402.705" class="r"/>
+<path d="M199.078 389.472 L207.900 389.472 L213.994 406.743 L214.067 406.743 L220.197 389.472 L228.983 389.472 L228.983 415.939 L223.151 415.939 L223.151 395.640 L223.078 395.640 L216.123 415.939 L211.676 415.939 L204.983 395.640 L204.910 395.640 L204.910 415.939 L199.078 415.939 L199.078 389.472" class="r"/>
+<path d="M240.200 411.004 L245.432 411.004 C245.880 411.004 246.336 410.954 246.795 410.855 C247.258 410.754 247.675 410.581 248.049 410.332 C248.423 410.082 248.727 409.758 248.964 409.360 C249.201 408.962 249.320 408.475 249.320 407.901 C249.320 407.279 249.165 406.774 248.852 406.388 C248.541 406.001 248.149 405.709 247.675 405.508 C247.203 405.309 246.692 405.172 246.141 405.098 C245.594 405.023 245.082 404.985 244.611 404.985 L240.200 404.985 L240.200 411.004 M240.200 400.051 L244.422 400.051 C244.872 400.051 245.314 400.002 245.749 399.901 C246.187 399.803 246.579 399.640 246.929 399.415 C247.276 399.191 247.556 398.892 247.769 398.519 C247.979 398.145 248.085 397.696 248.085 397.173 C248.085 396.625 247.967 396.171 247.732 395.808 C247.495 395.448 247.191 395.167 246.817 394.967 C246.442 394.768 246.016 394.625 245.545 394.537 C245.070 394.450 244.611 394.406 244.161 394.406 L240.200 394.406 L240.200 400.051 M234.368 389.472 L244.237 389.472 C245.381 389.472 246.533 389.554 247.693 389.715 C248.852 389.878 249.892 390.200 250.814 390.687 C251.736 391.172 252.484 391.852 253.059 392.724 C253.631 393.597 253.917 394.756 253.917 396.201 C253.917 397.696 253.500 398.936 252.667 399.920 C251.830 400.905 250.729 401.608 249.357 402.033 L249.357 402.108 C250.230 402.232 251.021 402.475 251.733 402.836 C252.442 403.198 253.053 403.659 253.564 404.218 C254.072 404.780 254.465 405.434 254.742 406.182 C255.015 406.929 255.152 407.728 255.152 408.575 C255.152 409.970 254.854 411.135 254.255 412.069 C253.656 413.004 252.883 413.759 251.936 414.331 C250.991 414.904 249.923 415.316 248.739 415.565 C247.556 415.814 246.379 415.939 245.207 415.939 L234.368 415.939 L234.368 389.472" class="r"/>
+<path d="M258.815 389.472 L276.797 389.472 L276.797 394.855 L264.647 394.855 L264.647 399.789 L276.125 399.789 L276.125 405.173 L264.647 405.173 L264.647 410.555 L277.470 410.555 L277.470 415.939 L258.815 415.939 L258.815 389.472" class="r"/>
+</svg><div class="who">Real Estate Advisor<br>Engel &amp; Völkers Vancouver</div></div>
+    <header class="hero-copy">
+      <div class="eyebrow">Market Insight · Mount Pleasant: East &amp; West</div>
+      <h1>Mount Pleasant <span class="accent">Market</span></h1>
+      <p class="lede">Mount Pleasant sits just south of False Creek, with Main Street's cafés, breweries and vintage shops running through the middle of it. Greater Vancouver REALTORS® reports it as two areas, Mount Pleasant East and Mount Pleasant West, so you'll see both side by side. Condos make up most of the sales on both sides, and that's what we track here. Here's where values are heading, how quickly homes are selling and how much room buyers have to negotiate, updated every month from Greater Vancouver REALTORS® data.</p>
+      <div class="stamp" id="stamp"></div>
+    </header>
+  </div>
+  
+</div>
+<div class="wrap">
+  <div class="stamp stamp-bare" id="stamp2"></div>
+  <section class="sec" aria-labelledby="h-now">
+    <div class="sec-head"><h2 id="h-now">The short version</h2></div>
+    <div class="nutshell" id="nutshell"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-glance">
+    <div class="sec-head">
+      <h2 id="h-glance">At a glance</h2>
+      <p>Hover or tap any chart to read a specific month.</p>
+    </div>
+    <div class="grid4">
+      <article class="card">
+        <div class="tag">Value</div>
+        <h3>Benchmark price</h3>
+        <p class="sub">MLS® Home Price Index, monthly · last 3 years</p>
+        <div class="multi" id="c-hpi"></div>
+        <details class="explain"><summary>What this shows</summary>
+          <p>The benchmark price is GVR's estimate of what a typical home would sell for that month. It adjusts for the mix of homes that happened to sell, so it moves more steadily than an average or median sale price. Each line gets its own scale so you can see how each one is moving.</p>
+        </details>
+      </article>
+
+      <article class="card" id="card-ratio" hidden>
+        <div class="tag">Market balance</div>
+        <h3>Sales-to-active listings ratio</h3>
+        <p class="sub">Rolling 12 months · last 3 years</p>
+        <div class="legend" id="l-ratio"></div>
+        <div class="chart" id="c-ratio"></div>
+        <details class="explain"><summary>What this shows</summary>
+          <p>Of the homes listed for sale, what share sold. At 10%, about one in ten listings sold in a typical month. Flip it and you get months of inventory: at 10%, it would take about ten months to sell everything listed if nothing new came on. Higher means a busier market with more pressure on buyers; lower means more choice and more room to negotiate.</p>
+          <p>Each point averages the previous 12 months, which smooths out one-off swings from a handful of sales.</p>
+        </details>
+      </article>
+
+      <article class="card" id="card-dom" hidden>
+        <div class="tag">Speed</div>
+        <h3>Days to an accepted offer</h3>
+        <p class="sub">Median listing-to-contract days · rolling 12 months</p>
+        <div class="legend" id="l-dom"></div>
+        <div class="chart" id="c-dom"></div>
+        <details class="explain"><summary>What this shows</summary>
+          <p>How long a typical home took to get an accepted offer, counted from the day it was listed. Half of homes sold faster than this number and half took longer. Rising days mean buyers are taking their time.</p>
+        </details>
+      </article>
+
+      <article class="card" id="card-pct" hidden>
+        <div class="tag">Negotiating room</div>
+        <h3>Sale price vs. original asking price</h3>
+        <p class="sub">Median % of original list price · rolling 12 months</p>
+        <div class="legend" id="l-pct"></div>
+        <div class="chart" id="c-pct"></div>
+        <details class="explain"><summary>What this shows</summary>
+          <p>What a typical home sold for, compared with the price it was first listed at, including any price reductions along the way. 100% means it sold at the original asking price; 96% means it sold 4% below.</p>
+        </details>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <p id="src"></p>
+    <p>All figures are for apartments (condos), using GVR's Mount Pleasant VE and Mount Pleasant VW areas, shown side by side.</p>
+    <p>MLS® and the MLS® Home Price Index are trademarks of the Canadian Real Estate Association. Data from Greater Vancouver REALTORS® Stats Centre, © ShowingTime Plus, LLC. Figures are not a valuation of any specific property.</p>
+    <p>Eric Coulombe · Engel &amp; Völkers Vancouver · 604-764-8620 · eric@ericcoulombe.com</p>
+  </footer>
+</div>
+
+<script>
+const CFG = {"key": "mount-pleasant", "name": "Mount Pleasant", "segs": {"Detached (All)": {"label": "Detached", "nut": "Detached", "color": "--s-det"}, "Apartment": {"label": "Apartment", "nut": "Apartment", "color": "--s-apt"}, "Townhouse": {"label": "Townhouse", "nut": "Townhouse", "color": "--s-th"}, "VVEMP - Mount Pleasant VE": {"label": "Mount Pleasant East", "nut": "Mount Pleasant East condo", "color": "--s-apt"}, "VVWMP - Mount Pleasant VW": {"label": "Mount Pleasant West", "nut": "Mount Pleasant West condo", "color": "--s-th"}}};
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const MONTHS_L = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+function monthAt(start, i) { const [y, m] = start.split("-").map(Number); const t = (m - 1) + i; return { y: y + Math.floor(t / 12), m: t % 12 }; }
+const short = d => MONTHS[d.m] + " " + d.y;
+const long = d => MONTHS_L[d.m] + " " + d.y;
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmtMoneyK = v => v >= 1e6 ? "$" + (v / 1e6).toFixed(2).replace(/0$/, "") + "M" : "$" + Math.round(v / 1e3) + "K";
+const fmtMoney = v => "$" + Math.round(v).toLocaleString("en-CA");
+const fmtPct = v => (v * 100).toFixed(1) + "%";
+const sign = v => (v >= 0 ? "+" : "−") + Math.abs(v * 100).toFixed(1) + "%";
+const ok = v => v !== null && v !== undefined && !Number.isNaN(v);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function niceTicks(lo, hi, n) {
+  const span = hi - lo || 1, raw = span / n, mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  const step = [1, 2, 2.5, 5, 10].map(s => s * mag).find(s => span / s <= n) || 10 * mag;
+  const a = Math.floor(lo / step) * step, b = Math.ceil(hi / step) * step, out = [];
+  for (let v = a; v <= b + step / 2; v += step) out.push(+v.toFixed(10));
+  return out;
+}
+
+const NS = "http://www.w3.org/2000/svg";
+function el(tag, attrs, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+const lastIdx = a => { for (let i = a.length - 1; i >= 0; i--) if (ok(a[i])) return i; return -1; };
+
+function lineChart(host, cfg) {
+  host.innerHTML = "";
+  const W = Math.max(host.clientWidth, 200), H = cfg.height || 220;
+  const m = { t: 10, r: cfg.endLabels ? 58 : 14, b: 24, l: cfg.leftPad || 44 };
+  const n = Math.max(...cfg.series.map(s => s.values.length)), from = cfg.from || 0;
+  const idx = []; for (let i = from; i < n; i++) idx.push(i);
+  let lo = Infinity, hi = -Infinity;
+  cfg.series.forEach(s => idx.forEach(i => { if (ok(s.values[i])) { lo = Math.min(lo, s.values[i]); hi = Math.max(hi, s.values[i]); } }));
+  if (!isFinite(lo)) return;
+  const pad = (hi - lo) * 0.08 || Math.abs(hi) * 0.05 || 1; const ticks = niceTicks(lo - pad, hi + pad, cfg.ticks || 4);
+  const y0 = ticks[0], y1 = ticks[ticks.length - 1];
+  const x = i => m.l + (i - from) / Math.max(n - 1 - from, 1) * (W - m.l - m.r);
+  const y = v => m.t + (1 - (v - y0) / (y1 - y0)) * (H - m.t - m.b);
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, height: H, role: "img", "aria-label": cfg.label }, host);
+  ticks.forEach(t => {
+    el("line", { x1: m.l, x2: W - m.r, y1: y(t), y2: y(t), stroke: css("--grid"), "stroke-width": 1 }, svg);
+    const tx = el("text", { x: m.l - 6, y: y(t) + 4, "text-anchor": "end" }, svg); tx.textContent = cfg.fmtAxis(t);
+  });
+  el("line", { x1: m.l, x2: W - m.r, y1: H - m.b, y2: H - m.b, stroke: css("--line"), "stroke-width": 1 }, svg);
+  idx.forEach(i => { const d = monthAt(cfg.start, i); if (d.m === 0) { const tx = el("text", { x: x(i), y: H - 6, "text-anchor": "middle" }, svg); tx.textContent = d.y; el("line", { x1: x(i), x2: x(i), y1: H - m.b, y2: H - m.b + 4, stroke: css("--line") }, svg); } });
+  cfg.series.forEach(s => {
+    let dPath = "", pen = false;
+    idx.forEach(i => { const v = s.values[i]; if (!ok(v)) { pen = false; return; } dPath += (pen ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1); pen = true; });
+    el("path", { d: dPath, fill: "none", stroke: css(s.color), "stroke-width": 2, "stroke-linejoin": "round", "stroke-linecap": "round", class: "series" }, svg);
+    const li = lastIdx(s.values);
+    if (li >= from) el("circle", { cx: x(li), cy: y(s.values[li]), r: 4, fill: css(s.color), stroke: css("--surface"), "stroke-width": 2 }, svg);
+  });
+  if (cfg.endLabels) {
+    const labs = cfg.series.map(s => { const li = lastIdx(s.values); return { s, li, yy: li >= 0 ? y(s.values[li]) : null }; }).filter(o => o.yy !== null).sort((a, b) => a.yy - b.yy);
+    for (let k = 1; k < labs.length; k++) if (labs[k].yy - labs[k - 1].yy < 14) labs[k].yy = labs[k - 1].yy + 14;
+    labs.forEach(o => { const tx = el("text", { x: W - m.r + 8, y: o.yy + 4, class: "endlab" }, svg); tx.textContent = cfg.fmtTip(o.s.values[o.li]); });
+  }
+  const cross = el("line", { y1: m.t, y2: H - m.b, stroke: css("--ink-3"), "stroke-width": 1, "stroke-dasharray": "3 3", visibility: "hidden" }, svg);
+  const dots = cfg.series.map(s => el("circle", { r: 4.5, fill: css(s.color), stroke: css("--surface"), "stroke-width": 2, visibility: "hidden" }, svg));
+  const tip = document.createElement("div"); tip.className = "tip"; tip.hidden = true; host.appendChild(tip);
+  const hit = el("rect", { x: m.l, y: 0, width: W - m.l - m.r, height: H, fill: "transparent" }, svg);
+  function show(evt) {
+    const r = svg.getBoundingClientRect(), px = (evt.clientX - r.left) * (W / r.width);
+    let i = Math.round(from + (px - m.l) / (W - m.l - m.r) * (n - 1 - from)); i = Math.max(from, Math.min(n - 1, i));
+    cross.setAttribute("x1", x(i)); cross.setAttribute("x2", x(i)); cross.setAttribute("visibility", "visible");
+    const ys = [];
+    cfg.series.forEach((s, k) => { const v = s.values[i]; if (ok(v)) { dots[k].setAttribute("cx", x(i)); dots[k].setAttribute("cy", y(v)); dots[k].setAttribute("visibility", "visible"); ys.push(y(v)); } else dots[k].setAttribute("visibility", "hidden"); });
+    tip.innerHTML = `<b>${short(monthAt(cfg.start, i))}</b>` + cfg.series.map(s => `<div class="row"><i style="background:${css(s.color)}"></i>${cfg.series.length > 1 ? esc(s.name) + ": " : ""}${ok(s.values[i]) ? cfg.fmtTip(s.values[i]) : "n/a"}</div>`).join("");
+    tip.hidden = false;
+    const sx = r.width / W; tip.style.left = Math.min(Math.max(x(i) * sx, 70), r.width - 70) + "px"; tip.style.top = (ys.length ? Math.min(...ys) : m.t) * sx + "px";
+  }
+  function hide() { cross.setAttribute("visibility", "hidden"); dots.forEach(d => d.setAttribute("visibility", "hidden")); tip.hidden = true; }
+  hit.addEventListener("pointermove", show); hit.addEventListener("pointerdown", show); hit.addEventListener("pointerleave", hide);
+}
+
+const seg = col => CFG.segs[col] || { label: col.replace(/^\w+ - /, ""), color: "--ink-3" };
+const legend = cols => cols.map(c => `<span><i style="background:var(${seg(c).color})"></i>${esc(seg(c).label)}</span>`).join("");
+
+function start(J) {
+  const C = J.charts, H = C.hpi;
+  const last = c => monthAt(c.start, c.series[0].length - 1);
+  const hpiLast = last(H), rollC = C.ratio || C.dom || C.pctorig;
+  document.getElementById("stamp").innerHTML = document.getElementById("stamp2").innerHTML =
+    `<span>Benchmark prices through ${long(hpiLast)}</span>` + (rollC ? `<span>Rolling measures through ${long(last(rollC))}</span>` : "") + `<span>Source: Greater Vancouver REALTORS®</span>`;
+  document.getElementById("src").textContent = `Benchmark prices through ${long(hpiLast)}` + (rollC ? `; rolling 12-month measures through ${long(last(rollC))}` : "") + `. The most recent month can be revised as late sales are reported.`;
+
+  const nut = [];
+  H.cols.forEach((c, k) => {
+    const a = H.series[k], li = lastIdx(a); if (li < 0) return;
+    const prev = a[li - 12];
+    nut.push({ k: `${seg(c).nut} benchmark`, c: seg(c).color, v: fmtMoney(a[li]), d: ok(prev) ? `${sign(a[li] / prev - 1)} from ${short(monthAt(H.start, li - 12))}` : "" });
+  });
+  if (C.ratio) C.ratio.cols.forEach((c, k) => {
+    const a = C.ratio.series[k], li = lastIdx(a); if (li < 0) return;
+    const prev = a[li - 12];
+    nut.push({ k: `${seg(c).nut} listings selling`, c: seg(c).color, v: `${Math.round(a[li] * 100)} in 100`, d: `per month, 12-month average` + (ok(prev) ? ` (was ${Math.round(prev * 100)} a year ago)` : "") });
+  });
+  const nsEl = document.getElementById("nutshell"); if (nut.length % 3 === 0 && nut.length % 4 !== 0) nsEl.style.gridTemplateColumns = "repeat(auto-fit, minmax(min(100%, 300px), 1fr))";
+  nsEl.innerHTML = nut.map(o => `<div class="nut"><div class="k"><i style="background:var(${o.c})"></i>${esc(o.k)}</div><div class="v">${o.v}</div><div class="d">${o.d}</div></div>`).join("");
+
+  const hpiHost = document.getElementById("c-hpi");
+  hpiHost.innerHTML = H.cols.map((c, k) => `<div><div class="mini-h"><i style="background:var(${seg(c).color})"></i>${esc(seg(c).label)}</div><div class="chart" id="c-hpi-${k}"></div></div>`).join("");
+  const multi = (key, card) => { if (C[key]) { document.getElementById(card).hidden = false; document.getElementById("l-" + card.slice(5)).innerHTML = legend(C[key].cols); } };
+  multi("ratio", "card-ratio"); multi("dom", "card-dom"); multi("pctorig", "card-pct");
+  const S = ch => ch.cols.map((c, k) => ({ name: seg(c).label, color: seg(c).color, values: ch.series[k] }));
+
+  function renderAll() {
+    H.cols.forEach((c, k) => lineChart(document.getElementById("c-hpi-" + k), { start: H.start, series: [{ name: seg(c).label, color: seg(c).color, values: H.series[k] }], fmtAxis: fmtMoneyK, fmtTip: fmtMoney, height: 190, label: `${CFG.name} ${seg(c).nut} benchmark price, monthly` }));
+    if (C.ratio) lineChart(document.getElementById("c-ratio"), { start: C.ratio.start, series: S(C.ratio), fmtAxis: v => Math.round(v * 100) + "%", fmtTip: fmtPct, height: 230, endLabels: true, leftPad: 38, label: `${CFG.name} sales-to-active listings ratio, rolling 12 months` });
+    if (C.dom) lineChart(document.getElementById("c-dom"), { start: C.dom.start, series: S(C.dom), fmtAxis: v => Math.round(v), fmtTip: v => Math.round(v) + " days", height: 230, endLabels: true, leftPad: 34, label: `${CFG.name} median days to an accepted offer, rolling 12 months` });
+    if (C.pctorig) lineChart(document.getElementById("c-pct"), { start: C.pctorig.start, series: S(C.pctorig), fmtAxis: v => v.toFixed(0) + "%", fmtTip: v => v.toFixed(1) + "%", height: 230, endLabels: true, leftPad: 38, label: `${CFG.name} median sale price as a percent of original list price, rolling 12 months` });
+    postHeight();
+  }
+  renderAll();
+  let rt, lastW = 0; new ResizeObserver(es => { const w = Math.round(es[0].contentRect.width); if (w === lastW) return; lastW = w; clearTimeout(rt); rt = setTimeout(renderAll, 80); }).observe(document.querySelector(".wrap"));
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", renderAll);
+  new MutationObserver(renderAll).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+}
+
+/* Embedded on ericcoulombe.com: tell the host page how tall we are, so its frame never shows a second scrollbar. */
+let lastH = 0;
+function postHeight() {
+  if (!new URLSearchParams(location.search).has('embed') || window.parent === window) return;
+  requestAnimationFrame(() => { const h = Math.ceil(document.documentElement.scrollHeight); if (Math.abs(h - lastH) > 2) { lastH = h; window.parent.postMessage({ type: 'ec-stats-height', h }, '*'); } });
+}
+if (new URLSearchParams(location.search).has('embed')) {
+  document.documentElement.classList.add('embed');
+  if (new URLSearchParams(location.search).has('bare')) document.documentElement.classList.add('bare');
+  document.addEventListener('click', e => { const a = e.target.closest('a[href]'); if (a && !a.target) a.target = '_top'; });
+  new ResizeObserver(postHeight).observe(document.body);
+  document.addEventListener('toggle', postHeight, true);
+}
+fetch('../data/' + CFG.key + '.json', { cache: 'no-cache' })
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(j => { if (!j.charts || !j.charts.hpi) throw new Error('no data'); start(j); })
+  .catch(() => { document.getElementById('nutshell').innerHTML = '<div class="nut"><div class="d">The latest figures could not be loaded. Please refresh the page, or contact Eric for the current numbers.</div></div>'; postHeight(); });
+</script>
+</body>
+</html>
