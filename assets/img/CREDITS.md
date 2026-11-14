@@ -8,7 +8,7 @@ All photos from Unsplash (Unsplash License). Web-sized copies (2000px wide).
 | ec-ubc-entrance-fountain.jpg | Chenhsi Duan | https://unsplash.com/photos/xVKIR4B79GA | Market Insight hub UBC card, social share image |
 | ec-ubc-main-mall-plaza.jpg | Veronica Dudarev | https://unsplash.com/photos/ogHP2WE0Okc | Parents-of-UBC-students page (people visible; not for paid ads uncropped) |
 | ec-ubc-express-bus.jpg | Albert Stoynov | https://unsplash.com/photos/sSAj53GwVyM | Parents' page, secondary image (driver/passenger visible) |
-| ec-kits-shoreline-city.jpg | Vlad D | https://unsplash.com/photos/-He-xOYJfkM | Kitsilano stats page header and hub card |
+| ec-kits-shoreline-city.jpg | Vlad D | https://unsplash.com/photos/-He-xOYJfkM | Retired Nov 2026 (too similar to Point Grey); not in use |
 | ec-false-creek-marina.jpg | Doug Nealy | https://unsplash.com/photos/zBfM4ifCQ7o | Fairview stats page header and hub card |
 | ec-false-creek-downtown-aerial.jpg | Adrian Yu | https://unsplash.com/photos/Wc45W-dQFlA | Downtown Peninsula stats page header and hub card |
 
@@ -27,3 +27,4 @@ All photos from Unsplash (Unsplash License). Web-sized copies (2000px wide).
 | ec-grandview-commercial-drive.jpg | Northwest | https://commons.wikimedia.org/wiki/File:4th_%26_Commercial.jpg | CC BY-SA 4.0 | grandview header + hub card |
 | ec-strathcona-heritage-houses.jpg | Vladimir Menkov | https://commons.wikimedia.org/wiki/File:Strathcona-Houses-3729.jpg | CC BY-SA 3.0 | strathcona header + hub card |
 | ec-gastown-steam-clock.jpg | dronepicr | https://commons.wikimedia.org/wiki/File:Gastown_Vancouver_Steam_Clock_Water_Street_%2830853451538%29.jpg | CC BY 2.0 | downtown-east header + hub card |
+| ec-kits-pool-skyline.jpg | Kyle Pearce | https://commons.wikimedia.org/wiki/File:Kitsilano_Pool_view.jpg | CC BY-SA 2.0 | Kitsilano header + hub card |

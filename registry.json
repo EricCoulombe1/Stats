@@ -77,7 +77,7 @@
       "full_name": "Kitsilano",
       "page": "kitsilano/",
       "host_url": "https://ericcoulombe.com/kitsilano-market-stats.html",
-      "photo": "assets/img/ec-kits-shoreline-city.jpg",
+      "photo": "assets/img/ec-kits-pool-skyline.jpg",
       "headline": "Apartment",
       "charts": {
         "hpi": {"csv": "ttk9n-P1Q", "kind": "money", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 200000, "max": 12000000, "required": true},
