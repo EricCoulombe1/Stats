@@ -140,9 +140,9 @@
       "desc": "Cambie detached, apartment and townhouse market statistics, updated monthly: benchmark prices, market balance, days to sell and sale-to-list prices. From Eric Coulombe, Engel &amp;amp; Völkers Vancouver.",
       "ogdesc": "Where Cambie house, condo and townhouse values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
       "photo": {
-        "src": "assets/img/ec-cambie-qe-park-skyline.jpg",
-        "pos": "center 70%",
-        "credit": "Downtown and the North Shore from Queen Elizabeth Park · Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Vancouver_Skyline_and_Mountains.jpg\" target=\"_blank\" rel=\"noopener\">Kyle Pearce / Wikimedia Commons</a>, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\" rel=\"noopener\">CC BY-SA 2.0</a>"
+        "src": "assets/img/ec-cambie-city-hall-night.jpg",
+        "pos": "62% 15%",
+        "credit": "Vancouver City Hall · Photo: <a href=\"https://commons.wikimedia.org/wiki/File:City_Hall_(6868486297).jpg\" target=\"_blank\" rel=\"noopener\">Kenny Louie / Wikimedia Commons</a>, <a href=\"https://creativecommons.org/licenses/by/2.0/\" target=\"_blank\" rel=\"noopener\">CC BY 2.0</a>"
       }
     },
     "mount-pleasant": {
@@ -152,9 +152,9 @@
       "ogdesc": "Where Mount Pleasant condo and townhouse values are heading, how fast homes are selling, and how much room buyers have to negotiate.",
       "note": "Figures are for GVR's Mount Pleasant VE area, which has most of the neighbourhood's sales. GVR's separate Mount Pleasant VW area sees only a couple of sales a month, too few to chart reliably, and detached sales here are too few as well.",
       "photo": {
-        "src": "assets/img/ec-mount-pleasant-mural.jpg",
-        "pos": "center 50%",
-        "credit": "Vancouver Mural Festival art · Photo: <a href=\"https://commons.wikimedia.org/wiki/File:Vancouver_Mural_Festival_street_art%2C_foggy_%2827639192259%29.jpg\" target=\"_blank\" rel=\"noopener\">Colin Knowles / Wikimedia Commons</a>, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\" rel=\"noopener\">CC BY-SA 2.0</a>"
+        "src": "assets/img/ec-mount-pleasant-east-van-night.jpg",
+        "pos": "80% 50%",
+        "credit": "The East Van sign · Photo: <a href=\"https://commons.wikimedia.org/wiki/File:EAST_VAN_at_night_(7023328247).jpg\" target=\"_blank\" rel=\"noopener\">Kenny Louie / Wikimedia Commons</a>, <a href=\"https://creativecommons.org/licenses/by/2.0/\" target=\"_blank\" rel=\"noopener\">CC BY 2.0</a>"
       }
     },
     "main": {

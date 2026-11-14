@@ -20,11 +20,13 @@ All photos from Unsplash (Unsplash License). Web-sized copies (2000px wide).
 | ec-dunbar-rooftops-city-view.jpg | rowy | https://commons.wikimedia.org/wiki/File:Dunbar_view_fr_Dunbar_%26_18th.JPG | CC BY 3.0 | Dunbar header + hub card |
 | ec-kerrisdale-west-41st.jpg | Canmenwalker | https://commons.wikimedia.org/wiki/File:W_41_Ave_in_Kerrisdale_2026.JPG | CC BY 4.0 | Kerrisdale header + hub card |
 | ec-arbutus-ridge.jpg | Canmenwalker | https://commons.wikimedia.org/wiki/File:Arbutus-Ridge_2026.jpg | CC BY 4.0 | Arbutus header + hub card |
-| ec-cambie-qe-park-skyline.jpg | Kyle Pearce | https://commons.wikimedia.org/wiki/File:Vancouver_Skyline_and_Mountains.jpg | CC BY-SA 2.0 | cambie header + hub card |
-| ec-mount-pleasant-mural.jpg | Colin Knowles | https://commons.wikimedia.org/wiki/File:Vancouver_Mural_Festival_street_art%2C_foggy_%2827639192259%29.jpg | CC BY-SA 2.0 | mount-pleasant header + hub card |
+| ec-cambie-qe-park-skyline.jpg | Kyle Pearce | https://commons.wikimedia.org/wiki/File:Vancouver_Skyline_and_Mountains.jpg | CC BY-SA 2.0 | Retired Nov 2026 (replaced by City Hall); not in use |
+| ec-mount-pleasant-mural.jpg | Colin Knowles | https://commons.wikimedia.org/wiki/File:Vancouver_Mural_Festival_street_art%2C_foggy_%2827639192259%29.jpg | CC BY-SA 2.0 | Retired Nov 2026 (replaced by East Van sign); not in use |
 | ec-main-riley-park-aerial.jpg | Canmenwalker | https://commons.wikimedia.org/wiki/File:Riley_Park%E2%80%93Little_Mountain_Aerial_view_2026.jpg | CC BY 4.0 | main header + hub card |
 | ec-fraser-kensington-aerial.jpg | Canmenwalker | https://commons.wikimedia.org/wiki/File:Kensington_Cedar_Cottage_aerial_view_2026.jpg | CC BY 4.0 | fraser header + hub card |
 | ec-grandview-commercial-drive.jpg | Northwest | https://commons.wikimedia.org/wiki/File:4th_%26_Commercial.jpg | CC BY-SA 4.0 | grandview header + hub card |
 | ec-strathcona-heritage-houses.jpg | Vladimir Menkov | https://commons.wikimedia.org/wiki/File:Strathcona-Houses-3729.jpg | CC BY-SA 3.0 | strathcona header + hub card |
 | ec-gastown-steam-clock.jpg | dronepicr | https://commons.wikimedia.org/wiki/File:Gastown_Vancouver_Steam_Clock_Water_Street_%2830853451538%29.jpg | CC BY 2.0 | downtown-east header + hub card |
 | ec-kits-pool-skyline.jpg | Kyle Pearce | https://commons.wikimedia.org/wiki/File:Kitsilano_Pool_view.jpg | CC BY-SA 2.0 | Kitsilano header + hub card |
+| ec-cambie-city-hall-night.jpg | Kenny Louie | https://commons.wikimedia.org/wiki/File:City_Hall_(6868486297).jpg | CC BY 2.0 | Cambie header + hub card |
+| ec-mount-pleasant-east-van-night.jpg | Kenny Louie | https://commons.wikimedia.org/wiki/File:EAST_VAN_at_night_(7023328247).jpg | CC BY 2.0 | Mount Pleasant header + hub card (sculpture: "East Van" by Ken Lum, 2010) |

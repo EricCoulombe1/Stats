@@ -105,7 +105,7 @@
       "full_name": "Cambie",
       "page": "cambie/",
       "host_url": "https://ericcoulombe.com/cambie-market-stats.html",
-      "photo": "assets/img/ec-cambie-qe-park-skyline.jpg",
+      "photo": "assets/img/ec-cambie-city-hall-night.jpg",
       "headline": "Detached (All)",
       "charts": {
         "hpi": {"csv": "tdhnb-4NU", "kind": "money", "cols": ["Detached (All)", "Apartment", "Townhouse"], "min": 200000, "max": 12000000, "required": true},
@@ -133,7 +133,7 @@
       "full_name": "Mount Pleasant",
       "page": "mount-pleasant/",
       "host_url": "https://ericcoulombe.com/mount-pleasant-market-stats.html",
-      "photo": "assets/img/ec-mount-pleasant-mural.jpg",
+      "photo": "assets/img/ec-mount-pleasant-east-van-night.jpg",
       "headline": "Apartment",
       "charts": {
         "hpi": {"csv": "td274-3c0", "kind": "money", "cols": ["Apartment", "Townhouse"], "min": 200000, "max": 12000000, "required": true},
