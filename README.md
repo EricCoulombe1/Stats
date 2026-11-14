@@ -17,3 +17,5 @@ Photos: Unsplash, see `assets/img/CREDITS.md`.
 Also hosted here: `spinning-wheel/index.html`, the Spinning Wheel Calculator
 (embedded on ericcoulombe.com/spinning-wheel.html with `?embed=1`;
 scenario links use `#s=appr_rate_ltv_term_reinvest_rentPct_years_downturn`; engine assumptions match one-house-fifteen-years.html).
+
+Also hosted here: `reports/<report>/index.html`, client-facing reports (see `reports/README.md`).

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your First Investment Property Doesn't Have to Keep You Up at Night</title>
+<meta name="description" content="How remote ownership of a rental in Fort St. John actually works, what it costs, and the local property management team that runs it day to day. With a real year on one of Eric Coulombe's own houses.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://stats.ericcoulombe.com/reports/first-investment-property/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Your first investment property doesn't have to keep you up at night">
+<meta property="og:description" content="Remote ownership in Fort St. John: a real year on one of our own houses, what management costs, what can still go wrong, and the local team.">
+<meta property="og:url" content="https://stats.ericcoulombe.com/reports/first-investment-property/">
+<meta property="og:image" content="https://stats.ericcoulombe.com/reports/first-investment-property/img/share.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/email/ec-logo-signature.png">
+<link rel="stylesheet" href="/assets/fonts/ev-fonts.css">
+<style>
+/* Layout: one editorial column (~68ch) with full-bleed bands for the hero, the real-year numbers and the close. Single light theme, matching ericcoulombe.com. */
+:root{
+  --red:#B7202E;        /* Eric's darker logo red */
+  --ink:#1F2124;        /* charcoal */
+  --ink-2:#45484D;
+  --muted:#5E6166;
+  --paper:#FFFFFF;
+  --band:#F4F4F2;
+  --line:#E2E2DF;
+  --green:#2F6B4F;      /* semantic: money to the owner */
+  --display:"Engel Voelkers Head", Georgia, "Times New Roman", serif;
+  --body:"Engel Voelkers Text", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:400;font-size:17px;line-height:1.6}
+a{color:var(--red);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.col{max-width:700px}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.15}
+h2{font-size:clamp(28px,4vw,38px);margin-bottom:14px}
+h3{font-size:21px;margin-bottom:8px}
+p{margin:0 0 14px}
+.eyebrow{font-family:var(--body);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:10px;display:block}
+section{padding:64px 0;border-top:1px solid var(--line)}
+section.band{background:var(--band);border-top:none}
+.num{font-variant-numeric:tabular-nums}
+
+/* Hero */
+.hero{background:var(--ink);color:#fff;padding:28px 0 56px;border-top:none}
+.hero-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:56px}
+.hero-top img{height:52px;width:auto;display:block}
+.hero-top .meta{font-size:13px;color:#C9CBCE;letter-spacing:.04em}
+.hero h1{font-size:clamp(36px,6vw,62px);max-width:16ch;margin-bottom:20px}
+.hero .sub{font-size:20px;font-weight:300;color:#E2E2DF;max-width:46ch;margin-bottom:36px}
+.nutshell{border-left:3px solid var(--red);padding:4px 0 4px 20px;max-width:64ch;color:#F4F4F2}
+.nutshell strong{color:#fff}
+.nutshell .eyebrow{color:#E7A0A6}
+.byline{margin-top:36px;font-size:14px;color:#BFC1C4}
+
+/* Worries */
+.worries{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+.worry{border:1px solid var(--line);border-radius:6px;padding:20px 22px;background:#fff}
+.worry q{display:block;font-family:var(--display);font-size:20px;quotes:"\201C" "\201D";margin-bottom:8px}
+.worry p{margin:0;color:var(--ink-2);font-size:15.5px}
+.callout{margin-top:24px;font-size:16px;color:var(--ink-2)}
+
+/* Roles */
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.role{background:#fff;border-radius:6px;padding:22px;border-top:4px solid var(--ink-2)}
+.role.izon{border-top-color:var(--ink)}
+.role.you{border-top-color:var(--red)}
+.role.me{border-top-color:var(--muted)}
+.role ul{margin:0;padding-left:18px;font-size:15.5px;color:var(--ink-2)}
+.role li{margin-bottom:6px}
+.role .who{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted);display:block;margin-bottom:4px}
+
+/* Real year */
+.year-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:start;margin-top:28px}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+thead th{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;border-bottom:2px solid var(--ink)}
+tr.sub td{font-weight:700;border-top:2px solid var(--ink)}
+tr.total td{font-weight:700;color:var(--green);font-size:17px;border-bottom:none}
+.tablewrap{overflow-x:auto}
+.fine{font-size:13.5px;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 4px}
+.fact{background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.fact b{display:block;font-family:var(--display);font-size:22px;font-weight:400}
+.fact span{font-size:13px;color:var(--muted)}
+.chart{background:var(--band);border-radius:6px;padding:20px 20px 14px}
+.chart h3{font-size:18px}
+.chart svg{width:100%;height:auto;display:block}
+.chart svg text{font-family:var(--body);fill:var(--ink-2)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13px;color:var(--ink-2);margin-top:8px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.lessons{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.lesson{background:#fff;border:1px solid var(--line);border-top:3px solid var(--ink);border-radius:6px;padding:20px}
+.lesson h3{font-size:19px}
+.lesson p{font-size:15.5px;color:var(--ink-2);margin:0}
+.returns{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:14px;margin-top:32px;background:var(--ink);color:#fff;border-radius:6px;padding:26px 28px}
+.returns .r b{display:block;font-family:var(--display);font-size:34px;font-weight:400}
+.returns .r span{font-size:14px;color:#C9CBCE}
+.returns .op{font-family:var(--display);font-size:30px;color:#9a9da1}
+.returns .r.total b{color:#fff}
+.returns-note{margin-top:14px}
+
+/* Phases */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:30px;counter-reset:ph}
+.phase{padding:0 22px 0 0;position:relative}
+.phase .bar{height:4px;background:var(--line);margin-bottom:18px;position:relative}
+.phase .bar::before{content:"";position:absolute;left:0;top:-5px;width:14px;height:14px;border-radius:50%;background:var(--red)}
+.phase .step{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);font-weight:700}
+.phase ul{padding-left:18px;margin:8px 0 0;font-size:15.5px;color:var(--ink-2)}
+.phase li{margin-bottom:6px}
+
+/* Fees */
+.fees td:first-child{width:52%}
+.opinion{margin-top:22px;padding:18px 20px;background:var(--band);border-radius:6px}
+
+/* Risks */
+.risks td{font-size:15px}
+.risks td:first-child{font-weight:700;color:var(--ink);width:20%}
+.risks td:nth-child(2){color:var(--ink-2);width:30%}
+
+/* Checklist */
+.check{list-style:none;padding:0;margin:24px 0 0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 28px}
+.check li{position:relative;padding-left:36px;font-size:15.5px;color:var(--ink-2)}
+.check li b{color:var(--ink)}
+.check li::before{content:counter(item);counter-increment:item;position:absolute;left:0;top:1px;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--red);color:var(--red);font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.check{counter-reset:item}
+.passes{margin-top:28px;border-left:3px solid var(--red);padding:2px 0 2px 20px}
+
+/* Team */
+.team-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;margin-top:24px}
+.people{list-style:none;padding:0;margin:14px 0 0}
+.people li{padding:10px 0;border-bottom:1px solid var(--line);font-family:var(--display);font-size:20px}
+.people li span{display:block;font-family:var(--body);font-size:13.5px;color:var(--muted)}
+.contact{font-size:15px;color:var(--ink-2);margin-top:16px}
+.rating{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
+.rating b{font-family:var(--display);font-size:40px;font-weight:400}
+.rating span{font-size:14px;color:var(--muted)}
+blockquote{margin:0 0 14px;padding:16px 18px;background:var(--band);border-radius:6px;font-family:var(--display);font-size:18px;line-height:1.45}
+blockquote cite{display:block;font-family:var(--body);font-style:normal;font-size:13.5px;color:var(--muted);margin-top:8px}
+
+/* Close */
+.close{background:var(--ink);color:#fff;border-top:none}
+.close h2{color:#fff}
+.steps{list-style:none;padding:0;margin:24px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
+.steps li{background:#2A2D31;border-radius:6px;padding:20px;color:#E2E2DF;font-size:15.5px}
+.steps li b{display:block;font-family:var(--display);font-weight:400;font-size:21px;color:#fff;margin-bottom:6px}
+.steps li b::before{counter-increment:s;content:counter(s) ". ";color:#E7A0A6}
+.eric{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-top:36px;padding-top:28px;border-top:1px solid #3a3d42}
+.eric img{height:56px;width:auto}
+.eric p{margin:0;color:#E2E2DF;font-size:15.5px}
+.eric a{color:#fff}
+.reading{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.reading a{display:block;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:6px;padding:16px 18px;transition:border-color .15s}
+.reading a:hover,.reading a:focus-visible{border-color:var(--red)}
+.reading a b{display:block;font-family:var(--display);font-weight:400;font-size:18px;margin-bottom:2px}
+.reading a span{font-size:13.5px;color:var(--muted)}
+.reading a em{font-style:normal;color:var(--red);font-size:13px;font-weight:700}
+footer{padding:40px 0 56px;font-size:13px;color:var(--muted)}
+footer p{max-width:90ch}
+
+@media (max-width:860px){
+  .roles,.phases,.lessons,.steps,.reading{grid-template-columns:1fr}
+  .phase{padding:0 0 26px}
+  .year-grid,.team-grid{grid-template-columns:1fr}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .returns{grid-template-columns:1fr;text-align:left}
+  .returns .op{display:none}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .wrap{padding:0 18px}
+  section{padding:48px 0}
+  .worries,.check{grid-template-columns:1fr}
+  .risks thead{display:none}
+  .risks tr{display:block;border-bottom:1px solid var(--line);padding:10px 0}
+  .risks td{display:block;border:none;padding:3px 0;width:auto!important}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{
+  section{padding:40px 0;break-before:page}
+  section#reading{break-before:auto}
+  .lessons{break-before:page;margin-top:0}
+  .worries,.roles,.lessons,.phases,.check,.steps,.reading,.year-grid,.team-grid,.returns,table{break-inside:avoid}
+  .hero,.close,.returns{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .worry,.role,.lesson,.phase,blockquote,.chart,tr{break-inside:avoid}
+  h2{break-after:avoid}
+  .reading a::after{content:" " attr(href);display:block;font-size:9pt;color:var(--muted);word-break:break-all}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <img src="img/ec-logo-white.png" width="102" height="52" alt="Eric Coulombe">
+      <span class="meta">Investment Properties · Fort St. John · November 2026</span>
+    </div>
+    <h1>Your first investment property doesn't have to keep you up at night</h1>
+    <p class="sub">How remote ownership in Fort St. John actually works, what it costs, and the local team that runs it day to day.</p>
+    <div class="nutshell">
+      <span class="eyebrow">In a nutshell</span>
+      <p>Owning a rental 1,200 km from home is very doable when three things are in place: <strong>a property bought on numbers that hold up in an ordinary year</strong>, <strong>a licensed local property manager</strong> who handles the day-to-day, and <strong>a cash reserve</strong> for the months that don't go to plan.</p>
+      <p style="margin:0">A good manager won't make every problem disappear, but it turns most of them into a phone call and a line on your monthly statement. Below, I walk you through a real year on one of our own houses, what management costs, what can still go wrong, and how I vet the people we rely on.</p>
+    </div>
+    <p class="byline">Eric Coulombe, Real Estate Advisor, Engel &amp; Völkers Vancouver · Property management partner in Fort St. John: Izon Realty</p>
+  </div>
+</header>
+
+<main>
+
+<section id="worries">
+  <div class="wrap">
+    <span class="eyebrow">1 · The worries, named</span>
+    <h2>Every first-time investor asks the same four questions</h2>
+    <p class="col">Almost everyone I work with starts in the same place. They like the idea of rent paying down a mortgage, and then the questions arrive. Each one has a working answer.</p>
+    <div class="worries">
+      <div class="worry"><q>What if I pick the wrong tenant?</q><p>Screening is the manager's core job: a multi-point screening with credit and criminal checks, a written lease and a documented move-in inspection.</p></div>
+      <div class="worry"><q>What if something breaks and I'm 1,200 km away?</q><p>A local manager with a trades network and a pre-approved repair limit can deal with an urgent problem the same day, without waiting for you.</p></div>
+      <div class="worry"><q>What if I get the legal side wrong?</q><p>A licensed manager uses compliant tenancy agreements, serves notices properly and handles disputes through the Residential Tenancy Branch.</p></div>
+      <div class="worry"><q>Can I trust someone else with this?</q><p>You get a monthly statement, an online owner portal and an inspection report every year. I read the same statements on my own properties every month.</p></div>
+    </div>
+    <p class="callout col">None of these risks goes to zero. What changes is who deals with them, how quickly, and whether you hear about it as a crisis or as a line on a report.</p>
+  </div>
+</section>
+
+<section id="roles" class="band">
+  <div class="wrap">
+    <span class="eyebrow">2 · Who does what</span>
+    <h2>Remote ownership works when everyone knows their lane</h2>
+    <div class="roles">
+      <div class="role izon">
+        <span class="who">Izon handles</span>
+        <h3>The day-to-day</h3>
+        <ul>
+          <li>Advertising, showings and tenant screening</li>
+          <li>Leases, move-in and move-out condition reports</li>
+          <li>Rent collection and arrears follow-up</li>
+          <li>Maintenance calls, trades and emergencies</li>
+          <li>An annual inspection, included</li>
+          <li>Monthly owner statements and year-end summaries</li>
+          <li>Notices and Residential Tenancy Branch matters</li>
+        </ul>
+      </div>
+      <div class="role you">
+        <span class="who">You own</span>
+        <h3>The decisions</h3>
+        <ul>
+          <li>Approving larger repairs and improvements</li>
+          <li>Keeping a cash reserve</li>
+          <li>Insurance, mortgage and renewals</li>
+          <li>Your income tax filing, with your accountant</li>
+          <li>Reading your statements and asking questions</li>
+        </ul>
+      </div>
+      <div class="role me">
+        <span class="who">I help you</span>
+        <h3>Start right</h3>
+        <ul>
+          <li>Choose the market and the property</li>
+          <li>Underwrite it on today's rents, with no growth assumed</li>
+          <li>Negotiate and close the purchase</li>
+          <li>Get introduced to Izon and set the property up</li>
+          <li>Understand the manager relationship so you can run it confidently yourself</li>
+        </ul>
+      </div>
+    </div>
+    <p class="callout col">Once you're set up, the relationship with Izon is yours to run. I stay available for questions, and for the next purchase if you want one.</p>
+  </div>
+</section>
+
+<section id="real-year">
+  <div class="wrap">
+    <span class="eyebrow">3 · A real year</span>
+    <h2>8419 81 Street, Fort St. John: our own house, in an ordinary year</h2>
+    <p class="col">Rather than show you a perfect pro forma, here is one of our own houses with Izon managing it. Both suites rent furnished, with utilities, internet and housekeeping included. It's the least flattering of our Fort St. John properties, and I picked it on purpose.</p>
+    <div class="facts">
+      <div class="fact"><b>House + suite</b><span>3-bed main over a 2-bed suite, double garage</span></div>
+      <div class="fact"><b class="num">C$640,000</b><span>Bought January 2024; held at that value here</span></div>
+      <div class="fact"><b class="num">C$139,500</b><span>Cash in: 20% down plus transfer tax and legal</span></div>
+      <div class="fact"><b class="num">C$6,000</b><span>Full monthly rent, both units, since May 2026</span></div>
+    </div>
+    <div class="year-grid">
+      <div>
+        <div class="tablewrap">
+        <table>
+          <thead><tr><th>Average month, Jan 1 to Oct 22, 2026</th><th class="n">C$</th></tr></thead>
+          <tbody>
+            <tr><td>Rent and utility recoveries collected</td><td class="n">5,452</td></tr>
+            <tr><td>Property management (10%)</td><td class="n">−545</td></tr>
+            <tr><td>Utilities and internet</td><td class="n">−421</td></tr>
+            <tr><td>Re-renting fees (two placements)</td><td class="n">−309</td></tr>
+            <tr><td>Cleaning, repairs and supplies</td><td class="n">−308</td></tr>
+            <tr><td>Bank fees, GST and deposit interest</td><td class="n">−79</td></tr>
+            <tr><td>Property tax</td><td class="n">−467</td></tr>
+            <tr><td>Insurance</td><td class="n">−199</td></tr>
+            <tr class="sub"><td>Net operating income</td><td class="n">3,124</td></tr>
+            <tr><td>Mortgage payment</td><td class="n">−2,432</td></tr>
+            <tr class="total"><td>Cash flow to us</td><td class="n">+692</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p class="fine" style="margin-top:10px">Shown as a standard purchase: 20% down and a C$512,000 mortgage over 30 years at 3.99%. Our actual financing history differs.</p>
+      </div>
+      <div class="chart">
+        <h3>Where each month's rent went</h3>
+        <svg viewBox="0 0 460 228" role="img" aria-label="Average 2026 month at 8419 81 Street: of C$5,452 rent collected, C$2,328 went to running costs, C$1,613 to mortgage interest, C$819 to principal paydown and C$692 to cash flow."><text x="0" y="16" font-size="13">Rent collected: C$5,452 a month</text><rect x="0.0" y="26" width="196.4" height="34" fill="#45484D"/><rect x="196.4" y="26" width="136.1" height="34" fill="#9EA1A6"/><rect x="332.5" y="26" width="69.1" height="34" fill="#B7202E"/><rect x="401.6" y="26" width="58.4" height="34" fill="#2F6B4F"/><text x="0" y="105" font-size="13.5">Running costs</text><rect x="150" y="92" width="232.8" height="18" rx="2" fill="#45484D"/><text x="390.8" y="105" font-size="13.5" font-weight="700" style="fill:#1F2124">C$2,328</text><text x="0" y="139" font-size="13.5">Mortgage interest</text><rect x="150" y="126" width="161.3" height="18" rx="2" fill="#9EA1A6"/><text x="319.3" y="139" font-size="13.5" font-weight="700" style="fill:#1F2124">C$1,613</text><text x="0" y="173" font-size="13.5">Principal paid down</text><rect x="150" y="160" width="81.9" height="18" rx="2" fill="#B7202E"/><text x="239.9" y="173" font-size="13.5" font-weight="700" style="fill:#1F2124">C$819</text><text x="0" y="207" font-size="13.5">Cash flow to us</text><rect x="150" y="194" width="69.2" height="18" rx="2" fill="#2F6B4F"/><text x="227.2" y="207" font-size="13.5" font-weight="700" style="fill:#1F2124">C$692</text></svg>
+        <p class="fine" style="margin:10px 0 0">Average 2026 month. The interest and principal split is my calculation for 2026 on the simplified mortgage.</p>
+      </div>
+    </div>
+
+    <div class="lessons">
+      <div class="lesson"><h3>Turnover is the real cost</h3><p>One month sat almost empty between tenants, and two re-rentals cost C$3,000 in placement fees. Rent collected averaged C$5,452 against a full C$6,000. Fully rented months netted C$1,400 to C$1,900.</p></div>
+      <div class="lesson"><h3>The fee is the predictable part</h3><p>Management came to exactly 10% of rent collected. Setting aside the furnished extras, regular running costs (management, repairs, lawn care, property tax and insurance) were about 30% of rent, which is what my models assume.</p></div>
+      <div class="lesson"><h3>It still paid us every month</h3><p>About C$690 a month after everything. At a 5% mortgage rate it would have been about C$390: thinner, still positive.</p></div>
+    </div>
+
+    <div class="returns" role="group" aria-label="The two returns you can forecast">
+      <div class="r"><b class="num">+C$692</b><span>Cash flow a month, 2026 average</span></div>
+      <div class="op" aria-hidden="true">+</div>
+      <div class="r"><b class="num">≈ C$820</b><span>Principal your tenants pay down each month</span></div>
+      <div class="op" aria-hidden="true">=</div>
+      <div class="r total"><b class="num">≈ C$1,510</b><span>Built for us each month, before any change in value</span></div>
+    </div>
+    <p class="returns-note col"><b>The two returns you can forecast.</b> When you buy a rental, two returns are fairly predictable: the cash flow, and the principal your tenants pay down on the mortgage each month. Appreciation is the cherry on top. It's possible, but I never count on it, and every figure here holds the house at what we paid for it. The full story on this house, including the annual return on our cash, is on <a href="https://ericcoulombe.com/our-portfolio.html">Our Portfolio</a>.</p>
+  </div>
+</section>
+
+<section id="how-izon-works" class="band">
+  <div class="wrap">
+    <span class="eyebrow">4 · How Izon runs a property</span>
+    <h2>Three phases, from keys to steady rent</h2>
+    <div class="phases">
+      <div class="phase"><div class="bar"></div><span class="step">Phase 1</span><h3>Onboarding</h3>
+        <ul>
+          <li>A walk-through and a report on anything to fix before the first tenant moves in</li>
+          <li>Advice on furnishing where it pays, and where it doesn't</li>
+          <li>New locks, and the unit brought to Izon's standard</li>
+          <li>In my experience, set-up runs about C$5,000 to C$15,000 per property, depending on furnishing</li>
+        </ul></div>
+      <div class="phase"><div class="bar"></div><span class="step">Phase 2</span><h3>Finding the right tenant</h3>
+        <ul>
+          <li>Listings on Facebook, Instagram, Kijiji, rental sites and through industry contacts</li>
+          <li>A waitlist of approved applicants that shortens vacancies</li>
+          <li>A multi-point screening that includes credit and criminal checks</li>
+          <li>Strong ties to the energy and construction employers behind Fort St. John's rental demand</li>
+        </ul></div>
+      <div class="phase"><div class="bar"></div><span class="step">Phase 3</span><h3>Ongoing stewardship</h3>
+        <ul>
+          <li>Rent collected monthly, with a detailed owner statement</li>
+          <li>Maintenance handled through local plumbers, electricians and trades</li>
+          <li>A pre-approved repair limit, so urgent fixes don't wait for you</li>
+          <li>An annual inspection, plus move-in and move-out condition reports</li>
+          <li>Year-end documents for your accountant</li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="costs">
+  <div class="wrap">
+    <span class="eyebrow">5 · What it costs</span>
+    <h2>The fees, in plain numbers</h2>
+    <div class="col">
+      <div class="tablewrap">
+      <table class="fees">
+        <thead><tr><th>Fee</th><th>Amount</th></tr></thead>
+        <tbody>
+          <tr><td>Property management</td><td><b>10% of rent collected</b></td></tr>
+          <tr><td>Tenant placement</td><td class="num">C$500 per placement</td></tr>
+          <tr><td>Utility management (optional)</td><td class="num">C$15 per utility account per month</td></tr>
+          <tr><td>Annual inspection</td><td>Included</td></tr>
+          <tr><td>One-time set-up <span class="fine">(my experience, not an Izon fee)</span></td><td class="num">About C$5,000 to C$15,000 per property</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="fine" style="margin-top:10px">Izon's management fee is always 10%. The other fees are from Izon's schedule as of November 2026; confirm the current schedule in your management agreement before you sign. Our two furnished re-rentals at 8419 in 2026 cost C$3,000 in total, so ask how furnished placements are priced.</p>
+      <div class="opinion"><b>Is 10% worth it?</b> In my view, for a remote owner it isn't optional. The fee comes out of rent you're only collecting because someone local is doing the work. I build it into every pro forma from day one, so the numbers you see from me already account for it.</div>
+    </div>
+  </div>
+</section>
+
+<section id="risks" class="band">
+  <div class="wrap">
+    <span class="eyebrow">6 · What can still go wrong</span>
+    <h2>The plan for each risk, decided before you buy</h2>
+    <div class="tablewrap">
+    <table class="risks">
+      <thead><tr><th>Risk</th><th>What it looks like</th><th>The plan</th></tr></thead>
+      <tbody>
+        <tr><td>Vacancy and turnover</td><td>A month or two between tenants, plus placement fees</td><td>Budget 3–4% vacancy in the numbers, keep a cash reserve, and price to lease rather than to sit empty</td></tr>
+        <tr><td>An energy-sector slowdown</td><td>Fewer workers in town and softer rents</td><td>Underwrite on today's rents with no growth; buy newer, well-located homes that stay rentable in a slow year; keep a reserve</td></tr>
+        <tr><td>A difficult tenancy</td><td>Late rent, damage or a dispute</td><td>Careful screening up front; Izon serves notices and handles Residential Tenancy Branch matters</td></tr>
+        <tr><td>A big repair</td><td>Furnace, roof or water damage</td><td>Buy newer homes, keep a reserve and carry proper landlord insurance; pre-approved limits handle the urgent part</td></tr>
+        <tr><td>Higher rates at renewal</td><td>A bigger mortgage payment</td><td>I stress-test at a 5% rate before you buy, so the property still carries itself if rates rise</td></tr>
+        <tr><td>Having to sell early</td><td>Buying and selling costs eat the early returns</td><td>Plan on a long hold (10 years is my standard) and keep enough cash that you're never forced to sell</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="callout col">Fort St. John went through a hard bust in 2015–16, and that history is part of why prices there still look reasonable. It's also why I insist on cash flow that works without any growth assumed.</p>
+  </div>
+</section>
+
+<section id="vetting">
+  <div class="wrap">
+    <span class="eyebrow">7 · How I vet a property manager</span>
+    <h2>Eight questions to ask before you sign with anyone</h2>
+    <ol class="check">
+      <li><b>Licensed?</b> Look the brokerage up on the BC Financial Services Authority's public registry, including its discipline history.</li>
+      <li><b>A sample owner statement.</b> Is it clear what came in, what went out, and why?</li>
+      <li><b>The full fee schedule in writing,</b> including placement, lease renewal and any markup on repairs.</li>
+      <li><b>The repair approval limit.</b> What can they spend without calling you?</li>
+      <li><b>Vacancy track record.</b> How long do their units typically sit between tenants?</li>
+      <li><b>Inspections.</b> How often, and do you get the report and photos?</li>
+      <li><b>After-hours coverage</b> and the trades they rely on.</li>
+      <li><b>Tenant reviews, not just owner reviews.</b> Tenants who are treated well stay longer, and turnover is the biggest cost you'll face.</li>
+    </ol>
+    <div class="passes col">
+      <h3>Why Izon passes for me</h3>
+      <p style="margin:0">My own Fort St. John properties are managed by Izon, and I read their statements every month. I've spent almost seven years building my approach in Fort St. John, and they've been part of it throughout. They manage more than 250 doors, a good share of them for my clients and me. As of November 2026 they hold a 4.4-star average across 19 Google reviews, from owners and tenants alike.</p>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="band">
+  <div class="wrap">
+    <span class="eyebrow">8 · The team</span>
+    <h2>Who you'd be working with in Fort St. John</h2>
+    <div class="team-grid">
+      <div>
+        <h3>Izon Realty</h3>
+        <ul class="people">
+          <li>Lisa Ljuden<span>Founder and owner</span></li>
+          <li>Kim Shaw<span>Property management, working alongside Lisa</span></li>
+          <li>Ron Roy<span>Managing Broker</span></li>
+        </ul>
+        <p class="contact">10228 101 Ave, Fort St. John, BC<br>236-476-4966 · <a href="https://izonrealty.com/">izonrealty.com</a><br>Also serving Dawson Creek, with Grande Prairie, Alberta listed as coming soon.</p>
+      </div>
+      <div>
+        <div class="rating"><b class="num">4.4</b><span>average across 19 Google reviews, as of November 13, 2026</span></div>
+        <blockquote>“Izon Realty was a huge help when I needed to rent my space. Lisa always would go above and beyond…”<cite>Marcia Van Wart, owner</cite></blockquote>
+        <blockquote>“I'm a landlord and Izon has been managing my properties… They don't compare to the other companies in town.”<cite>Julie Grondin, landlord</cite></blockquote>
+        <blockquote>“FSJ deserves a good company for rentals, and they are the ones!”<cite>Veronica Floris, tenant</cite></blockquote>
+        <p class="fine">Reviews quoted from izonrealty.com.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="next" class="close">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#E7A0A6">9 · Next steps</span>
+    <h2>Where to go from here</h2>
+    <ol class="steps">
+      <li><b>Read the background</b>Start with the pages below: why Fort St. John, how one house performs over 15 years, and our own numbers.</li>
+      <li><b>Call me</b>We'll talk through your goals, your timeline and how much cash you'd want to keep in reserve.</li>
+      <li><b>Meet Izon</b>When we're looking at a specific property, I'll introduce you and ask Izon for a rental opinion before you write an offer.</li>
+    </ol>
+    <div class="eric">
+      <img src="img/ec-logo-white.png" width="102" height="52" alt="Eric Coulombe">
+      <p><b>Eric Coulombe</b>, Real Estate Advisor<br>Engel &amp; Völkers Vancouver (Kerrisdale)<br>604-764-8620 · eric@ericcoulombe.com · <a href="https://ericcoulombe.com/">ericcoulombe.com</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="reading">
+  <div class="wrap">
+    <span class="eyebrow">Related reading on ericcoulombe.com</span>
+    <h2>Go deeper</h2>
+    <div class="reading">
+      <a href="https://ericcoulombe.com/investing.html"><em>The basics</em><b>Start Here</b><span>What owning one rental house is like</span></a>
+      <a href="https://ericcoulombe.com/fort-st-john-investor-brief.html"><em>The market</em><b>Fort St. John</b><span>Why this town, and the risks</span></a>
+      <a href="https://ericcoulombe.com/one-house-fifteen-years.html"><em>The long run</em><b>One House, Fifteen Years</b><span>One house, held for 15 years</span></a>
+      <a href="https://ericcoulombe.com/spinning-wheel.html"><em>The strategy</em><b>The Spinning Wheel</b><span>Recycling equity, with the rules and a calculator</span></a>
+      <a href="https://ericcoulombe.com/our-portfolio.html"><em>Our own numbers</em><b>Our Portfolio</b><span>Our rentals, including 8419, by the numbers</span></a>
+      <a href="https://ericcoulombe.com/request-reports.html"><em>Full reports</em><b>Request the reports</b><span>The Spinning Wheel Report and the full Fort St. John report</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Where the numbers come from.</b> 8419 81 Street: rents and operating costs from Izon's 2026 owner statements (January 1 to October 22, cash basis); property tax from the 2026 notice; insurance from the current policy; purchase price from land title records. Financing is shown simplified as 20% down and a 30-year mortgage at 3.99%; our actual financing history differs. Principal paydown is my calculation on that simplified mortgage. Izon's fees are from its schedule as provided to me, November 2026. Google rating as displayed on November 13, 2026. Distance: about 1,200 km by road; direct flights take about two hours.</p>
+    <p><b>Disclosure.</b> I'm a licensed real estate advisor with Engel &amp; Völkers Vancouver. 8419 81 Street is owned by my wife and me; it is not for sale and this is not an offer. I earn a commission when clients buy or sell through me. Any referral arrangement would be disclosed to you in writing. Izon Realty is an independent brokerage; I don't control its services or fees. Past results on one property don't predict future results on any property. For education and discussion only; not financial, legal or tax advice.</p>
+    <p>© 2026 Eric Coulombe, Engel &amp; Völkers Vancouver.</p>
+  </div>
+</footer>
+</body>
+</html>
