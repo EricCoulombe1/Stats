@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Download header photos listed in assets/img/_incoming.json, resize to 2000px wide, save to assets/img/.
+"""Download header photos listed in assets/img/_incoming.json, resize photos to 2000px wide (PNGs saved unchanged), save to assets/img/.
 
 _incoming.json: [{"file": "ec-cambie-qe-park-view.jpg", "url": "https://upload.wikimedia.org/..."}]
 Runs in GitHub Actions (the build sandbox can't reach Wikimedia). Existing files are skipped.
@@ -23,6 +23,10 @@ for it in items:
             print("retry", it["file"], e); time.sleep(10)
     else:
         ok = False; continue
+    if it["file"].lower().endswith(".png"):  # icons/logos: keep as-is, no resize
+        Image.open(io.BytesIO(data)).verify()
+        open(out, "wb").write(data)
+        print("saved", it["file"], len(data) // 1024, "KB"); continue
     im = ImageOps.exif_transpose(Image.open(io.BytesIO(data))).convert("RGB")
     if im.width > 2000:
         im = im.resize((2000, round(im.height * 2000 / im.width)), Image.LANCZOS)
