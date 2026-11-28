@@ -5,7 +5,7 @@ PAGES=[
  ("investment-properties-northern-bc.html","Leverage, Explained","The numbers behind a mortgage"),
  ("one-house-fifteen-years.html","One House, Fifteen Years","One house, held for 15 years"),
  ("spinning-wheel.html","The Spinning Wheel","Recycling equity, with the rules"),
- ("fort-st-john-investor-brief.html","Fort St. John","Why this town, and the risks"),
+ ("markets.html","Markets","Where I invest, and why"),
  ("investmentproperties.html","Current Opportunities","Properties on the market now"),
  ("our-portfolio.html","Our Portfolio","Our own rentals, by the numbers"),
 ]
@@ -31,12 +31,18 @@ CSS="""<style>
 #ec-series .ecs-you{font-size:11px !important;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--r);margin-left:6px;font-family:'Engel Voelkers Text','Helvetica Neue',Arial,sans-serif}
 @media(max-width:640px){#ec-series .ecs-w{padding:28px 16px 24px}#ec-series ol{grid-template-columns:1fr}#ec-series li a,#ec-series li .ecs-here{display:grid;grid-template-columns:28px 1fr;column-gap:8px;padding:10px 0}#ec-series .ecs-n{grid-row:1/3;margin:2px 0 0}#ec-series .ecs-d{margin-top:2px}#ec-series li{border-top-width:1px}#ec-series li[aria-current]{border-top-width:2px}}
 </style>"""
+# Market briefs sit under Markets (step 05): step 05 is marked current but stays a link to Markets, with the market name as the badge.
+BRIEFS={"fort-st-john-investor-brief.html":"Fort St. John","saint-john-investor-brief.html":"Saint John"}
 def strip(cur):
-    i=[p[0] for p in PAGES].index(cur)
+    brief=BRIEFS.get(cur)
+    i=[p[0] for p in PAGES].index("markets.html" if brief else cur)
     items=[]
     for k,(href,t,d) in enumerate(PAGES):
         inner=f'<span class="ecs-n">{k+1:02d}</span><span class="ecs-t">{html.escape(t)}</span><span class="ecs-d">{html.escape(d)}</span>'
-        if k==i:
+        if k==i and brief:
+            inner=inner.replace('</span><span class="ecs-d">',f'<span class="ecs-you">{html.escape(brief)}</span></span><span class="ecs-d">',1)
+            items.append(f'<li aria-current="page"><a href="{href}">{inner}</a></li>')
+        elif k==i:
             inner=inner.replace('</span><span class="ecs-d">','<span class="ecs-you">You&rsquo;re here</span></span><span class="ecs-d">',1)
             items.append(f'<li aria-current="page"><span class="ecs-here">{inner}</span></li>')
         else:
@@ -45,9 +51,9 @@ def strip(cur):
         n=PAGES[i+1]; nx=f'Next: <a href="{n[0]}">{html.escape(n[1])} &rarr;</a>'
     else:
         nx='Want the full reports? <a href="request-reports.html">Ask for them &rarr;</a>'
-    return (f'<!-- EC investing series strip v1.0 (2026-11-08). Same block on every investing page; only the current item differs. Source: stats repo _build/series/gen.py -->\n'
+    return (f'<!-- EC investing series strip v1.1 (2026-11-28). Same block on every investing page; only the current item differs. Source: stats repo _build/series/gen.py -->\n'
             f'{CSS}\n<nav id="ec-series" aria-label="The investing series"><div class="ecs-w"><div class="ecs-top"><p class="ecs-k">The investing series &middot; {i+1} of {len(PAGES)}</p><p class="ecs-nx">{nx}</p></div><ol>{"".join(items)}</ol></div></nav>\n<!-- /EC investing series strip -->\n')
-for href,_,_ in PAGES:
+for href in [p[0] for p in PAGES]+list(BRIEFS):
     open(href.replace('.html','')+'.strip.html','w').write(strip(href))
 # preview page
 pv='<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Series strip preview</title><link rel="stylesheet" href="https://stats.ericcoulombe.com/assets/fonts/ev-fonts.css"></head><body style="margin:0">'
